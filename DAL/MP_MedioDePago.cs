@@ -1,0 +1,63 @@
+﻿using BE;
+using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace DAL
+{
+    public class MP_MedioDePago
+    {
+        Acceso acceso = new Acceso();
+
+        public List<MedioDePago> ListarMedioDePago(int Dni)
+        {
+            List<MedioDePago> lista = new List<MedioDePago>();
+            SqlParameter[] parametros = new SqlParameter[]
+            {
+                new SqlParameter("@Dni",Dni)
+            };
+            DataTable dt = acceso.leer("ListarMedioDePago", parametros);
+            foreach(DataRow dr in dt.Rows)
+            {
+                MedioDePago mdp = new MedioDePago();
+                mdp.nroTarjeta = Convert.ToInt32(dr["nroTarjeta"]);
+                mdp.idTipoTarjeta = Convert.ToInt32(dr["idTipoTarjeta"]);
+                mdp.DNI = Convert.ToInt32(dr["DNI"]);
+                mdp.FechaCaducidad = Convert.ToDateTime(dr["FechaCaducidad"]);
+                mdp.cvv = Convert.ToInt32(dr["cvv"]);
+
+                lista.Add(mdp);
+            }
+            return lista;
+        }
+
+
+        public int AgregarMedioDePago(MedioDePago mdp)
+        {
+            SqlParameter[] parametros = new SqlParameter[]
+            {
+                new SqlParameter("@nroTarjeta", mdp.nroTarjeta),
+                new SqlParameter("@idTipoTarjeta", mdp.idTipoTarjeta),
+                new SqlParameter("@DNI", mdp.DNI),
+                new SqlParameter("@FechaCaducidad", mdp.FechaCaducidad),
+                new SqlParameter("@cvv", mdp.cvv)
+            };
+            return acceso.escribir("AgregarMedioDePago", parametros);
+        }
+
+        public int EliminarMedioDePago(int nroTarjeta)
+        {
+            SqlParameter[] parametro = new SqlParameter[]
+            {
+                new SqlParameter("@nroTarjeta", nroTarjeta)
+            };
+            return acceso.escribir("EliminarMedioDePago",parametro);
+        }
+
+
+    }
+}
