@@ -32,22 +32,6 @@ namespace BE
 			set { _apellido = value; }
 		}
 
-		private string _email;
-
-		public string Email
-		{
-			get { return _email; }
-			set { _email = value; }
-		}
-
-		private int myVar;
-
-		public int MyProperty
-		{
-			get { return myVar; }
-			set { myVar = value; }
-		}
-
 		private int _telefono;
 
 		public int Telefono

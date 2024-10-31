@@ -55,10 +55,5 @@ namespace BE
 			set { _precio = value; }
 		}
 
-
-		//Comentario Prueba
-
-
-
 	}
 }
