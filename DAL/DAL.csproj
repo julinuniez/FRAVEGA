@@ -44,10 +44,12 @@
   <ItemGroup>
     <Compile Include="Acceso.cs" />
     <Compile Include="MP_Categoria.cs" />
+    <Compile Include="MP_DetalleVenta.cs" />
     <Compile Include="MP_MedioDePago.cs" />
     <Compile Include="MP_Producto.cs" />
     <Compile Include="MP_TipoTarjeta.cs" />
     <Compile Include="MP_Usuario.cs" />
+    <Compile Include="MP_Venta.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SqlMapper.cs" />
   </ItemGroup>
