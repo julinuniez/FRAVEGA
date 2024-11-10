@@ -12,9 +12,9 @@ namespace BLL
     {
         MP_MedioDePago mapper = new MP_MedioDePago();
 
-        public List<MedioDePago> ListarMedioDePago(int id)
+        public List<MedioDePago> ListarMedioDePago()
         {
-            return mapper.ListarMedioDePago(id);
+            return mapper.ListarMedioDePago();
         }
 
         public int AgregarMedioDePago(MedioDePago mdp)

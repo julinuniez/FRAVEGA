@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BE;
+using BLL;
 
 namespace GUI
 {
@@ -15,6 +17,45 @@ namespace GUI
         public frmMedioPago()
         {
             InitializeComponent();
+        }
+        BLLMedioDePago gestorMedioPago = new BLLMedioDePago();
+        private void btnAgregarMedioPago_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                MedioDePago medioPago = new MedioDePago();
+                medioPago.nroTarjeta = Convert.ToInt32(txtNumero.Text);
+                medioPago.FechaCaducidad = Convert.ToDateTime(txtFechaCaducidad.Text);
+                medioPago.cvv = Convert.ToInt32(txtCVV.Text);
+                gestorMedioPago.AgregarMedioDePago(medioPago);
+                MessageBox.Show("Medio de pago agregado correctamente");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btnEliminarMedioPago_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                MedioDePago medioPago = new MedioDePago();
+                medioPago.nroTarjeta = Convert.ToInt32(txtNumero.Text);
+                gestorMedioPago.EliminarMedioDePago(medioPago.nroTarjeta);
+                MessageBox.Show("Medio de pago eliminado correctamente");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }   
+        }
+
+
+        public void ActualizarListaMedioPago()
+        {
+            dgvMediosDePago.DataSource = null;
+            dgvMediosDePago.DataSource = gestorMedioPago.ListarMedioDePago();
         }
     }
 }

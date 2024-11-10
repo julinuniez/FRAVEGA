@@ -34,13 +34,14 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtCVV = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.btnModificarMedioPago = new System.Windows.Forms.Button();
             this.btnAgregarMedioPago = new System.Windows.Forms.Button();
             this.btnEliminarMedioPago = new System.Windows.Forms.Button();
             this.cmbTarjeta = new System.Windows.Forms.ComboBox();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.txtFechaCaducidad = new System.Windows.Forms.MaskedTextBox();
+            this.dgvMediosDePago = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMediosDePago)).BeginInit();
             this.SuspendLayout();
             // 
             // label5
@@ -101,12 +102,12 @@
             this.label3.TabIndex = 60;
             this.label3.Text = "Fecha Caducidad";
             // 
-            // textBox3
+            // txtCVV
             // 
-            this.textBox3.Location = new System.Drawing.Point(71, 288);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(121, 20);
-            this.textBox3.TabIndex = 63;
+            this.txtCVV.Location = new System.Drawing.Point(71, 288);
+            this.txtCVV.Name = "txtCVV";
+            this.txtCVV.Size = new System.Drawing.Size(121, 20);
+            this.txtCVV.TabIndex = 63;
             // 
             // label4
             // 
@@ -117,15 +118,6 @@
             this.label4.TabIndex = 62;
             this.label4.Text = "CVV (Codigo de seguridad)";
             // 
-            // btnModificarMedioPago
-            // 
-            this.btnModificarMedioPago.Location = new System.Drawing.Point(252, 244);
-            this.btnModificarMedioPago.Name = "btnModificarMedioPago";
-            this.btnModificarMedioPago.Size = new System.Drawing.Size(84, 46);
-            this.btnModificarMedioPago.TabIndex = 65;
-            this.btnModificarMedioPago.Text = "Modificar";
-            this.btnModificarMedioPago.UseVisualStyleBackColor = true;
-            // 
             // btnAgregarMedioPago
             // 
             this.btnAgregarMedioPago.Location = new System.Drawing.Point(252, 132);
@@ -134,6 +126,7 @@
             this.btnAgregarMedioPago.TabIndex = 64;
             this.btnAgregarMedioPago.Text = "Agregar";
             this.btnAgregarMedioPago.UseVisualStyleBackColor = true;
+            this.btnAgregarMedioPago.Click += new System.EventHandler(this.btnAgregarMedioPago_Click);
             // 
             // btnEliminarMedioPago
             // 
@@ -143,6 +136,7 @@
             this.btnEliminarMedioPago.TabIndex = 66;
             this.btnEliminarMedioPago.Text = "Eliminar";
             this.btnEliminarMedioPago.UseVisualStyleBackColor = true;
+            this.btnEliminarMedioPago.Click += new System.EventHandler(this.btnEliminarMedioPago_Click);
             // 
             // cmbTarjeta
             // 
@@ -152,26 +146,34 @@
             this.cmbTarjeta.Size = new System.Drawing.Size(121, 21);
             this.cmbTarjeta.TabIndex = 67;
             // 
-            // maskedTextBox1
+            // txtFechaCaducidad
             // 
-            this.maskedTextBox1.Location = new System.Drawing.Point(71, 235);
-            this.maskedTextBox1.Mask = "00/00/0000";
-            this.maskedTextBox1.Name = "maskedTextBox1";
-            this.maskedTextBox1.Size = new System.Drawing.Size(121, 20);
-            this.maskedTextBox1.TabIndex = 68;
-            this.maskedTextBox1.ValidatingType = typeof(System.DateTime);
+            this.txtFechaCaducidad.Location = new System.Drawing.Point(71, 235);
+            this.txtFechaCaducidad.Mask = "00/00/0000";
+            this.txtFechaCaducidad.Name = "txtFechaCaducidad";
+            this.txtFechaCaducidad.Size = new System.Drawing.Size(121, 20);
+            this.txtFechaCaducidad.TabIndex = 68;
+            this.txtFechaCaducidad.ValidatingType = typeof(System.DateTime);
+            // 
+            // dgvMediosDePago
+            // 
+            this.dgvMediosDePago.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvMediosDePago.Location = new System.Drawing.Point(389, 116);
+            this.dgvMediosDePago.Name = "dgvMediosDePago";
+            this.dgvMediosDePago.Size = new System.Drawing.Size(386, 266);
+            this.dgvMediosDePago.TabIndex = 69;
             // 
             // frmMedioPago
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(832, 469);
-            this.Controls.Add(this.maskedTextBox1);
+            this.Controls.Add(this.dgvMediosDePago);
+            this.Controls.Add(this.txtFechaCaducidad);
             this.Controls.Add(this.cmbTarjeta);
             this.Controls.Add(this.btnEliminarMedioPago);
-            this.Controls.Add(this.btnModificarMedioPago);
             this.Controls.Add(this.btnAgregarMedioPago);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.txtCVV);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
@@ -181,6 +183,7 @@
             this.Controls.Add(this.btnSalir);
             this.Name = "frmMedioPago";
             this.Text = "frmMedioPago";
+            ((System.ComponentModel.ISupportInitialize)(this.dgvMediosDePago)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -193,12 +196,12 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtCVV;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button btnModificarMedioPago;
         private System.Windows.Forms.Button btnAgregarMedioPago;
         private System.Windows.Forms.Button btnEliminarMedioPago;
         private System.Windows.Forms.ComboBox cmbTarjeta;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        private System.Windows.Forms.MaskedTextBox txtFechaCaducidad;
+        private System.Windows.Forms.DataGridView dgvMediosDePago;
     }
 }

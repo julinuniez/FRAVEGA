@@ -37,6 +37,8 @@
             this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.btnModificarCategoria = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
+            this.txtIdCategoria = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCategorias)).BeginInit();
             this.SuspendLayout();
             // 
@@ -76,6 +78,7 @@
             this.btnAgregarCategoria.TabIndex = 38;
             this.btnAgregarCategoria.Text = "Agregar";
             this.btnAgregarCategoria.UseVisualStyleBackColor = true;
+            this.btnAgregarCategoria.Click += new System.EventHandler(this.btnAgregarCategoria_Click);
             // 
             // txtNombreCategoria
             // 
@@ -110,6 +113,7 @@
             this.btnModificarCategoria.TabIndex = 40;
             this.btnModificarCategoria.Text = "Modificar";
             this.btnModificarCategoria.UseVisualStyleBackColor = true;
+
             // 
             // btnSalir
             // 
@@ -125,11 +129,29 @@
             this.btnSalir.Text = "Volver";
             this.btnSalir.UseVisualStyleBackColor = false;
             // 
+            // txtIdCategoria
+            // 
+            this.txtIdCategoria.Location = new System.Drawing.Point(156, 116);
+            this.txtIdCategoria.Name = "txtIdCategoria";
+            this.txtIdCategoria.Size = new System.Drawing.Size(84, 20);
+            this.txtIdCategoria.TabIndex = 43;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(168, 100);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(66, 13);
+            this.label3.TabIndex = 42;
+            this.label3.Text = "ID Categoria";
+            // 
             // frmCategoria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(932, 510);
+            this.Controls.Add(this.txtIdCategoria);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnModificarCategoria);
             this.Controls.Add(this.txtDescripcion);
@@ -157,5 +179,7 @@
         private System.Windows.Forms.TextBox txtDescripcion;
         private System.Windows.Forms.Button btnModificarCategoria;
         private System.Windows.Forms.Button btnSalir;
+        private System.Windows.Forms.TextBox txtIdCategoria;
+        private System.Windows.Forms.Label label3;
     }
 }

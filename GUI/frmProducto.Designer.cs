@@ -46,7 +46,7 @@
             this.btnAgregarProducto = new System.Windows.Forms.Button();
             this.btnModificarProducto = new System.Windows.Forms.Button();
             this.btnEliminarProducto = new System.Windows.Forms.Button();
-            this.brnGestionarCategorias = new System.Windows.Forms.Button();
+            this.btnGestionarCategorias = new System.Windows.Forms.Button();
             this.btnImprimirProductosXML = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
             this.SuspendLayout();
@@ -191,6 +191,7 @@
             this.btnAgregarProducto.TabIndex = 33;
             this.btnAgregarProducto.Text = "Agregar";
             this.btnAgregarProducto.UseVisualStyleBackColor = true;
+            this.btnAgregarProducto.Click += new System.EventHandler(this.btnAgregarProducto_Click);
             // 
             // btnModificarProducto
             // 
@@ -200,6 +201,7 @@
             this.btnModificarProducto.TabIndex = 34;
             this.btnModificarProducto.Text = "Modificar";
             this.btnModificarProducto.UseVisualStyleBackColor = true;
+            this.btnModificarProducto.Click += new System.EventHandler(this.btnModificarProducto_Click);
             // 
             // btnEliminarProducto
             // 
@@ -209,15 +211,17 @@
             this.btnEliminarProducto.TabIndex = 35;
             this.btnEliminarProducto.Text = "Eliminar";
             this.btnEliminarProducto.UseVisualStyleBackColor = true;
+            this.btnEliminarProducto.Click += new System.EventHandler(this.btnEliminarProducto_Click);
             // 
-            // brnGestionarCategorias
+            // btnGestionarCategorias
             // 
-            this.brnGestionarCategorias.Location = new System.Drawing.Point(57, 379);
-            this.brnGestionarCategorias.Name = "brnGestionarCategorias";
-            this.brnGestionarCategorias.Size = new System.Drawing.Size(155, 43);
-            this.brnGestionarCategorias.TabIndex = 36;
-            this.brnGestionarCategorias.Text = "Gestionar Categorias";
-            this.brnGestionarCategorias.UseVisualStyleBackColor = true;
+            this.btnGestionarCategorias.Location = new System.Drawing.Point(57, 379);
+            this.btnGestionarCategorias.Name = "btnGestionarCategorias";
+            this.btnGestionarCategorias.Size = new System.Drawing.Size(155, 43);
+            this.btnGestionarCategorias.TabIndex = 36;
+            this.btnGestionarCategorias.Text = "Gestionar Categorias";
+            this.btnGestionarCategorias.UseVisualStyleBackColor = true;
+            this.btnGestionarCategorias.Click += new System.EventHandler(this.btnGestionarCategorias_Click);
             // 
             // btnImprimirProductosXML
             // 
@@ -227,6 +231,7 @@
             this.btnImprimirProductosXML.TabIndex = 37;
             this.btnImprimirProductosXML.Text = "Imprimir Productos en XML";
             this.btnImprimirProductosXML.UseVisualStyleBackColor = true;
+            this.btnImprimirProductosXML.Click += new System.EventHandler(this.btnImprimirProductosXML_Click);
             // 
             // frmProducto
             // 
@@ -234,7 +239,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(966, 646);
             this.Controls.Add(this.btnImprimirProductosXML);
-            this.Controls.Add(this.brnGestionarCategorias);
+            this.Controls.Add(this.btnGestionarCategorias);
             this.Controls.Add(this.btnEliminarProducto);
             this.Controls.Add(this.btnModificarProducto);
             this.Controls.Add(this.btnAgregarProducto);
@@ -281,7 +286,7 @@
         private System.Windows.Forms.Button btnAgregarProducto;
         private System.Windows.Forms.Button btnModificarProducto;
         private System.Windows.Forms.Button btnEliminarProducto;
-        private System.Windows.Forms.Button brnGestionarCategorias;
+        private System.Windows.Forms.Button btnGestionarCategorias;
         private System.Windows.Forms.Button btnImprimirProductosXML;
     }
 }
