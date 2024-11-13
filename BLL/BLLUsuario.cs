@@ -12,14 +12,14 @@ namespace BLL
     {
         MP_Usuario mapper = new MP_Usuario();
 
-        public Usuario Login(string Dni, string contraseña)
+        public Usuario Login(int Dni, string contraseña)
         {
             return mapper.Login(Dni, contraseña);
         }
 
-        public int RegistrarUsuario(Cliente cliente, string contraseña)
+        public int RegistrarUsuario(Usuario usuario, string contraseña)
         {
-            return mapper.RegistrarUsuario(cliente, contraseña);
+            return mapper.RegistrarUsuario(usuario, contraseña);
         }
     }
 }

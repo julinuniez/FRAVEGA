@@ -21,7 +21,6 @@ namespace DAL
             DNI = Convert.ToInt32(registro["DNI"]),
             Nombre = registro["nombre"].ToString(),
             Apellido = registro["apellido"].ToString(),
-            Email = registro["Email"].ToString(),
             Telefono = Convert.ToInt32(registro["Telefono"])
         };
 

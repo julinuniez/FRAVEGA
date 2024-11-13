@@ -35,7 +35,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.btnSalir = new System.Windows.Forms.Button();
-            this.txt_Apellido = new System.Windows.Forms.TextBox();
+            this.txtApellido = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -69,6 +69,7 @@
             this.btnRegistrarse.TabIndex = 75;
             this.btnRegistrarse.Text = "Registrarse";
             this.btnRegistrarse.UseVisualStyleBackColor = true;
+            this.btnRegistrarse.Click += new System.EventHandler(this.btnRegistrarse_Click);
             // 
             // txtDNI
             // 
@@ -110,12 +111,12 @@
             this.btnSalir.Text = "Volver";
             this.btnSalir.UseVisualStyleBackColor = false;
             // 
-            // txt_Apellido
+            // txtApellido
             // 
-            this.txt_Apellido.Location = new System.Drawing.Point(134, 167);
-            this.txt_Apellido.Name = "txt_Apellido";
-            this.txt_Apellido.Size = new System.Drawing.Size(121, 20);
-            this.txt_Apellido.TabIndex = 83;
+            this.txtApellido.Location = new System.Drawing.Point(134, 167);
+            this.txtApellido.Name = "txtApellido";
+            this.txtApellido.Size = new System.Drawing.Size(121, 20);
+            this.txtApellido.TabIndex = 83;
             // 
             // label3
             // 
@@ -183,7 +184,7 @@
             this.Controls.Add(this.label7);
             this.Controls.Add(this.txtTelefono);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.txt_Apellido);
+            this.Controls.Add(this.txtApellido);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.label4);
@@ -209,7 +210,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnSalir;
-        private System.Windows.Forms.TextBox txt_Apellido;
+        private System.Windows.Forms.TextBox txtApellido;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Label label4;

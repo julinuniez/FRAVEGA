@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace BE
 {
-    public class Categoria
-    {
+	public class Categoria
+	{
 		private int _id;
 
 		public int idCategoria
@@ -31,6 +31,5 @@ namespace BE
 			get { return _desc; }
 			set { _desc = value; }
 		}
-
-		
+	} 	
 }

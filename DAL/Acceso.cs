@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace DAL
 {
@@ -64,7 +65,6 @@ namespace DAL
 
         public int escribirXml(string sp,string NombreArchivo ,SqlParameter[] parametros)
         {
-            int fa = 0;
             try
             {
                 conectar();
@@ -87,9 +87,13 @@ namespace DAL
             }
             catch(Exception ex)
             {
-
+                MessageBox.Show(ex.Message);
             }
 
+            finally
+            {
+                desconectar();
+            }
 
             return 0;
         }

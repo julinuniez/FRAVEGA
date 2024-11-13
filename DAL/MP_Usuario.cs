@@ -14,7 +14,7 @@ namespace DAL
     {
         Acceso acceso = new Acceso();
 
-        public Usuario Login(string Dni, string contraseña)
+        public Usuario Login(int Dni, string contraseña)
         {
             SqlParameter[] parametros = new SqlParameter[]
             {
@@ -36,14 +36,14 @@ namespace DAL
             
         }
 
-        public int RegistrarUsuario(Cliente cliente, string contraseña)
+        public int RegistrarUsuario(Usuario usuario, string contraseña)
         {
             SqlParameter[] parametros = new SqlParameter[]
             {
-                new SqlParameter("@Dni", cliente.DNI),
-                new SqlParameter("@Nombre", cliente.Nombre),
-                new SqlParameter("@Apellido",cliente.Apellido),
-                new SqlParameter("@telefono",cliente.Telefono),
+                new SqlParameter("@Dni", usuario.DNI),
+                new SqlParameter("@Nombre", usuario.Nombre),
+                new SqlParameter("@Apellido",usuario.Apellido),
+                new SqlParameter("@telefono",usuario.Telefono),
                 new SqlParameter("@Contraseña", contraseña)
             };
             return acceso.escribir("RegistrarUsuario", parametros);

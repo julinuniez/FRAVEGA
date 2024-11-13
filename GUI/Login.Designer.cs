@@ -36,16 +36,19 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnIniciarSesion = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
+            this.process1 = new System.Diagnostics.Process();
+            this.serviceController1 = new System.ServiceProcess.ServiceController();
             this.SuspendLayout();
             // 
             // btnRegistrarse
             // 
-            this.btnRegistrarse.Location = new System.Drawing.Point(228, 250);
+            this.btnRegistrarse.Location = new System.Drawing.Point(334, 250);
             this.btnRegistrarse.Name = "btnRegistrarse";
             this.btnRegistrarse.Size = new System.Drawing.Size(84, 46);
             this.btnRegistrarse.TabIndex = 68;
             this.btnRegistrarse.Text = "Registrarse";
             this.btnRegistrarse.UseVisualStyleBackColor = true;
+            this.btnRegistrarse.Click += new System.EventHandler(this.btnRegistrarse_Click);
             // 
             // txtDNI
             // 
@@ -91,12 +94,13 @@
             // 
             // btnIniciarSesion
             // 
-            this.btnIniciarSesion.Location = new System.Drawing.Point(334, 250);
+            this.btnIniciarSesion.Location = new System.Drawing.Point(220, 250);
             this.btnIniciarSesion.Name = "btnIniciarSesion";
             this.btnIniciarSesion.Size = new System.Drawing.Size(84, 46);
             this.btnIniciarSesion.TabIndex = 71;
             this.btnIniciarSesion.Text = "Iniciar Sesion";
             this.btnIniciarSesion.UseVisualStyleBackColor = true;
+            this.btnIniciarSesion.Click += new System.EventHandler(this.btnIniciarSesion_Click);
             // 
             // btnSalir
             // 
@@ -111,6 +115,20 @@
             this.btnSalir.TabIndex = 72;
             this.btnSalir.Text = "X";
             this.btnSalir.UseVisualStyleBackColor = false;
+            // 
+            // process1
+            // 
+            this.process1.StartInfo.Domain = "";
+            this.process1.StartInfo.LoadUserProfile = false;
+            this.process1.StartInfo.Password = null;
+            this.process1.StartInfo.StandardErrorEncoding = null;
+            this.process1.StartInfo.StandardOutputEncoding = null;
+            this.process1.StartInfo.UserName = "";
+            this.process1.SynchronizingObject = this;
+            // 
+            // serviceController1
+            // 
+            this.serviceController1.ServiceName = "MSSQLSERVER";
             // 
             // Login
             // 
@@ -127,6 +145,7 @@
             this.Controls.Add(this.label5);
             this.Name = "Login";
             this.Text = "Login";
+            this.Load += new System.EventHandler(this.Login_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -142,5 +161,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnIniciarSesion;
         private System.Windows.Forms.Button btnSalir;
+        private System.Diagnostics.Process process1;
+        private System.ServiceProcess.ServiceController serviceController1;
     }
 }
