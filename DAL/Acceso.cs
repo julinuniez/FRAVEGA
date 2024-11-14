@@ -12,7 +12,7 @@ namespace DAL
     internal class Acceso
     {
         SqlConnection cn = new SqlConnection(@"Data Source=.;Initial Catalog=Fravega;Integrated Security=True");
-        
+        SqlTransaction tx;
         private void conectar()
         {
             if(cn.State != ConnectionState.Open)
@@ -24,6 +24,24 @@ namespace DAL
         {
             cn.Close();
         }
+
+        private void IniciarTx()
+        {
+            if (cn.State == ConnectionState.Open)
+            {
+                tx=cn.BeginTransaction();
+            }
+        }
+        private void ConfirmarTx()
+        {
+
+                tx.Commit();
+        }
+        private void CancelarTx()
+        {
+                tx.Rollback();
+        }
+
 
         public DataTable leer(string sp, SqlParameter[] parametros)
         {
@@ -52,14 +70,61 @@ namespace DAL
         {
             int fa = 0;
             conectar();
-            SqlCommand cmd = new SqlCommand();
-            cmd.CommandType = CommandType.StoredProcedure;
-            cmd.CommandText = sp;
-            cmd.Connection = cn;
-            cmd.Parameters.AddRange(parametros);
+            IniciarTx();
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = sp;
+                cmd.Connection = cn;
+                if (parametros != null)
+                {
+                    cmd.Parameters.Clear();
+                    cmd.Parameters.AddRange(parametros);
+                }
+                fa = cmd.ExecuteNonQuery();
+                ConfirmarTx();
+            }
+            catch (Exception ex)
+            {
+                CancelarTx();
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                desconectar();
+            }
+            return fa;
+        }
 
-            fa = cmd.ExecuteNonQuery();
-            desconectar();
+        public int escribirQuery(string query, SqlParameter[] parametros)
+        {
+            int fa = 0;
+            conectar();
+            IniciarTx();
+            try
+            {
+                SqlCommand cmd = new SqlCommand();
+                cmd.CommandType = CommandType.Text;
+                cmd.CommandText = query;
+                cmd.Connection = cn;
+                if (parametros != null)
+                {
+                    cmd.Parameters.Clear();
+                    cmd.Parameters.AddRange(parametros);
+                }
+                fa = cmd.ExecuteNonQuery();
+                ConfirmarTx();
+            }
+            catch (Exception ex)
+            {
+                CancelarTx();
+                MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                desconectar();
+            }
             return fa;
         }
 
