@@ -121,6 +121,7 @@
             this.btnEliminarCliente.TabIndex = 52;
             this.btnEliminarCliente.Text = "Eliminar";
             this.btnEliminarCliente.UseVisualStyleBackColor = true;
+            this.btnEliminarCliente.Click += new System.EventHandler(this.btnEliminarCliente_Click);
             // 
             // txtNombre
             // 
@@ -160,6 +161,7 @@
             this.btnModificarCliente.TabIndex = 57;
             this.btnModificarCliente.Text = "Modificar";
             this.btnModificarCliente.UseVisualStyleBackColor = true;
+            this.btnModificarCliente.Click += new System.EventHandler(this.btnModificarCliente_Click);
             // 
             // frmGestionCliente
             // 

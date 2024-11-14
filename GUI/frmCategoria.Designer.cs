@@ -113,7 +113,7 @@
             this.btnModificarCategoria.TabIndex = 40;
             this.btnModificarCategoria.Text = "Modificar";
             this.btnModificarCategoria.UseVisualStyleBackColor = true;
-
+            this.btnModificarCategoria.Click += new System.EventHandler(this.btnModificarCategoria_Click);
             // 
             // btnSalir
             // 

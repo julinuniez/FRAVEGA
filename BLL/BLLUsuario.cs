@@ -21,5 +21,15 @@ namespace BLL
         {
             return mapper.RegistrarUsuario(usuario, contraseña);
         }
+
+        public int ActualizarUsuario(Usuario usuario)
+        {
+            return mapper.ActualizarUsuario(usuario);
+        }
+
+        public int EliminarUsuario(int id)
+        {
+            return mapper.EliminarUsuario(id);
+        }
     }
 }

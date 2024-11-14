@@ -83,5 +83,21 @@ namespace GUI
             dgvCategorias.DataSource = gestorCategoria.ListarCategoria();
         }
 
+        private void btnModificarCategoria_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Categoria categoria = new Categoria();
+                categoria.idCategoria = Convert.ToInt32(txtIdCategoria.Text);
+                categoria.NombreCategoria = txtNombreCategoria.Text;
+                categoria.Descripcion = txtDescripcion.Text;
+                gestorCategoria.ActualizarCategoria(categoria);
+                ActualizarListaCategorias();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }

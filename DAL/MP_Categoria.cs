@@ -60,6 +60,16 @@ namespace DAL
 
         }
 
+        public int ActualizarCategoria(Categoria cat)
+        {
+            SqlParameter[] parametros = new SqlParameter[]
+            {
+                new SqlParameter("idCategoria",cat.idCategoria),
+                new SqlParameter("Nombre",cat.NombreCategoria),
+                new SqlParameter("Descripcion",cat.Descripcion)
+            };
+            return acceso.escribir("ActualizarCategoria", parametros);
+        }
 
     }
 }

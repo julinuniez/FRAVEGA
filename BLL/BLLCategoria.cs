@@ -32,11 +32,11 @@ namespace BLL
             return mapper.selectNombreCategoriaSegunID(id);
         }
 
-        /*public int ActualizarCategoria(Categoria cat)
+        public int ActualizarCategoria(Categoria cat)
         {
             return mapper.ActualizarCategoria(cat);
         }
-
+        /*
         public int EliminarCategoria(Categoria cat)
         {
             return mapper.EliminarCategoria(cat);

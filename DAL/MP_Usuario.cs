@@ -49,7 +49,26 @@ namespace DAL
             return acceso.escribir("RegistrarUsuario", parametros);
         }
 
+        public int ActualizarUsuario(Usuario usuario)
+        {
+            SqlParameter[] parametros = new SqlParameter[]
+            {
+                new SqlParameter("@Dni", usuario.DNI),
+                new SqlParameter("@Nombre", usuario.Nombre),
+                new SqlParameter("@Apellido",usuario.Apellido),
+                new SqlParameter("@telefono",usuario.Telefono)
+            };
+            return acceso.escribir("ActualizarUsuario", parametros);
+        }
 
+        public int EliminarUsuario(int id)
+        {
+            SqlParameter[] parametros = new SqlParameter[]
+            {
+                new SqlParameter("@idUsuario", id)
+            };
+            return acceso.escribir("EliminarUsuario", parametros);
+        }
 
     }
 }
