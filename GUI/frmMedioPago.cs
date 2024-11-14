@@ -54,8 +54,9 @@ namespace GUI
 
         public void ActualizarListaMedioPago()
         {
+            int Dni = 0;
             dgvMediosDePago.DataSource = null;
-            dgvMediosDePago.DataSource = gestorMedioPago.ListarMedioDePago();
+            dgvMediosDePago.DataSource = gestorMedioPago.ListarMedioDePago(Dni);
         }
     }
 }

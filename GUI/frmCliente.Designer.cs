@@ -33,6 +33,9 @@
             this.label9 = new System.Windows.Forms.Label();
             this.cmbTarjeta = new System.Windows.Forms.ComboBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.btnSeleccionarProducto = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
             this.cmbProducto = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -40,10 +43,7 @@
             this.lblMonto = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnSeleccionarProducto = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
             this.btnFinalizarVenta = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.dgvCliente = new System.Windows.Forms.DataGridView();
             this.label5 = new System.Windows.Forms.Label();
             this.panel3.SuspendLayout();
@@ -58,7 +58,7 @@
             this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalir.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnSalir.Location = new System.Drawing.Point(995, 32);
+            this.btnSalir.Location = new System.Drawing.Point(934, 27);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(75, 22);
             this.btnSalir.TabIndex = 57;
@@ -70,7 +70,7 @@
             this.panel3.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.panel3.Controls.Add(this.label9);
             this.panel3.Controls.Add(this.cmbTarjeta);
-            this.panel3.Location = new System.Drawing.Point(96, 87);
+            this.panel3.Location = new System.Drawing.Point(35, 82);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(253, 83);
             this.panel3.TabIndex = 62;
@@ -104,10 +104,35 @@
             this.panel2.Controls.Add(this.label7);
             this.panel2.Controls.Add(this.cmbProducto);
             this.panel2.Controls.Add(this.label6);
-            this.panel2.Location = new System.Drawing.Point(95, 176);
+            this.panel2.Location = new System.Drawing.Point(34, 171);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(254, 168);
             this.panel2.TabIndex = 61;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(9, 105);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(91, 20);
+            this.textBox1.TabIndex = 66;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(17, 89);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(49, 13);
+            this.label2.TabIndex = 65;
+            this.label2.Text = "Cantidad";
+            // 
+            // btnSeleccionarProducto
+            // 
+            this.btnSeleccionarProducto.Location = new System.Drawing.Point(9, 131);
+            this.btnSeleccionarProducto.Name = "btnSeleccionarProducto";
+            this.btnSeleccionarProducto.Size = new System.Drawing.Size(118, 34);
+            this.btnSeleccionarProducto.TabIndex = 64;
+            this.btnSeleccionarProducto.Text = "Seleccionar";
+            this.btnSeleccionarProducto.UseVisualStyleBackColor = true;
             // 
             // label7
             // 
@@ -142,7 +167,7 @@
             // lblNroVenta
             // 
             this.lblNroVenta.AutoSize = true;
-            this.lblNroVenta.Location = new System.Drawing.Point(203, 383);
+            this.lblNroVenta.Location = new System.Drawing.Point(142, 378);
             this.lblNroVenta.Name = "lblNroVenta";
             this.lblNroVenta.Size = new System.Drawing.Size(52, 13);
             this.lblNroVenta.TabIndex = 60;
@@ -151,7 +176,7 @@
             // lblMonto
             // 
             this.lblMonto.AutoSize = true;
-            this.lblMonto.Location = new System.Drawing.Point(201, 408);
+            this.lblMonto.Location = new System.Drawing.Point(140, 403);
             this.lblMonto.Name = "lblMonto";
             this.lblMonto.Size = new System.Drawing.Size(52, 13);
             this.lblMonto.TabIndex = 59;
@@ -160,7 +185,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(96, 408);
+            this.label4.Location = new System.Drawing.Point(35, 403);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(99, 13);
             this.label4.TabIndex = 58;
@@ -169,52 +194,27 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(96, 383);
+            this.label1.Location = new System.Drawing.Point(35, 378);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(81, 13);
             this.label1.TabIndex = 63;
             this.label1.Text = "Numero Venta: ";
             // 
-            // btnSeleccionarProducto
-            // 
-            this.btnSeleccionarProducto.Location = new System.Drawing.Point(9, 131);
-            this.btnSeleccionarProducto.Name = "btnSeleccionarProducto";
-            this.btnSeleccionarProducto.Size = new System.Drawing.Size(118, 34);
-            this.btnSeleccionarProducto.TabIndex = 64;
-            this.btnSeleccionarProducto.Text = "Seleccionar";
-            this.btnSeleccionarProducto.UseVisualStyleBackColor = true;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(17, 89);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(49, 13);
-            this.label2.TabIndex = 65;
-            this.label2.Text = "Cantidad";
-            // 
             // btnFinalizarVenta
             // 
-            this.btnFinalizarVenta.Location = new System.Drawing.Point(115, 433);
+            this.btnFinalizarVenta.Location = new System.Drawing.Point(54, 428);
             this.btnFinalizarVenta.Name = "btnFinalizarVenta";
             this.btnFinalizarVenta.Size = new System.Drawing.Size(127, 41);
             this.btnFinalizarVenta.TabIndex = 66;
             this.btnFinalizarVenta.Text = "Finalizar Venta";
             this.btnFinalizarVenta.UseVisualStyleBackColor = true;
             // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(9, 105);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(91, 20);
-            this.textBox1.TabIndex = 66;
-            // 
             // dgvCliente
             // 
             this.dgvCliente.AllowUserToAddRows = false;
             this.dgvCliente.AllowUserToDeleteRows = false;
             this.dgvCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCliente.Location = new System.Drawing.Point(383, 68);
+            this.dgvCliente.Location = new System.Drawing.Point(322, 63);
             this.dgvCliente.Name = "dgvCliente";
             this.dgvCliente.ReadOnly = true;
             this.dgvCliente.Size = new System.Drawing.Size(687, 556);
@@ -224,7 +224,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(379, 32);
+            this.label5.Location = new System.Drawing.Point(318, 27);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(164, 24);
             this.label5.TabIndex = 68;

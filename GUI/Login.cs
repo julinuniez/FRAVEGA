@@ -23,11 +23,11 @@ namespace GUI
         }
 
         private void Login_Load(object sender, EventArgs e)
-        {
+        {/*
             if(serviceController1.Status == ServiceControllerStatus.Stopped)
             {
                 serviceController1.Start();
-            }
+            }*/
         }
 
         private void btnIniciarSesion_Click(object sender, EventArgs e)
@@ -45,6 +45,11 @@ namespace GUI
             this.Hide();
             frmRegistro.ShowDialog();
             this.Show();
+        }
+
+        private void btnAbrirNotepad_Click(object sender, EventArgs e)
+        {
+            process1.Start();
         }
     }
 }

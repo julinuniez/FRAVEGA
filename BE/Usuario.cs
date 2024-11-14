@@ -26,7 +26,7 @@ namespace BE
 
 		private int _dni;
 
-		public int DNI
+		new public int DNI 
 		{
 			get { return _dni; }
 			set { _dni = value; }

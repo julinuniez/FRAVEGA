@@ -38,6 +38,7 @@
             this.btnSalir = new System.Windows.Forms.Button();
             this.process1 = new System.Diagnostics.Process();
             this.serviceController1 = new System.ServiceProcess.ServiceController();
+            this.btnAbrirNotepad = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnRegistrarse
@@ -119,6 +120,7 @@
             // process1
             // 
             this.process1.StartInfo.Domain = "";
+            this.process1.StartInfo.FileName = "C:\\Windows\\notepad.exe";
             this.process1.StartInfo.LoadUserProfile = false;
             this.process1.StartInfo.Password = null;
             this.process1.StartInfo.StandardErrorEncoding = null;
@@ -130,11 +132,22 @@
             // 
             this.serviceController1.ServiceName = "MSSQLSERVER";
             // 
+            // btnAbrirNotepad
+            // 
+            this.btnAbrirNotepad.Location = new System.Drawing.Point(599, 321);
+            this.btnAbrirNotepad.Name = "btnAbrirNotepad";
+            this.btnAbrirNotepad.Size = new System.Drawing.Size(90, 58);
+            this.btnAbrirNotepad.TabIndex = 73;
+            this.btnAbrirNotepad.Text = "ABRIR NOTEPAD";
+            this.btnAbrirNotepad.UseVisualStyleBackColor = true;
+            this.btnAbrirNotepad.Click += new System.EventHandler(this.btnAbrirNotepad_Click);
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(766, 450);
+            this.Controls.Add(this.btnAbrirNotepad);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnIniciarSesion);
             this.Controls.Add(this.txtContraseña);
@@ -163,5 +176,6 @@
         private System.Windows.Forms.Button btnSalir;
         private System.Diagnostics.Process process1;
         private System.ServiceProcess.ServiceController serviceController1;
+        private System.Windows.Forms.Button btnAbrirNotepad;
     }
 }
