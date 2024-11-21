@@ -45,23 +45,34 @@ namespace DAL
 
         public DataTable leer(string sp, SqlParameter[] parametros)
         {
-            conectar();
             DataTable dataTable = new DataTable();
-            SqlDataAdapter da = new SqlDataAdapter();
+            try
+            {
+                conectar();
+                SqlDataAdapter da = new SqlDataAdapter();
 
-            da.SelectCommand = new SqlCommand
-            {
-                CommandType = CommandType.StoredProcedure,
-                CommandText = sp,
-                Connection = cn
-            };  
-            if(parametros !=null )
-            {
-                da.SelectCommand.Parameters.Clear();
-                da.SelectCommand.Parameters.AddRange(parametros);
+                da.SelectCommand = new SqlCommand
+                {
+                    CommandType = CommandType.StoredProcedure,
+                    CommandText = sp,
+                    Connection = cn
+                };
+                if (parametros != null)
+                {
+                    da.SelectCommand.Parameters.Clear();
+                    da.SelectCommand.Parameters.AddRange(parametros);
+                }
+                da.Fill(dataTable);
             }
-            da.Fill(dataTable);
-            desconectar();
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+            finally
+            {
+                desconectar();
+            }
 
             return dataTable;
 
@@ -69,19 +80,24 @@ namespace DAL
         public int escribir(string sp, SqlParameter[] parametros)
         {
             int fa = 0;
-            conectar();
-            IniciarTx();
+
             try
             {
+                conectar();
+                IniciarTx();
+
                 SqlCommand cmd = new SqlCommand();
+
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.CommandText = sp;
                 cmd.Connection = cn;
+
                 if (parametros != null)
                 {
                     cmd.Parameters.Clear();
                     cmd.Parameters.AddRange(parametros);
                 }
+
                 fa = cmd.ExecuteNonQuery();
                 ConfirmarTx();
             }
@@ -100,10 +116,10 @@ namespace DAL
         public int escribirQuery(string query, SqlParameter[] parametros)
         {
             int fa = 0;
-            conectar();
-            IniciarTx();
             try
             {
+                conectar();
+                IniciarTx();
                 SqlCommand cmd = new SqlCommand();
                 cmd.CommandType = CommandType.Text;
                 cmd.CommandText = query;
@@ -166,6 +182,8 @@ namespace DAL
         public int getId(string sp, SqlParameter[] parametros)
         {
             int id = 0;
+            try
+            {
             conectar();
             SqlCommand cmd = new SqlCommand();
             cmd.CommandType = CommandType.StoredProcedure;
@@ -177,7 +195,17 @@ namespace DAL
                 cmd.Parameters.AddRange(parametros);
             }
             id = (int)cmd.ExecuteScalar();
-            desconectar();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+            finally
+            {
+                desconectar();
+            }
             return id;
         }
 
