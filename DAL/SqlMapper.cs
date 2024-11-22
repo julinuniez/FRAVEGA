@@ -11,10 +11,12 @@ namespace DAL
             idProducto = Convert.ToInt32(registro["idProducto"]),
             NombreProducto = registro["Nombre"].ToString(),
             Descripcion = registro["Descripcion"].ToString(),
-            idCategoria = Convert.ToInt32(registro["idCategoria"]),
-            Stock = Convert.ToInt32(registro["stock"]),
+            //idCategoria = Convert.ToInt32(registro["idCategoria"]),
+            //Stock = Convert.ToInt32(registro["stock"]),
             Precio = Convert.ToDecimal(registro["precio"])
         };
+
+
 
         public static Cliente MapeoCliente(DataRow registro) => new Cliente
         {

@@ -16,6 +16,10 @@ namespace BLL
         {
             return mapper.Login(Dni, contraseña);
         }
+        public List<Usuario> ListarUsuario()
+        {
+            return mapper.ListarUsuarios();
+        }
 
         public int RegistrarUsuario(Usuario usuario, string contraseña)
         {

@@ -36,6 +36,24 @@ namespace DAL
             
         }
 
+
+
+        public List<Usuario> ListarUsuarios()
+        {
+            List<Usuario> lista = new List<Usuario>();
+            DataTable dt = acceso.leer("ListarUsuarios", null);
+            foreach (DataRow dr in dt.Rows)
+            {
+                Usuario usuario = new Usuario();
+                usuario.idUsuario = Convert.ToInt32(dr["idUsuario"]);
+                usuario.contraseña = Convert.ToString(dr["contraseña"]);
+                usuario.idUsuario = Convert.ToInt32(dr["idUsuario"]);
+                usuario.admin = Convert.ToBoolean(dr["admin"]);
+                lista.Add(usuario);
+            }
+            return lista;
+        }
+
         public int RegistrarUsuario(Usuario usuario, string contraseña)
         {
             SqlParameter[] parametros = new SqlParameter[]

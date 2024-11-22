@@ -20,8 +20,15 @@ namespace GUI
         public frmGestionCliente()
         {
             InitializeComponent();
+            ActualizarListaUsuario();
         }
-
+        /*
+        public void ActualizarListaProductos()
+        {
+            dgvProductos.DataSource = null;
+            dgvProductos.DataSource = gestorProducto.ListarProducto();
+        }
+        */
         private void btnEliminarCliente_Click(object sender, EventArgs e)
         {
             try
@@ -30,11 +37,18 @@ namespace GUI
                 usuario.DNI = Convert.ToInt32(txtDNI.Text);
                 gestorUsuario.EliminarUsuario(usuario.DNI);
                 MessageBox.Show("Cliente eliminado correctamente");
+                ActualizarListaUsuario();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        public void ActualizarListaUsuario()
+        {
+            dgvClientes.DataSource = null;
+            dgvClientes.DataSource = gestorUsuario.ListarUsuario();
         }
 
         private void btnModificarCliente_Click(object sender, EventArgs e)
@@ -49,6 +63,7 @@ namespace GUI
 
                 gestorUsuario.ActualizarUsuario(usuario);
                 MessageBox.Show("Cliente modificado correctamente");
+                ActualizarListaUsuario();
             }
             catch (Exception ex)
             {

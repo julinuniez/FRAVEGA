@@ -17,6 +17,7 @@ namespace GUI
         public frmMedioPago()
         {
             InitializeComponent();
+            ActualizarListaMedioPago();
         }
         BLLMedioDePago gestorMedioPago = new BLLMedioDePago();
         private void btnAgregarMedioPago_Click(object sender, EventArgs e)
@@ -29,6 +30,7 @@ namespace GUI
                 medioPago.cvv = Convert.ToInt32(txtCVV.Text);
                 gestorMedioPago.AgregarMedioDePago(medioPago);
                 MessageBox.Show("Medio de pago agregado correctamente");
+                ActualizarListaMedioPago();
             }
             catch (Exception ex)
             {
@@ -44,6 +46,7 @@ namespace GUI
                 medioPago.nroTarjeta = Convert.ToInt32(txtNumero.Text);
                 gestorMedioPago.EliminarMedioDePago(medioPago.nroTarjeta);
                 MessageBox.Show("Medio de pago eliminado correctamente");
+                ActualizarListaMedioPago();
             }
             catch (Exception ex)
             {

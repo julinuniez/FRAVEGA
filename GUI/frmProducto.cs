@@ -17,7 +17,16 @@ namespace GUI
         public frmProducto()
         {
             InitializeComponent();
+            ActualizarListaProductos();
         }
+        BLLProducto gestorProducto = new BLLProducto();
+
+        public void ActualizarListaProductos()
+        {
+            dgvProductos.DataSource = null;
+            dgvProductos.DataSource = gestorProducto.ListarProducto();
+        }
+
 
         private void btnAgregarProducto_Click(object sender, EventArgs e)
         {
@@ -31,6 +40,7 @@ namespace GUI
                 BLLProducto gestorProducto = new BLLProducto();
                 gestorProducto.AgregarProducto(producto);
                 MessageBox.Show("Producto agregado correctamente");
+                ActualizarListaProductos();
             }
             catch (Exception ex)
             {
@@ -48,6 +58,7 @@ namespace GUI
                 BLLProducto gestorProducto = new BLLProducto();
                 gestorProducto.EliminarProducto(producto);
                 MessageBox.Show("Producto eliminado correctamente");
+                ActualizarListaProductos();
             }
             catch (Exception ex)
             {
@@ -69,6 +80,7 @@ namespace GUI
                 BLLProducto gestorProducto = new BLLProducto();
                 gestorProducto.ActualizarProducto(producto);
                 MessageBox.Show("Producto modificado correctamente");
+                ActualizarListaProductos();
             }
             catch (Exception ex)
             {

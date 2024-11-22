@@ -23,5 +23,11 @@ namespace BLL
         {
             return mapper.ListarDetalleVenta(nroVenta);
         }
+
+        public List<DetalleVenta> ListarDetallesDeVentas()
+        {
+            return mapper.ListarDetallesDeVentas();
+        }
+        
     }
 }
