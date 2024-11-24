@@ -22,7 +22,7 @@ namespace DAL
                 new SqlParameter("@Contraseña", contraseña)
             };
             
-            DataTable dt= acceso.leer("Login", parametros);
+            DataTable dt= acceso.leer("sp_Login", parametros);
             if (dt.Rows.Count == 0) return null;
 
                 Usuario usuario = new Usuario();

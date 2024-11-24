@@ -34,8 +34,20 @@ namespace GUI
         {
             Usuario usuario = new Usuario();
             usuario.DNI = Convert.ToInt32(txtDNI.Text);
-            usuario.contraseña= txtContraseña.Text;
-            gestorUsuario.Login(usuario.DNI,usuario.contraseña);
+            usuario.contraseña = txtContraseña.Text;
+            Usuario logeado = gestorUsuario.Login(usuario.DNI, usuario.contraseña);
+            if (!logeado.admin)
+            {
+                frmCliente frmCliente = new frmCliente(logeado);
+                frmCliente.Show();
+                this.Close();
+            }
+            else
+            {
+                frmPrincipal frm = new frmPrincipal();
+                frm.Show();
+                this.Close();
+            }
 
         }
 
