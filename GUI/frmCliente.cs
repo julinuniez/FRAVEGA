@@ -19,7 +19,8 @@ namespace GUI
         {
             InitializeComponent();
             loginUser = user;
-
+            crearDG();
+            cargarCmb();
         }
 
         BLLProducto gestorProducto = new BLLProducto();
@@ -38,9 +39,11 @@ namespace GUI
         {
             cmbProducto.DataSource = null;
             cmbProducto.DataSource = gestorProducto.ListarProducto();
-            cmbProducto.DisplayMember = "Nombre";
-            cmbTarjeta.Items.Clear();
+            cmbProducto.DisplayMember = "NombreProducto";
 
+            cmbTarjeta.DataSource = null;
+            cmbTarjeta.DataSource = gestorMedioPago.ListarMedioDePago(loginUser.DNI);
+            cmbTarjeta.DisplayMember = "NroTarjeta";
         }
     }
 }

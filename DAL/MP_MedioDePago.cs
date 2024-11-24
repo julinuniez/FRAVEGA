@@ -26,10 +26,8 @@ namespace DAL
                 MedioDePago mdp = new MedioDePago();
                 mdp.nroTarjeta = Convert.ToInt32(dr["nroTarjeta"]);
                 mdp.idTipoTarjeta = Convert.ToInt32(dr["idTipoTarjeta"]);
-                mdp.DNI = Convert.ToInt32(dr["DNI"]);
+                mdp.DNI = Convert.ToInt32(dr["dni"]);
                 mdp.FechaCaducidad = Convert.ToDateTime(dr["FechaCaducidad"]);
-                mdp.cvv = Convert.ToInt32(dr["cvv"]);
-
                 lista.Add(mdp);
             }
             return lista;
@@ -42,7 +40,7 @@ namespace DAL
             {
                 new SqlParameter("@nroTarjeta", mdp.nroTarjeta),
                 new SqlParameter("@idTipoTarjeta", mdp.idTipoTarjeta),
-                new SqlParameter("@DNI", mdp.DNI),
+                new SqlParameter("@dni", mdp.DNI),
                 new SqlParameter("@FechaCaducidad", mdp.FechaCaducidad),
                 new SqlParameter("@cvv", mdp.cvv)
             };

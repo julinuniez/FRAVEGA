@@ -14,12 +14,39 @@ namespace GUI
 {
     public partial class frmMedioPago : Form
     {
-        public frmMedioPago()
+        Usuario loginUser;
+        public frmMedioPago(Usuario user)
         {
             InitializeComponent();
+            loginUser = user;
+            crearDG();
             ActualizarListaMedioPago();
+            CargarCBMTipoTarjeta();
+            
         }
         BLLMedioDePago gestorMedioPago = new BLLMedioDePago();
+        BLLTipoTarjeta gestorTipoTarjeta = new BLLTipoTarjeta();
+
+        private void CargarCBMTipoTarjeta()
+        {
+            cmbTipoTarjeta.DataSource = null;
+            cmbTipoTarjeta.DataSource = gestorTipoTarjeta.ListarTipoTarjeta();
+            cmbTipoTarjeta.DisplayMember = "Nombre";
+        }
+        private void crearDG()
+        {
+            dgvMediosDePago.AutoGenerateColumns = false;
+            dgvMediosDePago.Columns.Add("nroTarjeta", "Numero de tarjeta");
+            dgvMediosDePago.Columns.Add("idTipoTarjeta", "Tipo de tarjeta");
+            dgvMediosDePago.Columns.Add("DNI", "DNI");
+            dgvMediosDePago.Columns.Add("fechacaducida", "Fecha de caducidad");
+            dgvMediosDePago.ColumnHeadersDefaultCellStyle.BackColor = Color.BurlyWood;
+        }
+        public void ActualizarListaMedioPago()
+        {
+            dgvMediosDePago.DataSource = null;
+            dgvMediosDePago.DataSource = gestorMedioPago.ListarMedioDePago(loginUser.DNI);
+        }
         private void btnAgregarMedioPago_Click(object sender, EventArgs e)
         {
             try
@@ -55,11 +82,6 @@ namespace GUI
         }
 
 
-        public void ActualizarListaMedioPago()
-        {
-            int Dni = 0;
-            dgvMediosDePago.DataSource = null;
-            dgvMediosDePago.DataSource = gestorMedioPago.ListarMedioDePago(Dni);
-        }
+     
     }
 }

@@ -38,14 +38,16 @@ namespace GUI
             Usuario logeado = gestorUsuario.Login(usuario.DNI, usuario.contraseña);
             if (!logeado.admin)
             {
-                frmCliente frmCliente = new frmCliente(logeado);
-                frmCliente.Show();
+                frmPrincipalCliente frmCliente = new frmPrincipalCliente(logeado);
+                this.Hide();
+                frmCliente.ShowDialog();
                 this.Close();
             }
             else
             {
                 frmPrincipal frm = new frmPrincipal();
-                frm.Show();
+                this.Hide();
+                frm.ShowDialog();
                 this.Close();
             }
 

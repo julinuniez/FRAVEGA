@@ -58,7 +58,7 @@
             this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalir.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnSalir.Location = new System.Drawing.Point(934, 27);
+            this.btnSalir.Location = new System.Drawing.Point(603, 35);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(75, 22);
             this.btnSalir.TabIndex = 57;
@@ -217,7 +217,7 @@
             this.DGdetalleView.Location = new System.Drawing.Point(322, 63);
             this.DGdetalleView.Name = "DGdetalleView";
             this.DGdetalleView.ReadOnly = true;
-            this.DGdetalleView.Size = new System.Drawing.Size(687, 556);
+            this.DGdetalleView.Size = new System.Drawing.Size(356, 406);
             this.DGdetalleView.TabIndex = 67;
             // 
             // label5
@@ -234,7 +234,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1096, 658);
+            this.ClientSize = new System.Drawing.Size(728, 492);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.DGdetalleView);
             this.Controls.Add(this.btnFinalizarVenta);

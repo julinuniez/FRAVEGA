@@ -38,7 +38,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.btnAgregarMedioPago = new System.Windows.Forms.Button();
             this.btnEliminarMedioPago = new System.Windows.Forms.Button();
-            this.cmbTarjeta = new System.Windows.Forms.ComboBox();
+            this.cmbTipoTarjeta = new System.Windows.Forms.ComboBox();
             this.txtFechaCaducidad = new System.Windows.Forms.MaskedTextBox();
             this.dgvMediosDePago = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMediosDePago)).BeginInit();
@@ -138,13 +138,13 @@
             this.btnEliminarMedioPago.UseVisualStyleBackColor = true;
             this.btnEliminarMedioPago.Click += new System.EventHandler(this.btnEliminarMedioPago_Click);
             // 
-            // cmbTarjeta
+            // cmbTipoTarjeta
             // 
-            this.cmbTarjeta.FormattingEnabled = true;
-            this.cmbTarjeta.Location = new System.Drawing.Point(71, 181);
-            this.cmbTarjeta.Name = "cmbTarjeta";
-            this.cmbTarjeta.Size = new System.Drawing.Size(121, 21);
-            this.cmbTarjeta.TabIndex = 67;
+            this.cmbTipoTarjeta.FormattingEnabled = true;
+            this.cmbTipoTarjeta.Location = new System.Drawing.Point(71, 181);
+            this.cmbTipoTarjeta.Name = "cmbTipoTarjeta";
+            this.cmbTipoTarjeta.Size = new System.Drawing.Size(121, 21);
+            this.cmbTipoTarjeta.TabIndex = 67;
             // 
             // txtFechaCaducidad
             // 
@@ -170,7 +170,7 @@
             this.ClientSize = new System.Drawing.Size(832, 469);
             this.Controls.Add(this.dgvMediosDePago);
             this.Controls.Add(this.txtFechaCaducidad);
-            this.Controls.Add(this.cmbTarjeta);
+            this.Controls.Add(this.cmbTipoTarjeta);
             this.Controls.Add(this.btnEliminarMedioPago);
             this.Controls.Add(this.btnAgregarMedioPago);
             this.Controls.Add(this.txtCVV);
@@ -200,7 +200,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnAgregarMedioPago;
         private System.Windows.Forms.Button btnEliminarMedioPago;
-        private System.Windows.Forms.ComboBox cmbTarjeta;
+        private System.Windows.Forms.ComboBox cmbTipoTarjeta;
         private System.Windows.Forms.MaskedTextBox txtFechaCaducidad;
         private System.Windows.Forms.DataGridView dgvMediosDePago;
     }
