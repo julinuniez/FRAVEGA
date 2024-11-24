@@ -32,24 +32,28 @@ namespace GUI
 
         private void btnIniciarSesion_Click(object sender, EventArgs e)
         {
-            Usuario usuario = new Usuario();
-            usuario.DNI = Convert.ToInt32(txtDNI.Text);
-            usuario.contraseña = txtContraseña.Text;
-            Usuario logeado = gestorUsuario.Login(usuario.DNI, usuario.contraseña);
-            if (!logeado.admin)
+            if(lbltxtDNI.Validar() && lblTxtContraseña.Validar())
             {
-                frmPrincipalCliente frmCliente = new frmPrincipalCliente(logeado);
-                this.Hide();
-                frmCliente.ShowDialog();
-                this.Close();
+                Usuario usuario = new Usuario();
+                usuario.DNI = Convert.ToInt32(lbltxtDNI.Texto);
+                usuario.contraseña = lblTxtContraseña.Texto;
+                Usuario logeado = gestorUsuario.Login(usuario.DNI, usuario.contraseña);
+                if (!logeado.admin)
+                {
+                    frmPrincipalCliente frmCliente = new frmPrincipalCliente(logeado);
+                    this.Hide();
+                    frmCliente.ShowDialog();
+                    this.Close();
+                }
+                else
+                {
+                    frmPrincipal frm = new frmPrincipal();
+                    this.Hide();
+                    frm.ShowDialog();
+                    this.Close();
+                }
             }
-            else
-            {
-                frmPrincipal frm = new frmPrincipal();
-                this.Hide();
-                frm.ShowDialog();
-                this.Close();
-            }
+           
 
         }
 
@@ -64,6 +68,11 @@ namespace GUI
         private void btnAbrirNotepad_Click(object sender, EventArgs e)
         {
             process1.Start();
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

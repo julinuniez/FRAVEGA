@@ -29,21 +29,18 @@
         private void InitializeComponent()
         {
             this.btnRegistrarse = new System.Windows.Forms.Button();
-            this.txtDNI = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.txtContraseña = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.btnIniciarSesion = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.process1 = new System.Diagnostics.Process();
             this.serviceController1 = new System.ServiceProcess.ServiceController();
-            this.btnAbrirNotepad = new System.Windows.Forms.Button();
+            this.lblTxtContraseña = new GUI.lblTxtBox();
+            this.lbltxtDNI = new GUI.lblTxtBox();
             this.SuspendLayout();
             // 
             // btnRegistrarse
             // 
-            this.btnRegistrarse.Location = new System.Drawing.Point(334, 250);
+            this.btnRegistrarse.Location = new System.Drawing.Point(218, 176);
             this.btnRegistrarse.Name = "btnRegistrarse";
             this.btnRegistrarse.Size = new System.Drawing.Size(84, 46);
             this.btnRegistrarse.TabIndex = 68;
@@ -51,51 +48,19 @@
             this.btnRegistrarse.UseVisualStyleBackColor = true;
             this.btnRegistrarse.Click += new System.EventHandler(this.btnRegistrarse_Click);
             // 
-            // txtDNI
-            // 
-            this.txtDNI.Location = new System.Drawing.Point(251, 139);
-            this.txtDNI.Name = "txtDNI";
-            this.txtDNI.Size = new System.Drawing.Size(121, 20);
-            this.txtDNI.TabIndex = 67;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(251, 123);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(26, 13);
-            this.label2.TabIndex = 66;
-            this.label2.Text = "DNI";
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(234, 62);
+            this.label5.Location = new System.Drawing.Point(118, 12);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(184, 25);
             this.label5.TabIndex = 65;
             this.label5.Text = "INICIAR SESION";
             // 
-            // txtContraseña
-            // 
-            this.txtContraseña.Location = new System.Drawing.Point(254, 194);
-            this.txtContraseña.Name = "txtContraseña";
-            this.txtContraseña.Size = new System.Drawing.Size(121, 20);
-            this.txtContraseña.TabIndex = 70;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(254, 178);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(61, 13);
-            this.label1.TabIndex = 69;
-            this.label1.Text = "Contraseña";
-            // 
             // btnIniciarSesion
             // 
-            this.btnIniciarSesion.Location = new System.Drawing.Point(220, 250);
+            this.btnIniciarSesion.Location = new System.Drawing.Point(104, 176);
             this.btnIniciarSesion.Name = "btnIniciarSesion";
             this.btnIniciarSesion.Size = new System.Drawing.Size(84, 46);
             this.btnIniciarSesion.TabIndex = 71;
@@ -110,12 +75,13 @@
             this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSalir.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnSalir.Location = new System.Drawing.Point(698, 22);
+            this.btnSalir.Location = new System.Drawing.Point(397, 12);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(37, 23);
             this.btnSalir.TabIndex = 72;
             this.btnSalir.Text = "X";
             this.btnSalir.UseVisualStyleBackColor = false;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // process1
             // 
@@ -132,30 +98,36 @@
             // 
             this.serviceController1.ServiceName = "MSSQLSERVER";
             // 
-            // btnAbrirNotepad
+            // lblTxtContraseña
             // 
-            this.btnAbrirNotepad.Location = new System.Drawing.Point(599, 321);
-            this.btnAbrirNotepad.Name = "btnAbrirNotepad";
-            this.btnAbrirNotepad.Size = new System.Drawing.Size(90, 58);
-            this.btnAbrirNotepad.TabIndex = 73;
-            this.btnAbrirNotepad.Text = "ABRIR NOTEPAD";
-            this.btnAbrirNotepad.UseVisualStyleBackColor = true;
-            this.btnAbrirNotepad.Click += new System.EventHandler(this.btnAbrirNotepad_Click);
+            this.lblTxtContraseña.Etiqueta = "CONTRASEÑA";
+            this.lblTxtContraseña.Location = new System.Drawing.Point(135, 107);
+            this.lblTxtContraseña.Name = "lblTxtContraseña";
+            this.lblTxtContraseña.Size = new System.Drawing.Size(150, 46);
+            this.lblTxtContraseña.TabIndex = 74;
+            this.lblTxtContraseña.Texto = "";
+            // 
+            // lbltxtDNI
+            // 
+            this.lbltxtDNI.Etiqueta = "DNI";
+            this.lbltxtDNI.Location = new System.Drawing.Point(135, 55);
+            this.lbltxtDNI.Name = "lbltxtDNI";
+            this.lbltxtDNI.Size = new System.Drawing.Size(150, 46);
+            this.lbltxtDNI.TabIndex = 73;
+            this.lbltxtDNI.Texto = "";
             // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(766, 450);
-            this.Controls.Add(this.btnAbrirNotepad);
+            this.ClientSize = new System.Drawing.Size(446, 268);
+            this.Controls.Add(this.lblTxtContraseña);
+            this.Controls.Add(this.lbltxtDNI);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnIniciarSesion);
-            this.Controls.Add(this.txtContraseña);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnRegistrarse);
-            this.Controls.Add(this.txtDNI);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.label5);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Login";
             this.Text = "Login";
             this.Load += new System.EventHandler(this.Login_Load);
@@ -167,15 +139,12 @@
         #endregion
 
         private System.Windows.Forms.Button btnRegistrarse;
-        private System.Windows.Forms.TextBox txtDNI;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox txtContraseña;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnIniciarSesion;
         private System.Windows.Forms.Button btnSalir;
         private System.Diagnostics.Process process1;
         private System.ServiceProcess.ServiceController serviceController1;
-        private System.Windows.Forms.Button btnAbrirNotepad;
+        private lblTxtBox lbltxtDNI;
+        private lblTxtBox lblTxtContraseña;
     }
 }
