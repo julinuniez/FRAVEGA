@@ -22,13 +22,7 @@ namespace GUI
             InitializeComponent();
             ActualizarListaUsuario();
         }
-        /*
-        public void ActualizarListaProductos()
-        {
-            dgvProductos.DataSource = null;
-            dgvProductos.DataSource = gestorProducto.ListarProducto();
-        }
-        */
+
         private void btnEliminarCliente_Click(object sender, EventArgs e)
         {
             try

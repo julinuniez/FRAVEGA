@@ -18,13 +18,21 @@ namespace GUI
         {
             InitializeComponent();
             ActualizarListaDetallesDeVenta();
+            ActualizarListaVentas();
         }
         BLLDetalleVenta gestorDetalleVenta = new BLLDetalleVenta();
+        BLLVenta gestorVenta = new BLLVenta();
 
         public void ActualizarListaDetallesDeVenta()
         {
             dataGridView1.DataSource = null;
             dataGridView1.DataSource = gestorDetalleVenta.ListarDetallesDeVentas();
+        }
+
+        public void ActualizarListaVentas()
+        {
+            dataGridView1.DataSource = null;
+            dataGridView1.DataSource = gestorVenta.ListarVentas();
         }
 
         private void btnMostrarDetalleVenta_Click(object sender, EventArgs e)

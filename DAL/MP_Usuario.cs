@@ -49,6 +49,10 @@ namespace DAL
                 usuario.contraseña = Convert.ToString(dr["contraseña"]);
                 usuario.idUsuario = Convert.ToInt32(dr["idUsuario"]);
                 usuario.admin = Convert.ToBoolean(dr["admin"]);
+                usuario.DNI = Convert.ToInt32(dr["Dni"]);
+                usuario.Nombre = dr["Nombre"].ToString();
+                usuario.Apellido = dr["Apellido"].ToString();
+                usuario.Telefono = Convert.ToInt32(dr["Telefono"].ToString());
                 lista.Add(usuario);
             }
             return lista;
