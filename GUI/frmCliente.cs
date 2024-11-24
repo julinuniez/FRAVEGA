@@ -40,14 +40,7 @@ namespace GUI
             cmbProducto.DataSource = gestorProducto.ListarProducto();
             cmbProducto.DisplayMember = "Nombre";
             cmbTarjeta.Items.Clear();
-            foreach (var item in gestorMedioPago.ListarMedioDePago())
-            {
-                if (item.Id_cliente == _loginUser.IdCliente)
-                {
-                    cmbTarjeta.Items.Add(item);
-                }
-                cmbTarjeta.DisplayMember = "NroTarjeta";
-            }
+
         }
     }
 }

@@ -98,6 +98,7 @@
             this.dgvCategorias.ReadOnly = true;
             this.dgvCategorias.Size = new System.Drawing.Size(604, 431);
             this.dgvCategorias.TabIndex = 36;
+            this.dgvCategorias.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCategorias_CellClick);
             // 
             // txtDescripcion
             // 

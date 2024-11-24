@@ -107,5 +107,20 @@ namespace GUI
         {
 
         }
+
+        private void dgvProductos_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = dgvProductos.Rows[e.RowIndex];
+                txtDescripcion.Text = row.Cells["Descripcion"].Value.ToString();
+                txtIdProducto.Text = row.Cells["idProducto"].Value.ToString();
+                txtNombreProducto.Text = row.Cells["NombreProducto"].Value.ToString();
+                txtPrecio.Text = row.Cells["Precio"].Value.ToString();
+                txtStock.Text = row.Cells["Stock"].Value.ToString();
+                cmbCategoria.SelectedValue = row.Cells["idCategoria"].Value;
+
+            }
+        }
     }
 }

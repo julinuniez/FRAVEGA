@@ -70,5 +70,18 @@ namespace GUI
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void dgvClientes_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = dgvClientes.Rows[e.RowIndex];
+                txtApellido.Text = row.Cells["Apellido"].Value.ToString();
+                txtDNI.Text = row.Cells["DNI"].Value.ToString();
+                txtNombre.Text = row.Cells["Nombre"].Value.ToString();
+                txtTelefono.Text = row.Cells["Telefono"].Value.ToString();
+
+            }
+        }
     }
 }

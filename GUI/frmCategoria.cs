@@ -81,5 +81,17 @@ namespace GUI
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void dgvCategorias_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = dgvCategorias.Rows[e.RowIndex];
+                txtIdCategoria.Text = row.Cells["idCategoria"].Value.ToString();
+                txtNombreCategoria.Text = row.Cells["NombreCategoria"].Value.ToString();
+                txtDescripcion.Text = row.Cells["Descripcion"].Value.ToString();
+
+            }
+        }
     }
 }
