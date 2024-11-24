@@ -18,8 +18,10 @@ namespace GUI
         {
             InitializeComponent();
             ActualizarListaProductos();
+            LlenarComboCategorias();
         }
         BLLProducto gestorProducto = new BLLProducto();
+        BLLCategoria gestorCategoria = new BLLCategoria();
 
         public void ActualizarListaProductos()
         {
@@ -27,6 +29,12 @@ namespace GUI
             dgvProductos.DataSource = gestorProducto.ListarProducto();
         }
 
+        public void LlenarComboCategorias()
+        {
+            cmbCategoria.DataSource = gestorCategoria.ListarCategoria();
+            cmbCategoria.DisplayMember = "NombreCategoria";
+            cmbCategoria.ValueMember = "idCategoria";
+        }
 
         private void btnAgregarProducto_Click(object sender, EventArgs e)
         {
@@ -34,6 +42,7 @@ namespace GUI
             {
                 Producto producto = new Producto();
                 producto.NombreProducto = txtNombreProducto.Text;
+                producto.Descripcion = txtDescripcion.Text;
                 producto.Precio = Convert.ToDecimal(txtPrecio.Text);
                 producto.Stock = Convert.ToInt32(txtStock.Text);
                 producto.idCategoria = Convert.ToInt32(cmbCategoria.SelectedValue);
@@ -73,6 +82,7 @@ namespace GUI
             {
                 Producto producto = new Producto();
                 producto.idProducto = Convert.ToInt32(txtIdProducto.Text);
+                producto.Descripcion = txtDescripcion.Text;
                 producto.NombreProducto = txtNombreProducto.Text;
                 producto.Precio = Convert.ToDecimal(txtPrecio.Text);
                 producto.Stock = Convert.ToInt32(txtStock.Text);

@@ -91,6 +91,7 @@ namespace DAL
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.CommandText = sp;
                 cmd.Connection = cn;
+                cmd.Transaction = tx;
 
                 if (parametros != null)
                 {
@@ -98,37 +99,6 @@ namespace DAL
                     cmd.Parameters.AddRange(parametros);
                 }
 
-                fa = cmd.ExecuteNonQuery();
-                ConfirmarTx();
-            }
-            catch (Exception ex)
-            {
-                CancelarTx();
-                MessageBox.Show(ex.Message);
-            }
-            finally
-            {
-                desconectar();
-            }
-            return fa;
-        }
-
-        public int escribirQuery(string query, SqlParameter[] parametros)
-        {
-            int fa = 0;
-            try
-            {
-                conectar();
-                IniciarTx();
-                SqlCommand cmd = new SqlCommand();
-                cmd.CommandType = CommandType.Text;
-                cmd.CommandText = query;
-                cmd.Connection = cn;
-                if (parametros != null)
-                {
-                    cmd.Parameters.Clear();
-                    cmd.Parameters.AddRange(parametros);
-                }
                 fa = cmd.ExecuteNonQuery();
                 ConfirmarTx();
             }

@@ -46,7 +46,6 @@
             this.btnAgregarProducto = new System.Windows.Forms.Button();
             this.btnModificarProducto = new System.Windows.Forms.Button();
             this.btnEliminarProducto = new System.Windows.Forms.Button();
-            this.btnGestionarCategorias = new System.Windows.Forms.Button();
             this.btnImprimirProductosXML = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductos)).BeginInit();
             this.SuspendLayout();
@@ -145,7 +144,7 @@
             this.dgvProductos.Location = new System.Drawing.Point(316, 41);
             this.dgvProductos.Name = "dgvProductos";
             this.dgvProductos.ReadOnly = true;
-            this.dgvProductos.Size = new System.Drawing.Size(638, 582);
+            this.dgvProductos.Size = new System.Drawing.Size(638, 388);
             this.dgvProductos.TabIndex = 27;
             // 
             // txtNombreProducto
@@ -213,19 +212,9 @@
             this.btnEliminarProducto.UseVisualStyleBackColor = true;
             this.btnEliminarProducto.Click += new System.EventHandler(this.btnEliminarProducto_Click);
             // 
-            // btnGestionarCategorias
-            // 
-            this.btnGestionarCategorias.Location = new System.Drawing.Point(57, 379);
-            this.btnGestionarCategorias.Name = "btnGestionarCategorias";
-            this.btnGestionarCategorias.Size = new System.Drawing.Size(155, 43);
-            this.btnGestionarCategorias.TabIndex = 36;
-            this.btnGestionarCategorias.Text = "Gestionar Categorias";
-            this.btnGestionarCategorias.UseVisualStyleBackColor = true;
-            this.btnGestionarCategorias.Click += new System.EventHandler(this.btnGestionarCategorias_Click);
-            // 
             // btnImprimirProductosXML
             // 
-            this.btnImprimirProductosXML.Location = new System.Drawing.Point(57, 452);
+            this.btnImprimirProductosXML.Location = new System.Drawing.Point(62, 386);
             this.btnImprimirProductosXML.Name = "btnImprimirProductosXML";
             this.btnImprimirProductosXML.Size = new System.Drawing.Size(155, 43);
             this.btnImprimirProductosXML.TabIndex = 37;
@@ -237,9 +226,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(966, 646);
+            this.ClientSize = new System.Drawing.Size(966, 444);
             this.Controls.Add(this.btnImprimirProductosXML);
-            this.Controls.Add(this.btnGestionarCategorias);
             this.Controls.Add(this.btnEliminarProducto);
             this.Controls.Add(this.btnModificarProducto);
             this.Controls.Add(this.btnAgregarProducto);
@@ -286,7 +274,6 @@
         private System.Windows.Forms.Button btnAgregarProducto;
         private System.Windows.Forms.Button btnModificarProducto;
         private System.Windows.Forms.Button btnEliminarProducto;
-        private System.Windows.Forms.Button btnGestionarCategorias;
         private System.Windows.Forms.Button btnImprimirProductosXML;
     }
 }

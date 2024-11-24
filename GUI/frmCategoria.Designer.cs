@@ -39,6 +39,7 @@
             this.btnSalir = new System.Windows.Forms.Button();
             this.txtIdCategoria = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.button_Eliminar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCategorias)).BeginInit();
             this.SuspendLayout();
             // 
@@ -145,11 +146,22 @@
             this.label3.TabIndex = 42;
             this.label3.Text = "ID Categoria";
             // 
+            // button_Eliminar
+            // 
+            this.button_Eliminar.Location = new System.Drawing.Point(150, 244);
+            this.button_Eliminar.Name = "button_Eliminar";
+            this.button_Eliminar.Size = new System.Drawing.Size(84, 46);
+            this.button_Eliminar.TabIndex = 44;
+            this.button_Eliminar.Text = "Baja";
+            this.button_Eliminar.UseVisualStyleBackColor = true;
+            this.button_Eliminar.Click += new System.EventHandler(this.button_Eliminar_Click);
+            // 
             // frmCategoria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(932, 510);
+            this.Controls.Add(this.button_Eliminar);
             this.Controls.Add(this.txtIdCategoria);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.btnSalir);
@@ -181,5 +193,6 @@
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.TextBox txtIdCategoria;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button button_Eliminar;
     }
 }

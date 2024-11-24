@@ -17,8 +17,8 @@ namespace DAL
         {
             SqlParameter[] parametros = new SqlParameter[]
             {
-                new SqlParameter("Nombre", producto.NombreProducto),
-                new SqlParameter("Descripcion", producto.Descripcion),
+                new SqlParameter("nombre", producto.NombreProducto),
+                new SqlParameter("descripcion", producto.Descripcion),
                 new SqlParameter("idCategoria", producto.idCategoria),
                 new SqlParameter("stock",producto.Stock),
                 new SqlParameter("precio", producto.Precio),
@@ -28,11 +28,13 @@ namespace DAL
 
         public int ActualizarProducto(Producto producto)
         {
-            SqlParameter[] parametros = new SqlParameter[4]
+            SqlParameter[] parametros = new SqlParameter[]
             {
                 new SqlParameter("idProducto",producto.idProducto),
                 new SqlParameter("Nombre", producto.NombreProducto),
                 new SqlParameter("Descripcion", producto.Descripcion),
+                new SqlParameter("Stock", producto.Stock),
+                new SqlParameter("idCategoria", producto.idCategoria),
                 new SqlParameter("precio", producto.Precio),
             };
             return acceso.escribir("actualizarProducto", parametros);

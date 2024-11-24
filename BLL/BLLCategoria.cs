@@ -36,11 +36,11 @@ namespace BLL
         {
             return mapper.ActualizarCategoria(cat);
         }
-        /*
+        
         public int EliminarCategoria(Categoria cat)
         {
             return mapper.EliminarCategoria(cat);
-        }*/
+        }
 
 
     }

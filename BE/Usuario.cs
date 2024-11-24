@@ -24,12 +24,12 @@ namespace BE
 			set { _contraseña = value; }
 		}
 
-		private int _idCliente;
+		private int _dni;
 
-		public int IdCliente 
+		public int DNI 
 		{
-			get { return _idCliente; }
-			set { _idCliente = value; }
+			get { return _dni; }
+			set { _dni = value; }
 		}
 
 		private bool _admin;

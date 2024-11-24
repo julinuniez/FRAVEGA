@@ -32,6 +32,8 @@ namespace GUI
                 categoria.Descripcion = txtDescripcion.Text;
                 gestorCategoria.AgregarCategoria(categoria);
                 ActualizarListaCategorias();
+                MessageBox.Show("Categoria agregado correctamente");
+
             }
             catch (Exception ex)
             {
@@ -39,43 +41,6 @@ namespace GUI
             }
 
         }
-
-
-
-        /*
-        private void btnModificarCategoria_Click(object sender, EventArgs e)
-        {
-            try
-            {
-
-                Categoria categoria = new Categoria();
-                categoria.idCategoria = Convert.ToInt32(txtIdCategoria.Text);
-                categoria.NombreCategoria = txtNombreCategoria.Text;
-                categoria.Descripcion = txtDescripcion.Text;
-                gestorCategoria.ModificarCategoria();
-                ActualizarListaCategorias();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-
-                private void btnEliminarCategoria_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                Categoria categoria = new Categoria();
-                categoria.idCategoria = Convert.ToInt32(txtIdCategoria.Text);
-                gestorCategoria.EliminarCategoria(categoria);
-                ActualizarListaCategorias();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }   
-        */
 
         public void ActualizarListaCategorias()
         {
@@ -93,6 +58,23 @@ namespace GUI
                 categoria.Descripcion = txtDescripcion.Text;
                 gestorCategoria.ActualizarCategoria(categoria);
                 ActualizarListaCategorias();
+                MessageBox.Show("Categoria modificada correctamente");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void button_Eliminar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Categoria categoria = new Categoria();
+                categoria.idCategoria = Convert.ToInt32(txtIdCategoria.Text);
+                gestorCategoria.EliminarCategoria(categoria);
+                ActualizarListaCategorias();
+                MessageBox.Show("Categoria eliminado correctamente");
             }
             catch (Exception ex)
             {

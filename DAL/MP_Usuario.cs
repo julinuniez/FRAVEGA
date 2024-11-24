@@ -79,11 +79,12 @@ namespace DAL
             return acceso.escribir("ActualizarUsuario", parametros);
         }
 
+        //Elimina Cliente
         public int EliminarUsuario(int id)
         {
             SqlParameter[] parametros = new SqlParameter[]
             {
-                new SqlParameter("@idUsuario", id)
+                new SqlParameter("@DNI", id) 
             };
             return acceso.escribir("EliminarUsuario", parametros);
         }

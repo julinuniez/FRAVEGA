@@ -39,6 +39,14 @@ namespace DAL
             return nombre;
         }
 
+        public int EliminarCategoria(Categoria cat)
+        {
+            SqlParameter[] parametros = new SqlParameter[]
+            {
+                new SqlParameter("idCategoria",cat.idCategoria)
+            };
+            return acceso.escribir("EliminarCategoria", parametros);
+        }
 
         public int AgregarCategoria(Categoria cat)
         {
