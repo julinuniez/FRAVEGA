@@ -20,11 +20,13 @@ namespace BLL
 
         public int AgregarProducto(Producto producto)
         {
+            if(!ValidarProducto(producto))return 0;
             return mapper.AgregarProducto(producto);
         }
 
         public int ActualizarProducto(Producto producto)
         {
+            if (!ValidarProducto(producto)) return 0;
             return mapper.ActualizarProducto(producto);
         }
 
@@ -33,5 +35,25 @@ namespace BLL
             return mapper.EliminarProducto(producto);
         }
 
+        public int getPrecioProducto(Producto producto)
+        {
+            return mapper.getPrecioProducto(producto);
+        }
+        private bool ValidarProducto(Producto producto)
+        {
+            if (producto.NombreProducto == "")
+            {
+                throw new Exception("El nombre del producto no puede estar vacio");
+            }
+            if (producto.Precio == 0)
+            {
+                throw new Exception("El precio del producto no puede ser 0");
+            }
+            if (producto.Stock == 0)
+            {
+                throw new Exception("El stock del producto no puede ser 0");
+            }
+            return true;
+        }
     }
 }

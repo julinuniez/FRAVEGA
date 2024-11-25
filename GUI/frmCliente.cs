@@ -40,10 +40,27 @@ namespace GUI
             cmbProducto.DataSource = null;
             cmbProducto.DataSource = gestorProducto.ListarProducto();
             cmbProducto.DisplayMember = "NombreProducto";
+            cmbProducto.ValueMember = "idProducto";
 
             cmbTarjeta.DataSource = null;
             cmbTarjeta.DataSource = gestorMedioPago.ListarMedioDePago(loginUser.DNI);
             cmbTarjeta.DisplayMember = "NroTarjeta";
+        }
+
+        private void btnSeleccionarProducto_Click(object sender, EventArgs e)
+        {
+            Producto p = new Producto();
+            p.idProducto = Convert.ToInt32(cmbProducto.Text);
+            p.NombreProducto = cmbProducto.Text;
+            int precioProducto = gestorProducto.getPrecioProducto(p);
+            int cantidad = Convert.ToInt32(txtCantidad.Text);
+            int subtotal = precioProducto * cantidad;
+            DGdetalleView.Rows.Add(p.NombreProducto, cantidad,subtotal);
+        }
+
+        private void DGdetalleView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

@@ -33,7 +33,7 @@
             this.label9 = new System.Windows.Forms.Label();
             this.cmbTarjeta = new System.Windows.Forms.ComboBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtCantidad = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btnSeleccionarProducto = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
@@ -98,7 +98,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.panel2.Controls.Add(this.textBox1);
+            this.panel2.Controls.Add(this.txtCantidad);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.btnSeleccionarProducto);
             this.panel2.Controls.Add(this.label7);
@@ -109,12 +109,12 @@
             this.panel2.Size = new System.Drawing.Size(254, 168);
             this.panel2.TabIndex = 61;
             // 
-            // textBox1
+            // txtCantidad
             // 
-            this.textBox1.Location = new System.Drawing.Point(9, 105);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(91, 20);
-            this.textBox1.TabIndex = 66;
+            this.txtCantidad.Location = new System.Drawing.Point(9, 105);
+            this.txtCantidad.Name = "txtCantidad";
+            this.txtCantidad.Size = new System.Drawing.Size(153, 20);
+            this.txtCantidad.TabIndex = 66;
             // 
             // label2
             // 
@@ -133,6 +133,7 @@
             this.btnSeleccionarProducto.TabIndex = 64;
             this.btnSeleccionarProducto.Text = "Seleccionar";
             this.btnSeleccionarProducto.UseVisualStyleBackColor = true;
+            this.btnSeleccionarProducto.Click += new System.EventHandler(this.btnSeleccionarProducto_Click);
             // 
             // label7
             // 
@@ -219,6 +220,7 @@
             this.DGdetalleView.ReadOnly = true;
             this.DGdetalleView.Size = new System.Drawing.Size(356, 406);
             this.DGdetalleView.TabIndex = 67;
+            this.DGdetalleView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGdetalleView_CellContentClick);
             // 
             // label5
             // 
@@ -271,7 +273,7 @@
         private System.Windows.Forms.Label lblMonto;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtCantidad;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnSeleccionarProducto;
         private System.Windows.Forms.Button btnFinalizarVenta;

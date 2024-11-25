@@ -149,7 +149,7 @@ namespace DAL
             return 0;
         }
 
-        public int getId(string sp, SqlParameter[] parametros)
+        public int obtenerInt(string sp, SqlParameter[] parametros)
         {
             int id = 0;
             try

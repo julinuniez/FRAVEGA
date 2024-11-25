@@ -45,23 +45,5 @@ namespace DAL
             return lista;
         }
 
-        public List<DetalleVenta> ListarDetallesDeVentas()
-        {
-            List<DetalleVenta> lista = new List<DetalleVenta>();
-
-            DataTable dt = acceso.leer("ListarDetallesDeVentas",null);
-            foreach (DataRow dr in dt.Rows)
-            {
-                DetalleVenta detalleVenta = new DetalleVenta();
-                detalleVenta.idDetalleVenta = Convert.ToInt32(dr["idDetalleVenta"]);
-                detalleVenta.nroVenta = Convert.ToInt32(dr["nroVenta"]);
-                detalleVenta.idProducto = Convert.ToInt32(dr["idProducto"]);
-                detalleVenta.Cantidad = Convert.ToInt32(dr["cantidad"]);
-                detalleVenta.Subtotal = Convert.ToDecimal(dr["subtotal"]);
-                lista.Add(detalleVenta);
-            }
-            return lista;
-        }
-
     }
 }

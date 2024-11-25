@@ -61,5 +61,14 @@ namespace DAL
             return list;
         }
 
+        public int getPrecioProducto(Producto producto)
+        {
+            SqlParameter[] parametros = new SqlParameter[]
+            {
+                new SqlParameter("idProducto",producto.idProducto)
+            };
+            return acceso.obtenerInt("getPrecioProducto", parametros);
+
+        }
     }
 }
