@@ -17,37 +17,34 @@ namespace GUI
         public frmDetalle()
         {
             InitializeComponent();
-            ActualizarListaDetallesDeVenta();
             ActualizarListaVentas();
         }
         BLLDetalleVenta gestorDetalleVenta = new BLLDetalleVenta();
         BLLVenta gestorVenta = new BLLVenta();
 
-        public void ActualizarListaDetallesDeVenta()
+        public void ActualizarListaDetallesDeVenta(int nroVenta)
         {
-            dataGridView1.DataSource = null;
-            //llenar...
+            dgvVentas.DataSource = null;
+            dgvVentas.DataSource = gestorDetalleVenta.ListarDetalleVenta(nroVenta);
         }
 
         public void ActualizarListaVentas()
         {
-            dataGridView1.DataSource = null;
-            dataGridView1.DataSource = gestorVenta.ListarVentas();
+            dgvVentas.DataSource = null;
+            dgvVentas.DataSource = gestorVenta.ListarVentas();
         }
 
         private void btnMostrarDetalleVenta_Click(object sender, EventArgs e)
         {
             try
             {
-                List<DetalleVenta> listaDetalleVenta = gestorDetalleVenta.ListarDetalleVenta(Convert.ToInt32(cmbNumeroVenta.Text));
-                dgvDetalleVentas.DataSource = listaDetalleVenta;
+                ActualizarListaDetallesDeVenta(Convert.ToInt32(cmbNumeroVenta.Text));
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
         }
-
 
     }
 }

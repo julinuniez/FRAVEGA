@@ -98,11 +98,6 @@ namespace GUI
             }   
         }
 
-        private void btnGestionarCategorias_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnImprimirProductosXML_Click(object sender, EventArgs e)
         {
 

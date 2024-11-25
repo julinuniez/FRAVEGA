@@ -81,5 +81,9 @@ namespace GUI
             decimal subtotal = precioProducto * cantidad;
             DGdetalleView.Rows.Add(p.NombreProducto, cantidad, subtotal);
         }
+
+        private void btnFinalizarVenta_Click(object sender, EventArgs e)
+        {
+        }
     }
 }

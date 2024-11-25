@@ -19,7 +19,6 @@ namespace GUI
         {
             InitializeComponent();
             loginUser = user;
-            crearDG();
             ActualizarListaMedioPago();
             CargarCBMTipoTarjeta();
             
@@ -33,15 +32,6 @@ namespace GUI
             cmbTipoTarjeta.DataSource = gestorTipoTarjeta.ListarTipoTarjeta();
             cmbTipoTarjeta.DisplayMember = "Nombre";
         }
-        private void crearDG()
-        {
-            dgvMediosDePago.AutoGenerateColumns = false;
-            dgvMediosDePago.Columns.Add("nroTarjeta", "Numero de tarjeta");
-            dgvMediosDePago.Columns.Add("idTipoTarjeta", "Tipo de tarjeta");
-            dgvMediosDePago.Columns.Add("DNI", "DNI");
-            dgvMediosDePago.Columns.Add("fechacaducida", "Fecha de caducidad");
-            dgvMediosDePago.ColumnHeadersDefaultCellStyle.BackColor = Color.BurlyWood;
-        }
         public void ActualizarListaMedioPago()
         {
             dgvMediosDePago.DataSource = null;
@@ -52,12 +42,14 @@ namespace GUI
             try
             {
                 MedioDePago medioPago = new MedioDePago();
-                medioPago.nroTarjeta = Convert.ToInt32(txtNumero.Text);
+                medioPago.nroTarjeta = txtNumero.Text;
+                medioPago.DNI = loginUser.DNI;
                 medioPago.FechaCaducidad = Convert.ToDateTime(txtFechaCaducidad.Text);
                 medioPago.cvv = Convert.ToInt32(txtCVV.Text);
                 gestorMedioPago.AgregarMedioDePago(medioPago);
-                MessageBox.Show("Medio de pago agregado correctamente");
                 ActualizarListaMedioPago();
+                MessageBox.Show("Medio de pago agregado correctamente");
+                
             }
             catch (Exception ex)
             {
@@ -70,7 +62,7 @@ namespace GUI
             try
             {
                 MedioDePago medioPago = new MedioDePago();
-                medioPago.nroTarjeta = Convert.ToInt32(txtNumero.Text);
+                medioPago.nroTarjeta = txtNumero.Text.ToString();
                 gestorMedioPago.EliminarMedioDePago(medioPago.nroTarjeta);
                 MessageBox.Show("Medio de pago eliminado correctamente");
                 ActualizarListaMedioPago();
