@@ -45,7 +45,8 @@
             this.btnFinalizarVenta = new System.Windows.Forms.Button();
             this.DGdetalleView = new System.Windows.Forms.DataGridView();
             this.label5 = new System.Windows.Forms.Label();
-            this.lblTxtBox1 = new GUI.lblTxtBox();
+            this.txtCvv = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGdetalleView)).BeginInit();
@@ -54,7 +55,8 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.panel3.Controls.Add(this.lblTxtBox1);
+            this.panel3.Controls.Add(this.label3);
+            this.panel3.Controls.Add(this.txtCvv);
             this.panel3.Controls.Add(this.label9);
             this.panel3.Controls.Add(this.cmbTarjeta);
             this.panel3.Location = new System.Drawing.Point(35, 82);
@@ -100,7 +102,7 @@
             // 
             this.txtCantidad.Location = new System.Drawing.Point(9, 105);
             this.txtCantidad.Name = "txtCantidad";
-            this.txtCantidad.Size = new System.Drawing.Size(91, 20);
+            this.txtCantidad.Size = new System.Drawing.Size(153, 20);
             this.txtCantidad.TabIndex = 66;
             // 
             // label2
@@ -218,15 +220,21 @@
             this.label5.TabIndex = 68;
             this.label5.Text = "Realizar Compra";
             // 
-            // lblTxtBox1
+            // txtCvv
             // 
-            this.lblTxtBox1.CaracterContraseña = "\0";
-            this.lblTxtBox1.Etiqueta = "Cvv";
-            this.lblTxtBox1.Location = new System.Drawing.Point(3, 51);
-            this.lblTxtBox1.Name = "lblTxtBox1";
-            this.lblTxtBox1.Size = new System.Drawing.Size(150, 46);
-            this.lblTxtBox1.TabIndex = 20;
-            this.lblTxtBox1.Texto = "";
+            this.txtCvv.Location = new System.Drawing.Point(4, 78);
+            this.txtCvv.Name = "txtCvv";
+            this.txtCvv.Size = new System.Drawing.Size(153, 20);
+            this.txtCvv.TabIndex = 67;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(6, 62);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(26, 13);
+            this.label3.TabIndex = 67;
+            this.label3.Text = "Cvv";
             // 
             // frmCliente
             // 
@@ -272,6 +280,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ComboBox cmbTarjeta;
-        private lblTxtBox lblTxtBox1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txtCvv;
     }
 }
