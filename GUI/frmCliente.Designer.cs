@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnSalir = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label9 = new System.Windows.Forms.Label();
             this.cmbTarjeta = new System.Windows.Forms.ComboBox();
@@ -46,33 +45,21 @@
             this.btnFinalizarVenta = new System.Windows.Forms.Button();
             this.DGdetalleView = new System.Windows.Forms.DataGridView();
             this.label5 = new System.Windows.Forms.Label();
+            this.lblTxtBox1 = new GUI.lblTxtBox();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGdetalleView)).BeginInit();
             this.SuspendLayout();
             // 
-            // btnSalir
-            // 
-            this.btnSalir.BackColor = System.Drawing.Color.Crimson;
-            this.btnSalir.FlatAppearance.BorderSize = 0;
-            this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalir.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.btnSalir.Location = new System.Drawing.Point(590, 35);
-            this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(75, 22);
-            this.btnSalir.TabIndex = 57;
-            this.btnSalir.Text = "Salir";
-            this.btnSalir.UseVisualStyleBackColor = false;
-            // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.SystemColors.AppWorkspace;
+            this.panel3.Controls.Add(this.lblTxtBox1);
             this.panel3.Controls.Add(this.label9);
             this.panel3.Controls.Add(this.cmbTarjeta);
             this.panel3.Location = new System.Drawing.Point(35, 82);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(253, 83);
+            this.panel3.Size = new System.Drawing.Size(253, 101);
             this.panel3.TabIndex = 62;
             // 
             // label9
@@ -92,7 +79,7 @@
             this.cmbTarjeta.FormattingEnabled = true;
             this.cmbTarjeta.Location = new System.Drawing.Point(3, 26);
             this.cmbTarjeta.Name = "cmbTarjeta";
-            this.cmbTarjeta.Size = new System.Drawing.Size(158, 21);
+            this.cmbTarjeta.Size = new System.Drawing.Size(150, 21);
             this.cmbTarjeta.TabIndex = 18;
             // 
             // panel2
@@ -104,7 +91,7 @@
             this.panel2.Controls.Add(this.label7);
             this.panel2.Controls.Add(this.cmbProducto);
             this.panel2.Controls.Add(this.label6);
-            this.panel2.Location = new System.Drawing.Point(34, 171);
+            this.panel2.Location = new System.Drawing.Point(34, 207);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(254, 168);
             this.panel2.TabIndex = 61;
@@ -231,6 +218,16 @@
             this.label5.TabIndex = 68;
             this.label5.Text = "Realizar Compra";
             // 
+            // lblTxtBox1
+            // 
+            this.lblTxtBox1.CaracterContraseña = "\0";
+            this.lblTxtBox1.Etiqueta = "Cvv";
+            this.lblTxtBox1.Location = new System.Drawing.Point(3, 51);
+            this.lblTxtBox1.Name = "lblTxtBox1";
+            this.lblTxtBox1.Size = new System.Drawing.Size(150, 46);
+            this.lblTxtBox1.TabIndex = 20;
+            this.lblTxtBox1.Texto = "";
+            // 
             // frmCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -240,7 +237,6 @@
             this.Controls.Add(this.DGdetalleView);
             this.Controls.Add(this.btnFinalizarVenta);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.lblNroVenta);
@@ -259,8 +255,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label7;
@@ -278,5 +272,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ComboBox cmbTarjeta;
+        private lblTxtBox lblTxtBox1;
     }
 }

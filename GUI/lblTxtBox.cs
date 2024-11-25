@@ -27,6 +27,11 @@ namespace GUI
             get { return textBox1.Text; }
             set { textBox1.Text = value; }
         }
+        public string CaracterContraseña
+        {
+            get { return textBox1.PasswordChar.ToString(); }
+            set { textBox1.PasswordChar = Convert.ToChar(value); }
+        }
 
         protected void SetearColor(Color unColor)
         {
