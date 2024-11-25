@@ -8,9 +8,9 @@ namespace BE
 {
     public class MedioDePago
     {
-		private string _nroTarjeta;
+		private int _nroTarjeta;
 
-		public string nroTarjeta
+		public int nroTarjeta
 		{
 			get { return _nroTarjeta; }
 			set { _nroTarjeta = value; }

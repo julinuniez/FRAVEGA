@@ -46,7 +46,6 @@
             this.btnFinalizarVenta = new System.Windows.Forms.Button();
             this.DGdetalleView = new System.Windows.Forms.DataGridView();
             this.label5 = new System.Windows.Forms.Label();
-            this.lblTxtBox1 = new GUI.lblTxtBox();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGdetalleView)).BeginInit();
@@ -69,12 +68,11 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.SystemColors.AppWorkspace;
-            this.panel3.Controls.Add(this.lblTxtBox1);
             this.panel3.Controls.Add(this.label9);
             this.panel3.Controls.Add(this.cmbTarjeta);
             this.panel3.Location = new System.Drawing.Point(35, 82);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(253, 102);
+            this.panel3.Size = new System.Drawing.Size(253, 83);
             this.panel3.TabIndex = 62;
             // 
             // label9
@@ -94,7 +92,7 @@
             this.cmbTarjeta.FormattingEnabled = true;
             this.cmbTarjeta.Location = new System.Drawing.Point(3, 26);
             this.cmbTarjeta.Name = "cmbTarjeta";
-            this.cmbTarjeta.Size = new System.Drawing.Size(143, 21);
+            this.cmbTarjeta.Size = new System.Drawing.Size(158, 21);
             this.cmbTarjeta.TabIndex = 18;
             // 
             // panel2
@@ -106,22 +104,22 @@
             this.panel2.Controls.Add(this.label7);
             this.panel2.Controls.Add(this.cmbProducto);
             this.panel2.Controls.Add(this.label6);
-            this.panel2.Location = new System.Drawing.Point(34, 207);
+            this.panel2.Location = new System.Drawing.Point(34, 171);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(254, 177);
+            this.panel2.Size = new System.Drawing.Size(254, 168);
             this.panel2.TabIndex = 61;
             // 
             // txtCantidad
             // 
             this.txtCantidad.Location = new System.Drawing.Point(9, 105);
             this.txtCantidad.Name = "txtCantidad";
-            this.txtCantidad.Size = new System.Drawing.Size(153, 20);
+            this.txtCantidad.Size = new System.Drawing.Size(91, 20);
             this.txtCantidad.TabIndex = 66;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(8, 89);
+            this.label2.Location = new System.Drawing.Point(17, 89);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(49, 13);
             this.label2.TabIndex = 65;
@@ -170,7 +168,7 @@
             // lblNroVenta
             // 
             this.lblNroVenta.AutoSize = true;
-            this.lblNroVenta.Location = new System.Drawing.Point(146, 387);
+            this.lblNroVenta.Location = new System.Drawing.Point(142, 378);
             this.lblNroVenta.Name = "lblNroVenta";
             this.lblNroVenta.Size = new System.Drawing.Size(52, 13);
             this.lblNroVenta.TabIndex = 60;
@@ -179,7 +177,7 @@
             // lblMonto
             // 
             this.lblMonto.AutoSize = true;
-            this.lblMonto.Location = new System.Drawing.Point(144, 412);
+            this.lblMonto.Location = new System.Drawing.Point(140, 403);
             this.lblMonto.Name = "lblMonto";
             this.lblMonto.Size = new System.Drawing.Size(52, 13);
             this.lblMonto.TabIndex = 59;
@@ -188,7 +186,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(39, 412);
+            this.label4.Location = new System.Drawing.Point(35, 403);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(99, 13);
             this.label4.TabIndex = 58;
@@ -197,7 +195,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(39, 387);
+            this.label1.Location = new System.Drawing.Point(35, 378);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(81, 13);
             this.label1.TabIndex = 63;
@@ -211,7 +209,6 @@
             this.btnFinalizarVenta.TabIndex = 66;
             this.btnFinalizarVenta.Text = "Finalizar Venta";
             this.btnFinalizarVenta.UseVisualStyleBackColor = true;
-            this.btnFinalizarVenta.Click += new System.EventHandler(this.btnFinalizarVenta_Click);
             // 
             // DGdetalleView
             // 
@@ -233,16 +230,6 @@
             this.label5.Size = new System.Drawing.Size(164, 24);
             this.label5.TabIndex = 68;
             this.label5.Text = "Realizar Compra";
-            // 
-            // lblTxtBox1
-            // 
-            this.lblTxtBox1.CaracterContraseña = "\0";
-            this.lblTxtBox1.Etiqueta = "Cvv";
-            this.lblTxtBox1.Location = new System.Drawing.Point(3, 53);
-            this.lblTxtBox1.Name = "lblTxtBox1";
-            this.lblTxtBox1.Size = new System.Drawing.Size(150, 46);
-            this.lblTxtBox1.TabIndex = 20;
-            this.lblTxtBox1.Texto = "";
             // 
             // frmCliente
             // 
@@ -291,6 +278,5 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ComboBox cmbTarjeta;
-        private lblTxtBox lblTxtBox1;
     }
 }

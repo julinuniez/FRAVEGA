@@ -157,13 +157,10 @@
             // 
             // dgvMediosDePago
             // 
-            this.dgvMediosDePago.AllowUserToAddRows = false;
-            this.dgvMediosDePago.AllowUserToDeleteRows = false;
             this.dgvMediosDePago.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvMediosDePago.Location = new System.Drawing.Point(389, 116);
             this.dgvMediosDePago.Name = "dgvMediosDePago";
-            this.dgvMediosDePago.ReadOnly = true;
-            this.dgvMediosDePago.Size = new System.Drawing.Size(405, 266);
+            this.dgvMediosDePago.Size = new System.Drawing.Size(386, 266);
             this.dgvMediosDePago.TabIndex = 69;
             // 
             // frmMedioPago

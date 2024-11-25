@@ -100,7 +100,6 @@
             // 
             // lblTxtContraseña
             // 
-            this.lblTxtContraseña.CaracterContraseña = "*";
             this.lblTxtContraseña.Etiqueta = "CONTRASEÑA";
             this.lblTxtContraseña.Location = new System.Drawing.Point(135, 107);
             this.lblTxtContraseña.Name = "lblTxtContraseña";
@@ -110,7 +109,6 @@
             // 
             // lbltxtDNI
             // 
-            this.lbltxtDNI.CaracterContraseña = "\0";
             this.lbltxtDNI.Etiqueta = "DNI";
             this.lbltxtDNI.Location = new System.Drawing.Point(135, 55);
             this.lbltxtDNI.Name = "lbltxtDNI";

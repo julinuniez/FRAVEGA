@@ -41,7 +41,7 @@
             // 
             // btnRegistrarse
             // 
-            this.btnRegistrarse.Location = new System.Drawing.Point(305, 268);
+            this.btnRegistrarse.Location = new System.Drawing.Point(281, 275);
             this.btnRegistrarse.Name = "btnRegistrarse";
             this.btnRegistrarse.Size = new System.Drawing.Size(96, 46);
             this.btnRegistrarse.TabIndex = 75;
@@ -76,7 +76,6 @@
             // 
             // lblTxtBoxApellido
             // 
-            this.lblTxtBoxApellido.CaracterContraseña = "\0";
             this.lblTxtBoxApellido.Etiqueta = "APELLIDO";
             this.lblTxtBoxApellido.Location = new System.Drawing.Point(137, 148);
             this.lblTxtBoxApellido.Name = "lblTxtBoxApellido";
@@ -86,7 +85,6 @@
             // 
             // lblTxtBoxNombre
             // 
-            this.lblTxtBoxNombre.CaracterContraseña = "\0";
             this.lblTxtBoxNombre.Etiqueta = "NOMBRE";
             this.lblTxtBoxNombre.Location = new System.Drawing.Point(134, 96);
             this.lblTxtBoxNombre.Name = "lblTxtBoxNombre";
@@ -96,7 +94,6 @@
             // 
             // lblTxtBoxTelefono
             // 
-            this.lblTxtBoxTelefono.CaracterContraseña = "\0";
             this.lblTxtBoxTelefono.Etiqueta = "TELEFONO";
             this.lblTxtBoxTelefono.Location = new System.Drawing.Point(137, 200);
             this.lblTxtBoxTelefono.Name = "lblTxtBoxTelefono";
@@ -106,7 +103,6 @@
             // 
             // lblTxtBoxDNI
             // 
-            this.lblTxtBoxDNI.CaracterContraseña = "\0";
             this.lblTxtBoxDNI.Etiqueta = "DNI";
             this.lblTxtBoxDNI.Location = new System.Drawing.Point(411, 102);
             this.lblTxtBoxDNI.Name = "lblTxtBoxDNI";
@@ -116,7 +112,6 @@
             // 
             // lblTxtBoxContraseña
             // 
-            this.lblTxtBoxContraseña.CaracterContraseña = "\0";
             this.lblTxtBoxContraseña.Etiqueta = "CONTRASEÑA";
             this.lblTxtBoxContraseña.Location = new System.Drawing.Point(414, 154);
             this.lblTxtBoxContraseña.Name = "lblTxtBoxContraseña";
@@ -126,7 +121,6 @@
             // 
             // lblTxtBoxRepetirContraseña
             // 
-            this.lblTxtBoxRepetirContraseña.CaracterContraseña = "\0";
             this.lblTxtBoxRepetirContraseña.Etiqueta = "REPETIR CONTRASEÑA";
             this.lblTxtBoxRepetirContraseña.Location = new System.Drawing.Point(414, 200);
             this.lblTxtBoxRepetirContraseña.Name = "lblTxtBoxRepetirContraseña";

@@ -24,11 +24,10 @@ namespace DAL
             foreach(DataRow dr in dt.Rows)
             {
                 MedioDePago mdp = new MedioDePago();
-                mdp.nroTarjeta = dr["nroTarjeta"].ToString();
+                mdp.nroTarjeta = Convert.ToInt32(dr["nroTarjeta"]);
                 mdp.idTipoTarjeta = Convert.ToInt32(dr["idTipoTarjeta"]);
                 mdp.DNI = Convert.ToInt32(dr["dni"]);
                 mdp.FechaCaducidad = Convert.ToDateTime(dr["FechaCaducidad"]);
-                mdp.cvv = Convert.ToInt32(dr["cvv"]);
                 lista.Add(mdp);
             }
             return lista;
@@ -48,7 +47,7 @@ namespace DAL
             return acceso.escribir("AgregarMedioDePago", parametros);
         }
 
-        public int EliminarMedioDePago(string nroTarjeta)
+        public int EliminarMedioDePago(int nroTarjeta)
         {
             SqlParameter[] parametro = new SqlParameter[]
             {

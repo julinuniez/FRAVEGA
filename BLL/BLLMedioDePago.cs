@@ -22,7 +22,7 @@ namespace BLL
             return mapper.AgregarMedioDePago(mdp);
         }
 
-        public int EliminarMedioDePago(string nroTarjeta)
+        public int EliminarMedioDePago(int nroTarjeta)
         {
             return mapper.EliminarMedioDePago(nroTarjeta);
         }

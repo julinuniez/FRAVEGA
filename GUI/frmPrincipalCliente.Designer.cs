@@ -32,7 +32,6 @@
             this.comprarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mediosDePagoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel = new System.Windows.Forms.Panel();
-            this.hISTORIALCOMPRASToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -40,8 +39,7 @@
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.comprarToolStripMenuItem,
-            this.mediosDePagoToolStripMenuItem,
-            this.hISTORIALCOMPRASToolStripMenuItem});
+            this.mediosDePagoToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(800, 24);
@@ -70,12 +68,6 @@
             this.panel.Size = new System.Drawing.Size(800, 426);
             this.panel.TabIndex = 2;
             // 
-            // hISTORIALCOMPRASToolStripMenuItem
-            // 
-            this.hISTORIALCOMPRASToolStripMenuItem.Name = "hISTORIALCOMPRASToolStripMenuItem";
-            this.hISTORIALCOMPRASToolStripMenuItem.Size = new System.Drawing.Size(135, 20);
-            this.hISTORIALCOMPRASToolStripMenuItem.Text = "HISTORIAL COMPRAS";
-            // 
             // frmPrincipalCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -100,6 +92,5 @@
         private System.Windows.Forms.ToolStripMenuItem comprarToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem mediosDePagoToolStripMenuItem;
         private System.Windows.Forms.Panel panel;
-        private System.Windows.Forms.ToolStripMenuItem hISTORIALCOMPRASToolStripMenuItem;
     }
 }
