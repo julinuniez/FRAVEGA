@@ -95,6 +95,12 @@
     <Compile Include="frmProducto.Designer.cs">
       <DependentUpon>frmProducto.cs</DependentUpon>
     </Compile>
+    <Compile Include="lblComboBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="lblComboBox.Designer.cs">
+      <DependentUpon>lblComboBox.cs</DependentUpon>
+    </Compile>
     <Compile Include="lblTxtBox.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -138,6 +144,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmProducto.resx">
       <DependentUpon>frmProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="lblComboBox.resx">
+      <DependentUpon>lblComboBox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="lblTxtBox.resx">
       <DependentUpon>lblTxtBox.cs</DependentUpon>

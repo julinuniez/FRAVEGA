@@ -28,38 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.txtContraseña = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.btnRegistrarse = new System.Windows.Forms.Button();
-            this.txtDNI = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.btnSalir = new System.Windows.Forms.Button();
-            this.txtApellido = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtNombre = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtTelefono = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txtRepetirContraseña = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
+            this.lblTxtBoxApellido = new GUI.lblTxtBox();
+            this.lblTxtBoxNombre = new GUI.lblTxtBox();
+            this.lblTxtBoxTelefono = new GUI.lblTxtBox();
+            this.lblTxtBoxDNI = new GUI.lblTxtBox();
+            this.lblTxtBoxContraseña = new GUI.lblTxtBox();
+            this.lblTxtBoxRepetirContraseña = new GUI.lblTxtBox();
             this.SuspendLayout();
-            // 
-            // txtContraseña
-            // 
-            this.txtContraseña.Location = new System.Drawing.Point(411, 167);
-            this.txtContraseña.Name = "txtContraseña";
-            this.txtContraseña.Size = new System.Drawing.Size(121, 20);
-            this.txtContraseña.TabIndex = 77;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(411, 151);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(61, 13);
-            this.label1.TabIndex = 76;
-            this.label1.Text = "Contraseña";
             // 
             // btnRegistrarse
             // 
@@ -70,22 +48,6 @@
             this.btnRegistrarse.Text = "Registrarse";
             this.btnRegistrarse.UseVisualStyleBackColor = true;
             this.btnRegistrarse.Click += new System.EventHandler(this.btnRegistrarse_Click);
-            // 
-            // txtDNI
-            // 
-            this.txtDNI.Location = new System.Drawing.Point(411, 112);
-            this.txtDNI.Name = "txtDNI";
-            this.txtDNI.Size = new System.Drawing.Size(121, 20);
-            this.txtDNI.TabIndex = 74;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(408, 96);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(26, 13);
-            this.label2.TabIndex = 73;
-            this.label2.Text = "DNI";
             // 
             // label5
             // 
@@ -112,112 +74,91 @@
             this.btnSalir.UseVisualStyleBackColor = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
-            // txtApellido
+            // lblTxtBoxApellido
             // 
-            this.txtApellido.Location = new System.Drawing.Point(134, 167);
-            this.txtApellido.Name = "txtApellido";
-            this.txtApellido.Size = new System.Drawing.Size(121, 20);
-            this.txtApellido.TabIndex = 83;
+            this.lblTxtBoxApellido.Etiqueta = "APELLIDO";
+            this.lblTxtBoxApellido.Location = new System.Drawing.Point(137, 148);
+            this.lblTxtBoxApellido.Name = "lblTxtBoxApellido";
+            this.lblTxtBoxApellido.Size = new System.Drawing.Size(150, 46);
+            this.lblTxtBoxApellido.TabIndex = 89;
+            this.lblTxtBoxApellido.Texto = "";
             // 
-            // label3
+            // lblTxtBoxNombre
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(134, 151);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(44, 13);
-            this.label3.TabIndex = 82;
-            this.label3.Text = "Apellido";
+            this.lblTxtBoxNombre.Etiqueta = "NOMBRE";
+            this.lblTxtBoxNombre.Location = new System.Drawing.Point(134, 96);
+            this.lblTxtBoxNombre.Name = "lblTxtBoxNombre";
+            this.lblTxtBoxNombre.Size = new System.Drawing.Size(150, 46);
+            this.lblTxtBoxNombre.TabIndex = 88;
+            this.lblTxtBoxNombre.Texto = "";
             // 
-            // txtNombre
+            // lblTxtBoxTelefono
             // 
-            this.txtNombre.Location = new System.Drawing.Point(134, 112);
-            this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(121, 20);
-            this.txtNombre.TabIndex = 81;
+            this.lblTxtBoxTelefono.Etiqueta = "TELEFONO";
+            this.lblTxtBoxTelefono.Location = new System.Drawing.Point(137, 200);
+            this.lblTxtBoxTelefono.Name = "lblTxtBoxTelefono";
+            this.lblTxtBoxTelefono.Size = new System.Drawing.Size(150, 46);
+            this.lblTxtBoxTelefono.TabIndex = 90;
+            this.lblTxtBoxTelefono.Texto = "";
             // 
-            // label4
+            // lblTxtBoxDNI
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(134, 96);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(44, 13);
-            this.label4.TabIndex = 80;
-            this.label4.Text = "Nombre";
+            this.lblTxtBoxDNI.Etiqueta = "DNI";
+            this.lblTxtBoxDNI.Location = new System.Drawing.Point(411, 102);
+            this.lblTxtBoxDNI.Name = "lblTxtBoxDNI";
+            this.lblTxtBoxDNI.Size = new System.Drawing.Size(150, 46);
+            this.lblTxtBoxDNI.TabIndex = 91;
+            this.lblTxtBoxDNI.Texto = "";
             // 
-            // txtTelefono
+            // lblTxtBoxContraseña
             // 
-            this.txtTelefono.Location = new System.Drawing.Point(134, 215);
-            this.txtTelefono.Name = "txtTelefono";
-            this.txtTelefono.Size = new System.Drawing.Size(121, 20);
-            this.txtTelefono.TabIndex = 85;
+            this.lblTxtBoxContraseña.Etiqueta = "CONTRASEÑA";
+            this.lblTxtBoxContraseña.Location = new System.Drawing.Point(414, 154);
+            this.lblTxtBoxContraseña.Name = "lblTxtBoxContraseña";
+            this.lblTxtBoxContraseña.Size = new System.Drawing.Size(150, 46);
+            this.lblTxtBoxContraseña.TabIndex = 92;
+            this.lblTxtBoxContraseña.Texto = "";
             // 
-            // label6
+            // lblTxtBoxRepetirContraseña
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(134, 199);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(49, 13);
-            this.label6.TabIndex = 84;
-            this.label6.Text = "Telefono";
-            // 
-            // txtRepetirContraseña
-            // 
-            this.txtRepetirContraseña.Location = new System.Drawing.Point(411, 215);
-            this.txtRepetirContraseña.Name = "txtRepetirContraseña";
-            this.txtRepetirContraseña.Size = new System.Drawing.Size(121, 20);
-            this.txtRepetirContraseña.TabIndex = 87;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(411, 199);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(98, 13);
-            this.label7.TabIndex = 86;
-            this.label7.Text = "Repetir Contraseña";
+            this.lblTxtBoxRepetirContraseña.Etiqueta = "REPETIR CONTRASEÑA";
+            this.lblTxtBoxRepetirContraseña.Location = new System.Drawing.Point(414, 200);
+            this.lblTxtBoxRepetirContraseña.Name = "lblTxtBoxRepetirContraseña";
+            this.lblTxtBoxRepetirContraseña.Size = new System.Drawing.Size(164, 46);
+            this.lblTxtBoxRepetirContraseña.TabIndex = 93;
+            this.lblTxtBoxRepetirContraseña.Texto = "";
             // 
             // Registro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(689, 343);
-            this.Controls.Add(this.txtRepetirContraseña);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.txtTelefono);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.txtApellido);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.txtNombre);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.lblTxtBoxRepetirContraseña);
+            this.Controls.Add(this.lblTxtBoxContraseña);
+            this.Controls.Add(this.lblTxtBoxDNI);
+            this.Controls.Add(this.lblTxtBoxTelefono);
+            this.Controls.Add(this.lblTxtBoxApellido);
+            this.Controls.Add(this.lblTxtBoxNombre);
             this.Controls.Add(this.btnSalir);
-            this.Controls.Add(this.txtContraseña);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnRegistrarse);
-            this.Controls.Add(this.txtDNI);
-            this.Controls.Add(this.label2);
             this.Controls.Add(this.label5);
             this.Name = "Registro";
             this.Text = "Registro";
+            this.Load += new System.EventHandler(this.Registro_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.TextBox txtContraseña;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnRegistrarse;
-        private System.Windows.Forms.TextBox txtDNI;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnSalir;
-        private System.Windows.Forms.TextBox txtApellido;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtNombre;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txtTelefono;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txtRepetirContraseña;
-        private System.Windows.Forms.Label label7;
+        private lblTxtBox lblTxtBoxApellido;
+        private lblTxtBox lblTxtBoxNombre;
+        private lblTxtBox lblTxtBoxTelefono;
+        private lblTxtBox lblTxtBoxDNI;
+        private lblTxtBox lblTxtBoxContraseña;
+        private lblTxtBox lblTxtBoxRepetirContraseña;
     }
 }

@@ -127,7 +127,7 @@
             this.Controls.Add(this.btnIniciarSesion);
             this.Controls.Add(this.btnRegistrarse);
             this.Controls.Add(this.label5);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "Login";
             this.Text = "Login";
             this.Load += new System.EventHandler(this.Login_Load);

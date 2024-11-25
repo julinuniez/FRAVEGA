@@ -23,15 +23,21 @@ namespace GUI
 
         private void btnRegistrarse_Click(object sender, EventArgs e)
         {
+            bool valido = false;
             Usuario usuario = new Usuario();
-            usuario.DNI = Convert.ToInt32(txtDNI.Text);
-            usuario.Nombre = txtNombre.Text;
-            usuario.Apellido = txtApellido.Text;
-            usuario.Telefono = Convert.ToInt32(txtTelefono.Text);
-
-            if (txtContraseña.Text == txtRepetirContraseña.Text)
+            if(lblTxtBoxDNI.Validar() && lblTxtBoxNombre.Validar() && lblTxtBoxApellido.Validar() && lblTxtBoxTelefono.Validar())
             {
-                gestorUsuario.RegistrarUsuario(usuario, txtContraseña.Text);
+                valido = true;
+                usuario.DNI = Convert.ToInt32(lblTxtBoxDNI.Texto);
+                usuario.Nombre = lblTxtBoxNombre.Texto;
+                usuario.Apellido = lblTxtBoxApellido.Texto;
+                usuario.Telefono = Convert.ToInt32(lblTxtBoxTelefono.Texto);
+            }
+                
+
+            if (lblTxtBoxContraseña.Texto == lblTxtBoxRepetirContraseña.Texto && valido)
+            {
+                gestorUsuario.RegistrarUsuario(usuario, lblTxtBoxContraseña.Texto);
                 MessageBox.Show("Usuario registrado con exito");
             }
             else
@@ -43,6 +49,11 @@ namespace GUI
         private void btnSalir_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void Registro_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
