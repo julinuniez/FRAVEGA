@@ -64,7 +64,7 @@ namespace DAL
             {
                 new SqlParameter("Nombre",nombre)
             };
-            return acceso.getId("getIdCategoria",parametro);
+            return acceso.obtenerInt("getIdCategoria",parametro);
 
         }
 

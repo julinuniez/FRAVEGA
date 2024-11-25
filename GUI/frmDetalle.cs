@@ -26,7 +26,7 @@ namespace GUI
         public void ActualizarListaDetallesDeVenta()
         {
             dataGridView1.DataSource = null;
-            dataGridView1.DataSource = gestorDetalleVenta.ListarDetallesDeVentas();
+            //llenar...
         }
 
         public void ActualizarListaVentas()

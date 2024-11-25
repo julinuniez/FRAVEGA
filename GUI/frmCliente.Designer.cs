@@ -30,6 +30,8 @@
         {
             this.btnSalir = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.label9 = new System.Windows.Forms.Label();
+            this.cmbTarjeta = new System.Windows.Forms.ComboBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.txtCantidad = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -44,8 +46,6 @@
             this.btnFinalizarVenta = new System.Windows.Forms.Button();
             this.DGdetalleView = new System.Windows.Forms.DataGridView();
             this.label5 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.cmbTarjeta = new System.Windows.Forms.ComboBox();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGdetalleView)).BeginInit();
@@ -75,6 +75,26 @@
             this.panel3.Size = new System.Drawing.Size(253, 83);
             this.panel3.TabIndex = 62;
             // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(2, 10);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(89, 13);
+            this.label9.TabIndex = 19;
+            this.label9.Text = "Elegir Nro Tarjeta";
+            // 
+            // cmbTarjeta
+            // 
+            this.cmbTarjeta.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.cmbTarjeta.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
+            this.cmbTarjeta.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbTarjeta.FormattingEnabled = true;
+            this.cmbTarjeta.Location = new System.Drawing.Point(3, 26);
+            this.cmbTarjeta.Name = "cmbTarjeta";
+            this.cmbTarjeta.Size = new System.Drawing.Size(158, 21);
+            this.cmbTarjeta.TabIndex = 18;
+            // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.AppWorkspace;
@@ -91,10 +111,10 @@
             // 
             // txtCantidad
             // 
-            this.textBox1.Location = new System.Drawing.Point(9, 105);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(91, 20);
-            this.textBox1.TabIndex = 66;
+            this.txtCantidad.Location = new System.Drawing.Point(9, 105);
+            this.txtCantidad.Name = "txtCantidad";
+            this.txtCantidad.Size = new System.Drawing.Size(91, 20);
+            this.txtCantidad.TabIndex = 66;
             // 
             // label2
             // 
@@ -113,7 +133,7 @@
             this.btnSeleccionarProducto.TabIndex = 64;
             this.btnSeleccionarProducto.Text = "Seleccionar";
             this.btnSeleccionarProducto.UseVisualStyleBackColor = true;
-            this.btnSeleccionarProducto.Click += new System.EventHandler(this.btnSeleccionarProducto_Click);
+            this.btnSeleccionarProducto.Click += new System.EventHandler(this.btnSeleccionarProducto_Click_1);
             // 
             // label7
             // 
@@ -200,7 +220,6 @@
             this.DGdetalleView.ReadOnly = true;
             this.DGdetalleView.Size = new System.Drawing.Size(343, 406);
             this.DGdetalleView.TabIndex = 67;
-            this.DGdetalleView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGdetalleView_CellContentClick);
             // 
             // label5
             // 
@@ -211,26 +230,6 @@
             this.label5.Size = new System.Drawing.Size(164, 24);
             this.label5.TabIndex = 68;
             this.label5.Text = "Realizar Compra";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(2, 10);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(89, 13);
-            this.label9.TabIndex = 19;
-            this.label9.Text = "Elegir Nro Tarjeta";
-            // 
-            // cmbTarjeta
-            // 
-            this.cmbTarjeta.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
-            this.cmbTarjeta.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cmbTarjeta.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbTarjeta.FormattingEnabled = true;
-            this.cmbTarjeta.Location = new System.Drawing.Point(3, 26);
-            this.cmbTarjeta.Name = "cmbTarjeta";
-            this.cmbTarjeta.Size = new System.Drawing.Size(158, 21);
-            this.cmbTarjeta.TabIndex = 18;
             // 
             // frmCliente
             // 

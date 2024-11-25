@@ -35,9 +35,13 @@ namespace BLL
             return mapper.EliminarProducto(producto);
         }
 
-        public int getPrecioProducto(Producto producto)
+        public int getPrecioProducto(int id)
         {
-            return mapper.getPrecioProducto(producto);
+            return mapper.getPrecioProducto(id);
+        }
+        public int getIdProducto(string nombre)
+        {
+            return mapper.getIdProducto(nombre);
         }
         private bool ValidarProducto(Producto producto)
         {

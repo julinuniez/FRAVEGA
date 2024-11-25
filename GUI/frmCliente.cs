@@ -71,20 +71,15 @@ namespace GUI
             DGdetalleView.Rows.Add(nombre, cantidad, subtotal);
         }
 
-        private void btnSeleccionarProducto_Click(object sender, EventArgs e)
+        private void btnSeleccionarProducto_Click_1(object sender, EventArgs e)
         {
             Producto p = new Producto();
-            p.idProducto = Convert.ToInt32(cmbProducto.Text);
+            p.idProducto = gestorProducto.getIdProducto(cmbProducto.Text);
             p.NombreProducto = cmbProducto.Text;
-            int precioProducto = gestorProducto.getPrecioProducto(p);
+            decimal precioProducto = Convert.ToDecimal(gestorProducto.getPrecioProducto(p.idProducto));
             int cantidad = Convert.ToInt32(txtCantidad.Text);
-            int subtotal = precioProducto * cantidad;
-            DGdetalleView.Rows.Add(p.NombreProducto, cantidad,subtotal);
-        }
-
-        private void DGdetalleView_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
+            decimal subtotal = precioProducto * cantidad;
+            DGdetalleView.Rows.Add(p.NombreProducto, cantidad, subtotal);
         }
     }
 }
