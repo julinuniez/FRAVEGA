@@ -86,7 +86,7 @@ namespace GUI
 
         private void btnRegistrarse_Click(object sender, EventArgs e)
         {
-           Registro frmRegistro = new Registro();
+           Register frmRegistro = new Register();
             this.Hide();
             frmRegistro.ShowDialog();
             this.Show();

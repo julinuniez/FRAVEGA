@@ -24,8 +24,26 @@ namespace GUI
         public string CaracterContraseña
         {
             get { return textBox1.PasswordChar.ToString(); }
-            set { textBox1.PasswordChar = Convert.ToChar(value); }
+            set
+            {
+                if (!string.IsNullOrEmpty(value) && value.Length == 1)
+                    textBox1.PasswordChar = value[0];
+                else
+                    textBox1.PasswordChar = '\0'; // Sin carácter de contraseña
+            }
         }
+
+        protected override void OnCreateControl()
+        {
+            base.OnCreateControl();
+            if (this.DesignMode)
+            {
+                // Inicializa propiedades predeterminadas en tiempo de diseño
+                this.Texto = string.Empty;
+                this.Etiqueta = "Etiqueta";
+            }
+        }
+
 
         public string RegexPattern { get; set; } // Nuevo atributo para el patrón REGEX
 

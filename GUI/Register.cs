@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BE;
+using BLL;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,21 +9,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using BE;
-using BLL;
 
 namespace GUI
 {
-    public partial class Registro : Form
+    public partial class Register : Form
     {
-        public Registro()
+        public Register()
         {
             InitializeComponent();
         }
-
         BLLUsuario gestorUsuario = new BLLUsuario();
-
-        private void btnRegistrarse_Click(object sender, EventArgs e)
+        private void buttonRegistrarse_Click(object sender, EventArgs e)
         {
             bool valido = true;
             Usuario usuario = new Usuario();
@@ -72,13 +70,7 @@ namespace GUI
             }
         }
 
-
-        private void btnSalir_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void Registro_Load(object sender, EventArgs e)
+        private void Register_Load(object sender, EventArgs e)
         {
             lblTxtBoxDNI.RegexPattern = @"^\d{7,8}$"; // Solo números, 7 u 8 dígitos
             lblTxtBoxNombre.RegexPattern = @"^[a-zA-Z\s]+$"; // Solo letras y espacios
@@ -87,6 +79,5 @@ namespace GUI
             lblTxtBoxContraseña.RegexPattern = @"^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d@$!%*?&]{8,}$"; // Mínimo 8 caracteres, al menos una letra y un número
             lblTxtBoxRepetirContraseña.RegexPattern = lblTxtBoxContraseña.RegexPattern; // Misma validación que contraseña
         }
-
     }
 }
