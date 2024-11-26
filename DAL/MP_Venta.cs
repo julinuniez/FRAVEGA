@@ -41,7 +41,10 @@ namespace DAL
             }
             return lista;
         }
-
+        public int getNroVenta()
+        {
+            return acceso.obtenerIntQuery("select max(nroVenta) +1  from Venta");
+        }
         public bool generarXMLVenta()
         {
             return acceso.EscribirXML("sp_GenerarXMLVenta", "Ventas");

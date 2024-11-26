@@ -27,6 +27,8 @@ namespace GUI
 
         BLLProducto gestorProducto = new BLLProducto();
         BLLMedioDePago gestorMedioPago = new BLLMedioDePago();
+        BLLDetalleVenta gestorDetalleVenta = new BLLDetalleVenta();
+        BLLVenta gestorVenta = new BLLVenta();
 
         private void crearDG()
         {
@@ -65,6 +67,11 @@ namespace GUI
             cmbTarjeta.DataSource = null;
             cmbTarjeta.DataSource = gestorMedioPago.ListarMedioDePago(loginUser.DNI);
             cmbTarjeta.DisplayMember = "NroTarjeta";
+        }
+
+        private void frmCliente_Load(object sender, EventArgs e)
+        {
+            lblNroVenta.Text = (gestorVenta.getNroVenta()).ToString();
         }
 
         private void btnSeleccionarProducto_Click(object sender, EventArgs e)
@@ -136,10 +143,10 @@ namespace GUI
             if (e.RowIndex >= 0 && DGdetalleView.Columns[e.ColumnIndex].Name == "Eliminar")
             {
                 // Confirmación opcional
-                var confirmResult = MessageBox.Show("¿Estás seguro de que deseas eliminar esta fila?",
+                var confirmar = MessageBox.Show("¿Estás seguro de que deseas eliminar esta fila?",
                                                     "Confirmar Eliminación",
                                                     MessageBoxButtons.YesNo);
-                if (confirmResult == DialogResult.Yes)
+                if (confirmar == DialogResult.Yes)
                 {
 
                     DGdetalleView.Rows.RemoveAt(e.RowIndex);
@@ -148,5 +155,22 @@ namespace GUI
                 }
             }
         }
+
+        private void btnFinalizarVenta_Click(object sender, EventArgs e)
+        {
+            decimal totalVenta = 0;
+            foreach (DataGridViewRow row in DGdetalleView.Rows)
+            {
+                DetalleVenta Detalle = new DetalleVenta();
+                Detalle.nroVenta = Convert.ToInt32(lblNroVenta.Text);
+                Detalle.idProducto = gestorProducto.getIdProducto(row.Cells[1].Value.ToString());
+                Detalle.Cantidad = Convert.ToInt32(row.Cells[2].Value);
+                Detalle.Subtotal = Convert.ToDecimal(row.Cells[3].Value);
+                totalVenta += Detalle.Subtotal;
+                gestorDetalleVenta.AgregarDetalleVenta(Detalle);
+            }
+        }
+
+        
     }
 }

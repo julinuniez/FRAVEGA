@@ -23,6 +23,10 @@ namespace BLL
         {
             return mapper.ListarVentas();
         }
+        public int getNroVenta()
+        {
+            return mapper.getNroVenta();
+        }
 
         public bool generarXMLVenta()
         {

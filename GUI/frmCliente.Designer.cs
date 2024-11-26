@@ -214,6 +214,7 @@
             this.btnFinalizarVenta.TabIndex = 66;
             this.btnFinalizarVenta.Text = "Finalizar Venta";
             this.btnFinalizarVenta.UseVisualStyleBackColor = true;
+            this.btnFinalizarVenta.Click += new System.EventHandler(this.btnFinalizarVenta_Click);
             // 
             // DGdetalleView
             // 
@@ -253,6 +254,7 @@
             this.Controls.Add(this.label4);
             this.Name = "frmCliente";
             this.Text = "frmCliente";
+            this.Load += new System.EventHandler(this.frmCliente_Load);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel2.ResumeLayout(false);

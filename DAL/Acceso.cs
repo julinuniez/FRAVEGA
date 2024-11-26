@@ -186,5 +186,35 @@ namespace DAL
             return id;
         }
 
+        public int obtenerIntQuery(string query, SqlParameter[] parametros = null)
+        {
+            int id = 0;
+            try
+            {
+                conectar();
+                SqlCommand cmd = new SqlCommand();
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = query;
+                cmd.Connection = cn;
+                if (parametros != null)
+                {
+                    cmd.Parameters.Clear();
+                    cmd.Parameters.AddRange(parametros);
+                }
+                id = (int)cmd.ExecuteScalar();
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+            finally
+            {
+                desconectar();
+            }
+            return id;
+        }
+
     }
 }
