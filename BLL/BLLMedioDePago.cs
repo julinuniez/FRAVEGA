@@ -27,6 +27,11 @@ namespace BLL
             return mapper.EliminarMedioDePago(nroTarjeta);
         }
 
+        public bool ValidarMedioDePago(string nroTarjeta, int cvv)
+        {
+            return mapper.ValidarMedioDePago(nroTarjeta, cvv);
+        }
+
         public bool generarXML()
         {
             return mapper.generarXMLMedioDePago();

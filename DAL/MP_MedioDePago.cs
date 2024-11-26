@@ -56,6 +56,18 @@ namespace DAL
             return acceso.escribir("EliminarMedioDePago",parametro);
         }
 
+        public bool ValidarMedioDePago(string nroTarjeta, int cvv)
+        {
+            SqlParameter[] parametros = new SqlParameter[]
+            {
+                new SqlParameter("@nroTarjeta",nroTarjeta),
+                new SqlParameter("@cvv",cvv)
+            };
+            if (acceso.obtenerInt("ValidarMedioDePago", parametros) > 0)
+                return true;
+            else
+                return false;
+        }
         public bool generarXMLMedioDePago()
         {
             return acceso.EscribirXML("sp_GenerarXMLMedioDePago", "MediosDePago");

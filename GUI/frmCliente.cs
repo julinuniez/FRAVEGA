@@ -159,15 +159,31 @@ namespace GUI
         private void btnFinalizarVenta_Click(object sender, EventArgs e)
         {
             decimal totalVenta = 0;
-            foreach (DataGridViewRow row in DGdetalleView.Rows)
+            if (!gestorMedioPago.ValidarMedioDePago(cmbTarjeta.Text, Convert.ToInt32(txtCvv.Text)))
+                throw new Exception("El codigo de seguridad es incorrecto");
+
+            try
             {
-                DetalleVenta Detalle = new DetalleVenta();
-                Detalle.nroVenta = Convert.ToInt32(lblNroVenta.Text);
-                Detalle.idProducto = gestorProducto.getIdProducto(row.Cells[1].Value.ToString());
-                Detalle.Cantidad = Convert.ToInt32(row.Cells[2].Value);
-                Detalle.Subtotal = Convert.ToDecimal(row.Cells[3].Value);
-                totalVenta += Detalle.Subtotal;
-                gestorDetalleVenta.AgregarDetalleVenta(Detalle);
+                foreach (DataGridViewRow row in DGdetalleView.Rows)
+                {
+                    DetalleVenta Detalle = new DetalleVenta();
+                    Detalle.nroVenta = Convert.ToInt32(lblNroVenta.Text);
+                    Detalle.idProducto = gestorProducto.getIdProducto(row.Cells[1].Value.ToString());
+                    Detalle.Cantidad = Convert.ToInt32(row.Cells[2].Value);
+                    Detalle.Subtotal = Convert.ToDecimal(row.Cells[3].Value);
+                    totalVenta += Detalle.Subtotal;
+                    gestorDetalleVenta.AgregarDetalleVenta(Detalle);
+                }
+                Venta venta = new Venta();
+                venta.idCliente = loginUser.idUsuario;
+                venta.total = totalVenta;
+                venta.fecha = DateTime.Now;
+                venta.nroTarjeta = cmbTarjeta.Text;
+                gestorVenta.AgregarVenta(venta);
+            }
+            catch(Exception ex)
+            {
+                throw new Exception("La compra no pudo ser realizada");
             }
         }
 
