@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.panel3 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtCvv = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.cmbTarjeta = new System.Windows.Forms.ComboBox();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -45,8 +47,6 @@
             this.btnFinalizarVenta = new System.Windows.Forms.Button();
             this.DGdetalleView = new System.Windows.Forms.DataGridView();
             this.label5 = new System.Windows.Forms.Label();
-            this.txtCvv = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DGdetalleView)).BeginInit();
@@ -63,6 +63,22 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(253, 101);
             this.panel3.TabIndex = 62;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(6, 62);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(26, 13);
+            this.label3.TabIndex = 67;
+            this.label3.Text = "Cvv";
+            // 
+            // txtCvv
+            // 
+            this.txtCvv.Location = new System.Drawing.Point(4, 78);
+            this.txtCvv.Name = "txtCvv";
+            this.txtCvv.Size = new System.Drawing.Size(153, 20);
+            this.txtCvv.TabIndex = 67;
             // 
             // label9
             // 
@@ -207,8 +223,9 @@
             this.DGdetalleView.Location = new System.Drawing.Point(322, 63);
             this.DGdetalleView.Name = "DGdetalleView";
             this.DGdetalleView.ReadOnly = true;
-            this.DGdetalleView.Size = new System.Drawing.Size(343, 406);
+            this.DGdetalleView.Size = new System.Drawing.Size(415, 406);
             this.DGdetalleView.TabIndex = 67;
+            this.DGdetalleView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DGdetalleView_CellContentClick);
             // 
             // label5
             // 
@@ -220,27 +237,11 @@
             this.label5.TabIndex = 68;
             this.label5.Text = "Realizar Compra";
             // 
-            // txtCvv
-            // 
-            this.txtCvv.Location = new System.Drawing.Point(4, 78);
-            this.txtCvv.Name = "txtCvv";
-            this.txtCvv.Size = new System.Drawing.Size(153, 20);
-            this.txtCvv.TabIndex = 67;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 62);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(26, 13);
-            this.label3.TabIndex = 67;
-            this.label3.Text = "Cvv";
-            // 
             // frmCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(728, 492);
+            this.ClientSize = new System.Drawing.Size(761, 492);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.DGdetalleView);
             this.Controls.Add(this.btnFinalizarVenta);

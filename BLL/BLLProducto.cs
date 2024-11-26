@@ -50,7 +50,7 @@ namespace BLL
         public bool validarCantidadProductos(Producto p, int cantidad)
         {
             if (getStock(p) < cantidad)
-                throw new Exception("No hay suficiente stock")
+                return false;
             else return true;
         }
         private bool ValidarProducto(Producto producto)

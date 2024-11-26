@@ -15,6 +15,7 @@ namespace GUI
 {
     public partial class frmCliente : Form
     {
+        decimal total = 0;
         Usuario loginUser;
         public frmCliente(Usuario user)
         {
@@ -35,21 +36,23 @@ namespace GUI
             DGdetalleView.Columns.Add("NombreProducto", "Nombre Producto");
             DGdetalleView.Columns.Add("Cantidad", "Cantidad");
             DGdetalleView.Columns.Add("Sub total", "Sub total");
-            if (DGdetalleView.DataSource != null)
-            {
-                DataGridViewButtonColumn BtnEliminarColumna = new DataGridViewButtonColumn();
-                BtnEliminarColumna.HeaderText = "Eliminar";
-                BtnEliminarColumna.Name = "Eliminar";
-                BtnEliminarColumna.Text = "Eliminar";
-                BtnEliminarColumna.UseColumnTextForButtonValue = true;
 
-                if (DGdetalleView.Columns["Eliminar"] == null)
-                {
-                    DGdetalleView.Columns.Insert(0, BtnEliminarColumna);
-                }
-            }
             DGdetalleView.ColumnHeadersDefaultCellStyle.BackColor = Color.BurlyWood;
             
+        }
+        private DataGridViewButtonColumn CrearBotonElimninarDGV()
+        {
+            DataGridViewButtonColumn BtnEliminarColumna = new DataGridViewButtonColumn();
+            BtnEliminarColumna.HeaderText = "Eliminar";
+            BtnEliminarColumna.Name = "Eliminar";
+            BtnEliminarColumna.Text = "Eliminar";
+            BtnEliminarColumna.UseColumnTextForButtonValue = true;
+
+            if (DGdetalleView.Columns["Eliminar"] == null)
+            {
+                DGdetalleView.Columns.Insert(0, BtnEliminarColumna);
+            }
+            return BtnEliminarColumna;
         }
 
         private void cargarCmb()
@@ -120,10 +123,30 @@ namespace GUI
             decimal subtotal = precioProducto * cantidad;
             if (gestorProducto.validarCantidadProductos(p, cantidad))
             {
-                DGdetalleView.Rows.Add(p.NombreProducto, cantidad, subtotal);
+                DGdetalleView.Rows.Add(CrearBotonElimninarDGV(), p.NombreProducto, cantidad, subtotal);
+                total += subtotal;
+                lblMonto.Text = total.ToString();
             }
             else
-                MessageBox.Show("no se pudo agregar");
+                MessageBox.Show("no hay suficiente stock");
+        }
+
+        private void DGdetalleView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0 && DGdetalleView.Columns[e.ColumnIndex].Name == "Eliminar")
+            {
+                // Confirmación opcional
+                var confirmResult = MessageBox.Show("¿Estás seguro de que deseas eliminar esta fila?",
+                                                    "Confirmar Eliminación",
+                                                    MessageBoxButtons.YesNo);
+                if (confirmResult == DialogResult.Yes)
+                {
+
+                    DGdetalleView.Rows.RemoveAt(e.RowIndex);
+                    total -= Convert.ToDecimal(DGdetalleView.Rows[e.RowIndex].Cells[3].Value);
+                    lblMonto.Text = total.ToString();
+                }
+            }
         }
     }
 }
