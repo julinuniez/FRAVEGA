@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using System.Text.RegularExpressions;
 
 namespace GUI
 {
@@ -33,6 +34,8 @@ namespace GUI
             set { textBox1.PasswordChar = Convert.ToChar(value); }
         }
 
+        public string RegexPattern { get; set; } // Nuevo atributo para el patrón REGEX
+
         protected void SetearColor(Color unColor)
         {
             lblEtiqueta.ForeColor = unColor;
@@ -41,7 +44,9 @@ namespace GUI
         public virtual bool Validar()
         {
             bool ok = true;
-            if (string.IsNullOrWhiteSpace(this.textBox1.Text))
+
+            if (string.IsNullOrWhiteSpace(this.textBox1.Text) ||
+                (!string.IsNullOrEmpty(RegexPattern) && !Regex.IsMatch(this.textBox1.Text, RegexPattern)))
             {
                 ok = false;
                 SetearColor(Color.Red);

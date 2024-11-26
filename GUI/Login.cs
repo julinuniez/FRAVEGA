@@ -23,21 +23,46 @@ namespace GUI
         }
 
         private void Login_Load(object sender, EventArgs e)
-        {/*
-            if(serviceController1.Status == ServiceControllerStatus.Stopped)
-            {
-                serviceController1.Start();
-            }*/
+        {
+            // Patrones de validación
+            lbltxtDNI.RegexPattern = @"^\d{7,8}$"; // Solo números, 7-8 dígitos
+            lblTxtContraseña.RegexPattern = @"^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d@$!%*?&]{8,}$"; // Mínimo 8 caracteres, al menos una letra y un número
         }
+
 
         private void btnIniciarSesion_Click(object sender, EventArgs e)
         {
-            if(lbltxtDNI.Validar() && lblTxtContraseña.Validar())
+            // Validar campos
+            if (!lbltxtDNI.Validar())
             {
-                Usuario usuario = new Usuario();
-                usuario.DNI = Convert.ToInt32(lbltxtDNI.Texto);
-                usuario.contraseña = lblTxtContraseña.Texto;
+                MessageBox.Show("DNI inválido. Debe contener 7 u 8 dígitos numéricos.");
+                return;
+            }
+
+            if (!lblTxtContraseña.Validar())
+            {
+                MessageBox.Show("Contraseña inválida. Debe contener al menos 8 caracteres, incluyendo una letra y un número.");
+                return;
+            }
+
+            // Intentar iniciar sesión si los datos son válidos
+            try
+            {
+                Usuario usuario = new Usuario
+                {
+                    DNI = Convert.ToInt32(lbltxtDNI.Texto),
+                    contraseña = lblTxtContraseña.Texto
+                };
+
                 Usuario logeado = gestorUsuario.Login(usuario.DNI, usuario.contraseña);
+
+                if (logeado == null)
+                {
+                    MessageBox.Show("Credenciales incorrectas. Por favor, intente de nuevo.");
+                    return;
+                }
+
+                // Redirigir según el tipo de usuario
                 if (!logeado.admin)
                 {
                     frmPrincipalCliente frmCliente = new frmPrincipalCliente(logeado);
@@ -53,9 +78,12 @@ namespace GUI
                     this.Close();
                 }
             }
-           
-
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ocurrió un error al iniciar sesión: {ex.Message}");
+            }
         }
+
 
         private void btnRegistrarse_Click(object sender, EventArgs e)
         {
