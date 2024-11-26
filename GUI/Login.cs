@@ -25,8 +25,7 @@ namespace GUI
         private void Login_Load(object sender, EventArgs e)
         {
             // Patrones de validación
-            lbltxtDNI.RegexPattern = @"^\d{7,8}$"; // Solo números, 7-8 dígitos
-            lblTxtContraseña.RegexPattern = @"^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d@$!%*?&]{8,}$"; // Mínimo 8 caracteres, al menos una letra y un número
+           // lbltxtDNI.RegexPattern = @"^\d{7,8}$"; // Solo números, 7-8 dígitos
         }
 
 
@@ -35,13 +34,13 @@ namespace GUI
             // Validar campos
             if (!lbltxtDNI.Validar())
             {
-                MessageBox.Show("DNI inválido. Debe contener 7 u 8 dígitos numéricos.");
+                MessageBox.Show("DNI inválido. Debe completar este campo.");
                 return;
             }
 
             if (!lblTxtContraseña.Validar())
             {
-                MessageBox.Show("Contraseña inválida. Debe contener al menos 8 caracteres, incluyendo una letra y un número.");
+                MessageBox.Show("Contraseña inválida. Debe completar este campo.");
                 return;
             }
 

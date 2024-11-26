@@ -118,7 +118,12 @@ namespace GUI
             decimal precioProducto = Convert.ToDecimal(gestorProducto.getPrecioProducto(p.idProducto));
             int cantidad = Convert.ToInt32(txtCantidad.Text);
             decimal subtotal = precioProducto * cantidad;
-            DGdetalleView.Rows.Add(p.NombreProducto, cantidad, subtotal);
+            if (gestorProducto.validarCantidadProductos(p, cantidad))
+            {
+                DGdetalleView.Rows.Add(p.NombreProducto, cantidad, subtotal);
+            }
+            else
+                MessageBox.Show("no se pudo agregar");
         }
     }
 }

@@ -43,6 +43,16 @@ namespace BLL
         {
             return mapper.getIdProducto(nombre);
         }
+        public int getStock(Producto producto)
+        {
+            return mapper.getStock(producto);
+        }
+        public bool validarCantidadProductos(Producto p, int cantidad)
+        {
+            if (getStock(p) < cantidad)
+                throw new Exception("No hay suficiente stock")
+            else return true;
+        }
         private bool ValidarProducto(Producto producto)
         {
             if (producto.NombreProducto == "")

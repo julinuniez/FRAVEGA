@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 using BE;
@@ -14,6 +15,9 @@ namespace BLL
 
         public Usuario Login(int Dni, string contraseña)
         {
+            if (!ValidarLogin(Dni, contraseña))
+                throw new Exception("Completar campos");
+
             return mapper.Login(Dni, contraseña);
         }
         public List<Usuario> ListarUsuario()
@@ -23,6 +27,9 @@ namespace BLL
 
         public int RegistrarUsuario(Usuario usuario, string contraseña)
         {
+            if (!validarRegistro(usuario))
+            throw new Exception("Debe completar los campos");
+
             return mapper.RegistrarUsuario(usuario, contraseña);
         }
 
@@ -40,5 +47,28 @@ namespace BLL
         {
             return mapper.generarXMLUsuario();
         }
+        private bool ValidarLogin(int dni, string contraseña)
+        {
+            bool validar = false;
+            if (string.IsNullOrEmpty(contraseña) || dni == 0)
+            {
+                validar = false;
+            }
+            else
+            {
+                validar = true;
+            }
+            return validar;
+        }
+        private bool validarRegistro(Usuario usuario)
+        {
+            bool validar = false;
+            if (!string.IsNullOrEmpty(usuario.contraseña) && !string.IsNullOrEmpty(usuario.Nombre) && !string.IsNullOrEmpty(usuario.Apellido) && usuario.DNI >= 1000000)
+                validar = false;
+            else
+                validar = true;
+            return validar;
+        }
     }
 }
+
