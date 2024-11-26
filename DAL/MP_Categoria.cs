@@ -79,5 +79,9 @@ namespace DAL
             return acceso.escribir("ActualizarCategoria", parametros);
         }
 
+        public bool generarXMLCategorias()
+        {
+            return acceso.EscribirXML("sp_GenerarXMLCategorias", "Categorias");
+        }
     }
 }

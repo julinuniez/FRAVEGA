@@ -114,29 +114,37 @@ namespace DAL
             return fa;
         }
 
-        public int escribirXml(string sp,string NombreArchivo ,SqlParameter[] parametros)
+        public bool EscribirXML(string sp, string nombreArchivo, SqlParameter[] parametroSql = null)
         {
+            bool pe = false;
+
             try
             {
                 conectar();
                 DataSet ds = new DataSet();
-                SqlDataAdapter adapter = new SqlDataAdapter();
-                adapter.SelectCommand = new SqlCommand()
+                SqlDataAdapter adapter = new SqlDataAdapter
                 {
-                    Connection = cn,
-                    CommandType = CommandType.StoredProcedure,
-                    CommandText = sp
+                    SelectCommand = new SqlCommand
+                    {
+                        CommandType = CommandType.StoredProcedure,
+                        CommandText = sp,
+                        Connection = cn
+                    }
                 };
-                if(parametros != null)
+                if (parametroSql != null)
                 {
                     adapter.SelectCommand.Parameters.Clear();
-                    adapter.SelectCommand.Parameters.AddRange(parametros);
+                    adapter.SelectCommand.Parameters.AddRange(parametroSql);
                 }
-                adapter.Fill(ds);
-                ds.WriteXml(@"D:\.UAI\LUG\Fravega\" + NombreArchivo);
 
+                adapter.Fill(ds);
+
+                string filePath = @"C:\Users\User\source\repos\FRAVEGA\ArchivosXML\" + nombreArchivo;
+                ds.WriteXml(filePath);
+
+                pe = true;
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
@@ -145,8 +153,7 @@ namespace DAL
             {
                 desconectar();
             }
-
-            return 0;
+            return pe;
         }
 
         public int obtenerInt(string sp, SqlParameter[] parametros)

@@ -83,7 +83,6 @@ namespace DAL
             return acceso.escribir("ActualizarUsuario", parametros);
         }
 
-        //Elimina Cliente
         public int EliminarUsuario(int id)
         {
             SqlParameter[] parametros = new SqlParameter[]
@@ -93,5 +92,9 @@ namespace DAL
             return acceso.escribir("EliminarUsuario", parametros);
         }
 
+        public bool generarXMLUsuario()
+        {
+            return acceso.EscribirXML("sp_GenerarXMLUsuario", "Usuarios");
+        }
     }
 }

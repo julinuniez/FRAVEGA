@@ -42,6 +42,9 @@ namespace BLL
             return mapper.EliminarCategoria(cat);
         }
 
-
+        public bool generarXML()
+        {
+            return mapper.generarXMLCategorias();
+        }
     }
 }

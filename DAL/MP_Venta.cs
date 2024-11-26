@@ -42,5 +42,10 @@ namespace DAL
             return lista;
         }
 
+        public bool generarXMLVenta()
+        {
+            return acceso.EscribirXML("sp_GenerarXMLVenta", "Ventas");
+        }
+
     }
 }

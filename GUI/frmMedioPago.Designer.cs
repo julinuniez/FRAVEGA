@@ -41,6 +41,7 @@
             this.cmbTipoTarjeta = new System.Windows.Forms.ComboBox();
             this.txtFechaCaducidad = new System.Windows.Forms.MaskedTextBox();
             this.dgvMediosDePago = new System.Windows.Forms.DataGridView();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMediosDePago)).BeginInit();
             this.SuspendLayout();
             // 
@@ -166,11 +167,22 @@
             this.dgvMediosDePago.Size = new System.Drawing.Size(446, 266);
             this.dgvMediosDePago.TabIndex = 69;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(86, 358);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(92, 45);
+            this.button1.TabIndex = 70;
+            this.button1.Text = "GenerarXML";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // frmMedioPago
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(832, 469);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.dgvMediosDePago);
             this.Controls.Add(this.txtFechaCaducidad);
             this.Controls.Add(this.cmbTipoTarjeta);
@@ -206,5 +218,6 @@
         private System.Windows.Forms.ComboBox cmbTipoTarjeta;
         private System.Windows.Forms.MaskedTextBox txtFechaCaducidad;
         private System.Windows.Forms.DataGridView dgvMediosDePago;
+        private System.Windows.Forms.Button button1;
     }
 }

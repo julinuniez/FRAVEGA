@@ -78,5 +78,10 @@ namespace DAL
             };
             return acceso.obtenerInt("getIdProducto", parametros);
         }
+
+        public bool generarXMLProducto()
+        {
+            return acceso.EscribirXML("sp_GenerarXMLProducto", "Productos");
+        }
     }
 }

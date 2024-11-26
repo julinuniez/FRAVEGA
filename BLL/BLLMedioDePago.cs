@@ -27,5 +27,9 @@ namespace BLL
             return mapper.EliminarMedioDePago(nroTarjeta);
         }
 
+        public bool generarXML()
+        {
+            return mapper.generarXMLMedioDePago();
+        }
     }
 }

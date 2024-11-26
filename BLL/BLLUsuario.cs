@@ -35,5 +35,10 @@ namespace BLL
         {
             return mapper.EliminarUsuario(id);
         }
+
+        public bool generarXML()
+        {
+            return mapper.generarXMLUsuario();
+        }
     }
 }

@@ -56,6 +56,10 @@ namespace DAL
             return acceso.escribir("EliminarMedioDePago",parametro);
         }
 
+        public bool generarXMLMedioDePago()
+        {
+            return acceso.EscribirXML("sp_GenerarXMLMedioDePago", "MediosDePago");
+        }
 
     }
 }

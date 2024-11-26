@@ -122,7 +122,7 @@ namespace GUI
 
         private void btnImprimirProductosXML_Click(object sender, EventArgs e)
         {
-
+            gestorProducto.generarXML();
         }
 
         private void dgvProductos_CellClick(object sender, DataGridViewCellEventArgs e)

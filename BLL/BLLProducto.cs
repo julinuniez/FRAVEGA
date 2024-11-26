@@ -59,5 +59,9 @@ namespace BLL
             }
             return true;
         }
+        public bool generarXML()
+        {
+            return mapper.generarXMLProducto();
+        }
     }
 }

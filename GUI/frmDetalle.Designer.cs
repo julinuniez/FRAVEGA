@@ -144,6 +144,7 @@
             this.button1.TabIndex = 39;
             this.button1.Text = "Generar XML";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // frmDetalle
             // 
