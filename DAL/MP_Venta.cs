@@ -36,7 +36,7 @@ namespace DAL
                 venta.idCliente = Convert.ToInt32(dr["idCliente"]);
                 venta.total = Convert.ToDecimal(dr["total"]);
                 venta.fecha = Convert.ToDateTime(dr["fecha"]);
-                venta.nroTarjeta = Convert.ToInt32(dr["nroTarjeta"]);
+                venta.nroTarjeta = dr["nroTarjeta"].ToString();
                 lista.Add(venta);
             }
             return lista;

@@ -125,9 +125,9 @@ namespace GUI
             Producto p = new Producto();
             p.idProducto = gestorProducto.getIdProducto(cmbProducto.Text);
             p.NombreProducto = cmbProducto.Text;
-            decimal precioProducto = Convert.ToDecimal(gestorProducto.getPrecioProducto(p.idProducto));
+            int precioProducto = Convert.ToInt32(gestorProducto.getPrecioProducto(p.idProducto));
             int cantidad = Convert.ToInt32(txtCantidad.Text);
-            decimal subtotal = precioProducto * cantidad;
+            int subtotal = precioProducto * cantidad;
             if (gestorProducto.validarCantidadProductos(p, cantidad))
             {
                 DGdetalleView.Rows.Add(CrearBotonElimninarDGV(), p.NombreProducto, cantidad, subtotal);
@@ -158,7 +158,7 @@ namespace GUI
 
         private void btnFinalizarVenta_Click(object sender, EventArgs e)
         {
-            decimal totalVenta = 0;
+            int totalVenta = 0;
             if (!gestorMedioPago.ValidarMedioDePago(cmbTarjeta.Text, Convert.ToInt32(txtCvv.Text)))
                 throw new Exception("El codigo de seguridad es incorrecto");
 
@@ -170,7 +170,7 @@ namespace GUI
                     Detalle.nroVenta = Convert.ToInt32(lblNroVenta.Text);
                     Detalle.idProducto = gestorProducto.getIdProducto(row.Cells[1].Value.ToString());
                     Detalle.Cantidad = Convert.ToInt32(row.Cells[2].Value);
-                    Detalle.Subtotal = Convert.ToDecimal(row.Cells[3].Value);
+                    Detalle.Subtotal = Convert.ToInt32(row.Cells[3].Value);
                     totalVenta += Detalle.Subtotal;
                     gestorDetalleVenta.AgregarDetalleVenta(Detalle);
                 }

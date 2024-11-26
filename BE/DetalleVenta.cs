@@ -40,9 +40,9 @@ namespace BE
 			set { _cant = value; }
 		}
 
-		private decimal _subtotal;
+		private int _subtotal;
 
-		public decimal Subtotal
+		public int Subtotal
 		{
 			get { return _subtotal; }
 			set { _subtotal = value; }

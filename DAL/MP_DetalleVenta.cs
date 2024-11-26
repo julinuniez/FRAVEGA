@@ -39,7 +39,7 @@ namespace DAL
                 detalleVenta.nroVenta = Convert.ToInt32(dr["nroVenta"]);
                 detalleVenta.idProducto = Convert.ToInt32(dr["idProducto"]);
                 detalleVenta.Cantidad = Convert.ToInt32(dr["cantidad"]);
-                detalleVenta.Subtotal = Convert.ToDecimal(dr["subtotal"]);
+                detalleVenta.Subtotal = Convert.ToInt32(dr["subtotal"]);
                 lista.Add(detalleVenta);
             }
             return lista;

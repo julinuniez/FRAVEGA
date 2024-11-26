@@ -193,7 +193,7 @@ namespace DAL
             {
                 conectar();
                 SqlCommand cmd = new SqlCommand();
-                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandType = CommandType.Text;
                 cmd.CommandText = query;
                 cmd.Connection = cn;
                 if (parametros != null)
