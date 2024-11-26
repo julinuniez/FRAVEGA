@@ -20,6 +20,7 @@ namespace GUI
             ActualizarListaProductos();
             LlenarComboCategorias();
         }
+
         BLLProducto gestorProducto = new BLLProducto();
         BLLCategoria gestorCategoria = new BLLCategoria();
 
@@ -38,69 +39,85 @@ namespace GUI
 
         private void btnAgregarProducto_Click(object sender, EventArgs e)
         {
+            // Validar los datos antes de procesar
+            if (!ValidarCamposProducto())
+                return;
+
             try
             {
-                Producto producto = new Producto();
-                producto.NombreProducto = txtNombreProducto.Text;
-                producto.Descripcion = txtDescripcion.Text;
-                producto.Precio = Convert.ToDecimal(txtPrecio.Text);
-                producto.Stock = Convert.ToInt32(txtStock.Text);
-                producto.idCategoria = Convert.ToInt32(cmbCategoria.SelectedValue);
-                BLLProducto gestorProducto = new BLLProducto();
+                Producto producto = new Producto
+                {
+                    NombreProducto = txtNombreProducto.Text,
+                    Descripcion = txtDescripcion.Text,
+                    Precio = Convert.ToDecimal(txtPrecio.Text),
+                    Stock = Convert.ToInt32(txtStock.Text),
+                    idCategoria = Convert.ToInt32(cmbCategoria.SelectedValue)
+                };
+
                 gestorProducto.AgregarProducto(producto);
                 MessageBox.Show("Producto agregado correctamente");
                 ActualizarListaProductos();
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show($"Error al agregar el producto: {ex.Message}");
             }
         }
 
         private void btnEliminarProducto_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(txtIdProducto.Text))
+            {
+                MessageBox.Show("Por favor, seleccione un producto para eliminar.");
+                return;
+            }
 
             try
             {
-                Producto producto = new Producto();
-                producto.idProducto = Convert.ToInt32(txtIdProducto.Text);
-                BLLProducto gestorProducto = new BLLProducto();
-                gestorProducto.EliminarProducto(producto);
+                int idProducto = Convert.ToInt32(txtIdProducto.Text);
+                gestorProducto.EliminarProducto(new Producto { idProducto = idProducto });
                 MessageBox.Show("Producto eliminado correctamente");
                 ActualizarListaProductos();
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
+                MessageBox.Show($"Error al eliminar el producto: {ex.Message}");
             }
         }
 
         private void btnModificarProducto_Click(object sender, EventArgs e)
         {
+            // Validar los datos antes de procesar
+            if (!ValidarCamposProducto())
+                return;
 
             try
             {
-                Producto producto = new Producto();
-                producto.idProducto = Convert.ToInt32(txtIdProducto.Text);
-                producto.Descripcion = txtDescripcion.Text;
-                producto.NombreProducto = txtNombreProducto.Text;
-                producto.Precio = Convert.ToDecimal(txtPrecio.Text);
-                producto.Stock = Convert.ToInt32(txtStock.Text);
-                producto.idCategoria = Convert.ToInt32(cmbCategoria.SelectedValue);
-                BLLProducto gestorProducto = new BLLProducto();
+                Producto producto = new Producto
+                {
+                    idProducto = Convert.ToInt32(txtIdProducto.Text),
+                    NombreProducto = txtNombreProducto.Text,
+                    Descripcion = txtDescripcion.Text,
+                    Precio = Convert.ToDecimal(txtPrecio.Text),
+                    Stock = Convert.ToInt32(txtStock.Text),
+                    idCategoria = Convert.ToInt32(cmbCategoria.SelectedValue)
+                };
+
                 gestorProducto.ActualizarProducto(producto);
                 MessageBox.Show("Producto modificado correctamente");
                 ActualizarListaProductos();
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);
-            }   
+                MessageBox.Show($"Error al modificar el producto: {ex.Message}");
+            }
         }
 
         private void btnGestionarCategorias_Click(object sender, EventArgs e)
         {
-
+            frmCategoria frm = new frmCategoria(); // Redirige a otro formulario para gestionar categorías
+            frm.ShowDialog();
+            LlenarComboCategorias(); // Actualiza la lista de categorías en caso de cambios
         }
 
         private void btnImprimirProductosXML_Click(object sender, EventArgs e)
@@ -112,15 +129,56 @@ namespace GUI
         {
             if (e.RowIndex >= 0)
             {
-                DataGridViewRow row = dgvProductos.Rows[e.RowIndex];
-                txtDescripcion.Text = row.Cells["Descripcion"].Value.ToString();
-                txtIdProducto.Text = row.Cells["idProducto"].Value.ToString();
-                txtNombreProducto.Text = row.Cells["NombreProducto"].Value.ToString();
-                txtPrecio.Text = row.Cells["Precio"].Value.ToString();
-                txtStock.Text = row.Cells["Stock"].Value.ToString();
-                cmbCategoria.SelectedValue = row.Cells["idCategoria"].Value;
-
+                try
+                {
+                    DataGridViewRow row = dgvProductos.Rows[e.RowIndex];
+                    txtDescripcion.Text = row.Cells["Descripcion"].Value?.ToString() ?? string.Empty;
+                    txtIdProducto.Text = row.Cells["idProducto"].Value?.ToString() ?? string.Empty;
+                    txtNombreProducto.Text = row.Cells["NombreProducto"].Value?.ToString() ?? string.Empty;
+                    txtPrecio.Text = row.Cells["Precio"].Value?.ToString() ?? string.Empty;
+                    txtStock.Text = row.Cells["Stock"].Value?.ToString() ?? string.Empty;
+                    cmbCategoria.SelectedValue = row.Cells["idCategoria"].Value;
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error al cargar los datos del producto: {ex.Message}");
+                }
             }
+        }
+
+        private bool ValidarCamposProducto()
+        {
+            if (string.IsNullOrWhiteSpace(txtNombreProducto.Text))
+            {
+                MessageBox.Show("El nombre del producto es obligatorio.");
+                return false;
+            }
+
+            if (string.IsNullOrWhiteSpace(txtDescripcion.Text))
+            {
+                MessageBox.Show("La descripción del producto es obligatoria.");
+                return false;
+            }
+
+            if (!decimal.TryParse(txtPrecio.Text, out decimal precio) || precio <= 0)
+            {
+                MessageBox.Show("Ingrese un precio válido (mayor a 0).");
+                return false;
+            }
+
+            if (!int.TryParse(txtStock.Text, out int stock) || stock < 0)
+            {
+                MessageBox.Show("Ingrese un stock válido (0 o mayor).");
+                return false;
+            }
+
+            if (cmbCategoria.SelectedValue == null)
+            {
+                MessageBox.Show("Seleccione una categoría.");
+                return false;
+            }
+
+            return true;
         }
     }
 }

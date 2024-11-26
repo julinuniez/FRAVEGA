@@ -24,7 +24,7 @@ namespace DAL
             foreach(DataRow dr in dt.Rows)
             {
                 MedioDePago mdp = new MedioDePago();
-                mdp.nroTarjeta = dr["nroTarjeta"].ToString();
+                mdp.nroTarjeta = Convert.ToString(dr["nroTarjeta"]);
                 mdp.idTipoTarjeta = Convert.ToInt32(dr["idTipoTarjeta"]);
                 mdp.DNI = Convert.ToInt32(dr["dni"]);
                 mdp.FechaCaducidad = Convert.ToDateTime(dr["FechaCaducidad"]);

@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BE;
@@ -65,11 +66,49 @@ namespace GUI
 
         private void btnSeleccionarProducto_Click(object sender, EventArgs e)
         {
-            string nombre = cmbProducto.Text;
-            int cantidad = Convert.ToInt32(txtCantidad.Text);
-            decimal subtotal = gestorProducto.ListarProducto().Find(x => x.NombreProducto == nombre).Precio * cantidad;
-            DGdetalleView.Rows.Add(nombre, cantidad, subtotal);
+            // Validar la cantidad ingresada
+            if (!ValidarCantidad(txtCantidad.Text))
+            {
+                MessageBox.Show("Por favor, ingrese una cantidad válida (número entero positivo).");
+                return;
+            }
+
+            // Validar que se haya seleccionado un producto
+            if (string.IsNullOrWhiteSpace(cmbProducto.Text))
+            {
+                MessageBox.Show("Por favor, seleccione un producto válido.");
+                return;
+            }
+
+            // Procesar los datos después de validar
+            try
+            {
+                string nombre = cmbProducto.Text;
+                int cantidad = Convert.ToInt32(txtCantidad.Text);
+                Producto producto = gestorProducto.ListarProducto().Find(x => x.NombreProducto == nombre);
+
+                if (producto == null)
+                {
+                    MessageBox.Show("Producto no encontrado en la base de datos.");
+                    return;
+                }
+
+                decimal subtotal = producto.Precio * cantidad;
+
+                // Agregar al DataGridView
+                DGdetalleView.Rows.Add(nombre, cantidad, subtotal);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ocurrió un error al agregar el producto: {ex.Message}");
+            }
         }
+        private bool ValidarCantidad(string cantidad)
+        {
+            string pattern = @"^\d+$"; // Solo números enteros positivos
+            return Regex.IsMatch(cantidad, pattern);
+        }
+
 
         private void btnSeleccionarProducto_Click_1(object sender, EventArgs e)
         {
