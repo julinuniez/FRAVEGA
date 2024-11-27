@@ -40,7 +40,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Consolas", 11.25F);
-            this.label2.Location = new System.Drawing.Point(565, 33);
+            this.label2.Location = new System.Drawing.Point(595, 33);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(144, 18);
             this.label2.TabIndex = 7;
@@ -51,11 +51,12 @@
             this.dataGridViewDetalles.AllowUserToAddRows = false;
             this.dataGridViewDetalles.AllowUserToDeleteRows = false;
             this.dataGridViewDetalles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewDetalles.Location = new System.Drawing.Point(421, 54);
+            this.dataGridViewDetalles.Location = new System.Drawing.Point(479, 54);
             this.dataGridViewDetalles.Name = "dataGridViewDetalles";
             this.dataGridViewDetalles.ReadOnly = true;
-            this.dataGridViewDetalles.Size = new System.Drawing.Size(367, 371);
+            this.dataGridViewDetalles.Size = new System.Drawing.Size(378, 371);
             this.dataGridViewDetalles.TabIndex = 6;
+            this.dataGridViewDetalles.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewDetalles_CellContentClick);
             // 
             // label1
             // 
@@ -75,7 +76,7 @@
             this.dataGridViewHistorial.Location = new System.Drawing.Point(12, 54);
             this.dataGridViewHistorial.Name = "dataGridViewHistorial";
             this.dataGridViewHistorial.ReadOnly = true;
-            this.dataGridViewHistorial.Size = new System.Drawing.Size(361, 371);
+            this.dataGridViewHistorial.Size = new System.Drawing.Size(403, 371);
             this.dataGridViewHistorial.TabIndex = 4;
             this.dataGridViewHistorial.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewHistorial_CellClick);
             // 
@@ -84,7 +85,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.PaleGoldenrod;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(939, 450);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.dataGridViewDetalles);
             this.Controls.Add(this.label1);

@@ -86,6 +86,16 @@ namespace DAL
             return acceso.obtenerInt("getIdProducto", parametros);
         }
 
+        public string getNombreProducto(int id)
+        {
+            SqlParameter[] parametros = new SqlParameter[]
+            {
+                new SqlParameter("@id",id)
+            };
+            DataTable dt = acceso.leer("getNombreProducto", parametros);
+            return dt.Rows[0]["nombre"].ToString();
+        }
+
         public bool generarXMLProducto()
         {
             return acceso.EscribirXML("sp_GenerarXMLProducto", "Productos");
