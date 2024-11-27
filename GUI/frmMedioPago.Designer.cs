@@ -106,7 +106,7 @@
             // 
             // btnAgregarMedioPago
             // 
-            this.btnAgregarMedioPago.Location = new System.Drawing.Point(252, 132);
+            this.btnAgregarMedioPago.Location = new System.Drawing.Point(212, 132);
             this.btnAgregarMedioPago.Name = "btnAgregarMedioPago";
             this.btnAgregarMedioPago.Size = new System.Drawing.Size(84, 46);
             this.btnAgregarMedioPago.TabIndex = 64;
@@ -116,7 +116,7 @@
             // 
             // btnEliminarMedioPago
             // 
-            this.btnEliminarMedioPago.Location = new System.Drawing.Point(252, 189);
+            this.btnEliminarMedioPago.Location = new System.Drawing.Point(212, 189);
             this.btnEliminarMedioPago.Name = "btnEliminarMedioPago";
             this.btnEliminarMedioPago.Size = new System.Drawing.Size(84, 46);
             this.btnEliminarMedioPago.TabIndex = 66;
@@ -146,10 +146,10 @@
             this.dgvMediosDePago.AllowUserToAddRows = false;
             this.dgvMediosDePago.AllowUserToDeleteRows = false;
             this.dgvMediosDePago.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvMediosDePago.Location = new System.Drawing.Point(353, 116);
+            this.dgvMediosDePago.Location = new System.Drawing.Point(313, 116);
             this.dgvMediosDePago.Name = "dgvMediosDePago";
             this.dgvMediosDePago.ReadOnly = true;
-            this.dgvMediosDePago.Size = new System.Drawing.Size(446, 266);
+            this.dgvMediosDePago.Size = new System.Drawing.Size(547, 266);
             this.dgvMediosDePago.TabIndex = 69;
             // 
             // button1
@@ -166,7 +166,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(832, 469);
+            this.ClientSize = new System.Drawing.Size(893, 469);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dgvMediosDePago);
             this.Controls.Add(this.txtFechaCaducidad);

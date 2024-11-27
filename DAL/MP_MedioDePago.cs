@@ -28,6 +28,7 @@ namespace DAL
                 mdp.idTipoTarjeta = Convert.ToInt32(dr["idTipoTarjeta"]);
                 mdp.DNI = Convert.ToInt32(dr["dni"]);
                 mdp.FechaCaducidad = Convert.ToDateTime(dr["FechaCaducidad"]);
+                mdp.cvv = Convert.ToInt32(dr["cvv"]);
                 lista.Add(mdp);
             }
             return lista;
