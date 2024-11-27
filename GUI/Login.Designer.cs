@@ -85,7 +85,7 @@
             // lblTxtContraseña
             // 
             this.lblTxtContraseña.CaracterContraseña = "\0";
-            this.lblTxtContraseña.Etiqueta = "Etiqueta";
+            this.lblTxtContraseña.Etiqueta = "Contraseña";
             this.lblTxtContraseña.Location = new System.Drawing.Point(135, 107);
             this.lblTxtContraseña.Name = "lblTxtContraseña";
             this.lblTxtContraseña.RegexPattern = null;
@@ -96,7 +96,7 @@
             // lbltxtDNI
             // 
             this.lbltxtDNI.CaracterContraseña = "\0";
-            this.lbltxtDNI.Etiqueta = "Etiqueta";
+            this.lbltxtDNI.Etiqueta = "DNI";
             this.lbltxtDNI.Location = new System.Drawing.Point(135, 55);
             this.lbltxtDNI.Name = "lbltxtDNI";
             this.lbltxtDNI.RegexPattern = null;
