@@ -31,7 +31,6 @@
             this.btnRegistrarse = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.btnIniciarSesion = new System.Windows.Forms.Button();
-            this.btnSalir = new System.Windows.Forms.Button();
             this.process1 = new System.Diagnostics.Process();
             this.serviceController1 = new System.ServiceProcess.ServiceController();
             this.lblTxtContraseña = new GUI.lblTxtBox();
@@ -68,21 +67,6 @@
             this.btnIniciarSesion.UseVisualStyleBackColor = true;
             this.btnIniciarSesion.Click += new System.EventHandler(this.btnIniciarSesion_Click);
             // 
-            // btnSalir
-            // 
-            this.btnSalir.BackColor = System.Drawing.Color.Crimson;
-            this.btnSalir.FlatAppearance.BorderSize = 0;
-            this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalir.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnSalir.Location = new System.Drawing.Point(397, 12);
-            this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(37, 23);
-            this.btnSalir.TabIndex = 72;
-            this.btnSalir.Text = "X";
-            this.btnSalir.UseVisualStyleBackColor = false;
-            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
-            // 
             // process1
             // 
             this.process1.StartInfo.Domain = "";
@@ -100,18 +84,22 @@
             // 
             // lblTxtContraseña
             // 
-            this.lblTxtContraseña.Etiqueta = "CONTRASEÑA";
+            this.lblTxtContraseña.CaracterContraseña = "\0";
+            this.lblTxtContraseña.Etiqueta = "Etiqueta";
             this.lblTxtContraseña.Location = new System.Drawing.Point(135, 107);
             this.lblTxtContraseña.Name = "lblTxtContraseña";
+            this.lblTxtContraseña.RegexPattern = null;
             this.lblTxtContraseña.Size = new System.Drawing.Size(150, 46);
             this.lblTxtContraseña.TabIndex = 74;
             this.lblTxtContraseña.Texto = "";
             // 
             // lbltxtDNI
             // 
-            this.lbltxtDNI.Etiqueta = "DNI";
+            this.lbltxtDNI.CaracterContraseña = "\0";
+            this.lbltxtDNI.Etiqueta = "Etiqueta";
             this.lbltxtDNI.Location = new System.Drawing.Point(135, 55);
             this.lbltxtDNI.Name = "lbltxtDNI";
+            this.lbltxtDNI.RegexPattern = null;
             this.lbltxtDNI.Size = new System.Drawing.Size(150, 46);
             this.lbltxtDNI.TabIndex = 73;
             this.lbltxtDNI.Texto = "";
@@ -123,7 +111,6 @@
             this.ClientSize = new System.Drawing.Size(446, 268);
             this.Controls.Add(this.lblTxtContraseña);
             this.Controls.Add(this.lbltxtDNI);
-            this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnIniciarSesion);
             this.Controls.Add(this.btnRegistrarse);
             this.Controls.Add(this.label5);
@@ -141,7 +128,6 @@
         private System.Windows.Forms.Button btnRegistrarse;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnIniciarSesion;
-        private System.Windows.Forms.Button btnSalir;
         private System.Diagnostics.Process process1;
         private System.ServiceProcess.ServiceController serviceController1;
         private lblTxtBox lbltxtDNI;

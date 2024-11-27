@@ -36,7 +36,6 @@
             this.dgvCategorias = new System.Windows.Forms.DataGridView();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.btnModificarCategoria = new System.Windows.Forms.Button();
-            this.btnSalir = new System.Windows.Forms.Button();
             this.txtIdCategoria = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.button_Eliminar = new System.Windows.Forms.Button();
@@ -118,20 +117,6 @@
             this.btnModificarCategoria.UseVisualStyleBackColor = true;
             this.btnModificarCategoria.Click += new System.EventHandler(this.btnModificarCategoria_Click);
             // 
-            // btnSalir
-            // 
-            this.btnSalir.BackColor = System.Drawing.Color.Crimson;
-            this.btnSalir.FlatAppearance.BorderSize = 0;
-            this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSalir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalir.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.btnSalir.Location = new System.Drawing.Point(845, 12);
-            this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(75, 23);
-            this.btnSalir.TabIndex = 41;
-            this.btnSalir.Text = "Volver";
-            this.btnSalir.UseVisualStyleBackColor = false;
-            // 
             // txtIdCategoria
             // 
             this.txtIdCategoria.Location = new System.Drawing.Point(156, 116);
@@ -177,7 +162,6 @@
             this.Controls.Add(this.button_Eliminar);
             this.Controls.Add(this.txtIdCategoria);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnModificarCategoria);
             this.Controls.Add(this.txtDescripcion);
             this.Controls.Add(this.btnAgregarCategoria);
@@ -203,7 +187,6 @@
         private System.Windows.Forms.DataGridView dgvCategorias;
         private System.Windows.Forms.TextBox txtDescripcion;
         private System.Windows.Forms.Button btnModificarCategoria;
-        private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.TextBox txtIdCategoria;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button button_Eliminar;
