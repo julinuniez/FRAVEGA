@@ -201,14 +201,16 @@ namespace DAL
                     cmd.Parameters.Clear();
                     cmd.Parameters.AddRange(parametros);
                 }
-                id = (int)cmd.ExecuteScalar();
-
+                var result = cmd.ExecuteScalar();
+                if (result != null && result != DBNull.Value)
+                {
+                    id = Convert.ToInt32(result);
+                }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
-
             finally
             {
                 desconectar();
