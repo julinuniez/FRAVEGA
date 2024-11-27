@@ -67,9 +67,10 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 62);
+            this.label3.Font = new System.Drawing.Font("Consolas", 11.25F);
+            this.label3.Location = new System.Drawing.Point(5, 57);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(26, 13);
+            this.label3.Size = new System.Drawing.Size(32, 18);
             this.label3.TabIndex = 67;
             this.label3.Text = "Cvv";
             // 
@@ -83,9 +84,10 @@
             // label9
             // 
             this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Consolas", 11.25F);
             this.label9.Location = new System.Drawing.Point(2, 10);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(89, 13);
+            this.label9.Size = new System.Drawing.Size(152, 18);
             this.label9.TabIndex = 19;
             this.label9.Text = "Elegir Nro Tarjeta";
             // 
@@ -124,14 +126,16 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Consolas", 11.25F);
             this.label2.Location = new System.Drawing.Point(17, 89);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(49, 13);
+            this.label2.Size = new System.Drawing.Size(72, 18);
             this.label2.TabIndex = 65;
             this.label2.Text = "Cantidad";
             // 
             // btnSeleccionarProducto
             // 
+            this.btnSeleccionarProducto.Font = new System.Drawing.Font("Consolas", 11.25F);
             this.btnSeleccionarProducto.Location = new System.Drawing.Point(9, 131);
             this.btnSeleccionarProducto.Name = "btnSeleccionarProducto";
             this.btnSeleccionarProducto.Size = new System.Drawing.Size(118, 34);
@@ -143,9 +147,10 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(7, 39);
+            this.label7.Font = new System.Drawing.Font("Consolas", 11.25F);
+            this.label7.Location = new System.Drawing.Point(6, 34);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(50, 13);
+            this.label7.Size = new System.Drawing.Size(72, 18);
             this.label7.TabIndex = 12;
             this.label7.Text = "Producto";
             // 
@@ -173,7 +178,7 @@
             // lblNroVenta
             // 
             this.lblNroVenta.AutoSize = true;
-            this.lblNroVenta.Location = new System.Drawing.Point(142, 378);
+            this.lblNroVenta.Location = new System.Drawing.Point(172, 383);
             this.lblNroVenta.Name = "lblNroVenta";
             this.lblNroVenta.Size = new System.Drawing.Size(52, 13);
             this.lblNroVenta.TabIndex = 60;
@@ -182,7 +187,7 @@
             // lblMonto
             // 
             this.lblMonto.AutoSize = true;
-            this.lblMonto.Location = new System.Drawing.Point(140, 403);
+            this.lblMonto.Location = new System.Drawing.Point(172, 406);
             this.lblMonto.Name = "lblMonto";
             this.lblMonto.Size = new System.Drawing.Size(52, 13);
             this.lblMonto.TabIndex = 59;
@@ -191,26 +196,29 @@
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Consolas", 11.25F);
             this.label4.Location = new System.Drawing.Point(35, 403);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(99, 13);
+            this.label4.Size = new System.Drawing.Size(144, 18);
             this.label4.TabIndex = 58;
             this.label4.Text = "Monto Acumulado: ";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Consolas", 11.25F);
             this.label1.Location = new System.Drawing.Point(35, 378);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(81, 13);
+            this.label1.Size = new System.Drawing.Size(120, 18);
             this.label1.TabIndex = 63;
             this.label1.Text = "Numero Venta: ";
             // 
             // btnFinalizarVenta
             // 
-            this.btnFinalizarVenta.Location = new System.Drawing.Point(54, 428);
+            this.btnFinalizarVenta.Font = new System.Drawing.Font("Consolas", 11.25F);
+            this.btnFinalizarVenta.Location = new System.Drawing.Point(35, 424);
             this.btnFinalizarVenta.Name = "btnFinalizarVenta";
-            this.btnFinalizarVenta.Size = new System.Drawing.Size(127, 41);
+            this.btnFinalizarVenta.Size = new System.Drawing.Size(127, 60);
             this.btnFinalizarVenta.TabIndex = 66;
             this.btnFinalizarVenta.Text = "Finalizar Venta";
             this.btnFinalizarVenta.UseVisualStyleBackColor = true;
@@ -242,6 +250,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.PaleGoldenrod;
             this.ClientSize = new System.Drawing.Size(761, 492);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.DGdetalleView);

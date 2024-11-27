@@ -62,63 +62,69 @@
             // label6
             // 
             this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Consolas", 11.25F);
             this.label6.Location = new System.Drawing.Point(159, 74);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(101, 13);
+            this.label6.Size = new System.Drawing.Size(152, 18);
             this.label6.TabIndex = 24;
             this.label6.Text = "Codigo de Producto";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(8, 234);
+            this.label5.Font = new System.Drawing.Font("Consolas", 11.25F);
+            this.label5.Location = new System.Drawing.Point(8, 242);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(35, 13);
+            this.label5.Size = new System.Drawing.Size(48, 18);
             this.label5.TabIndex = 23;
             this.label5.Text = "Stock";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(8, 192);
+            this.label4.Font = new System.Drawing.Font("Consolas", 11.25F);
+            this.label4.Location = new System.Drawing.Point(8, 200);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(37, 13);
+            this.label4.Size = new System.Drawing.Size(56, 18);
             this.label4.TabIndex = 22;
             this.label4.Text = "Precio";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(5, 155);
+            this.label3.Font = new System.Drawing.Font("Consolas", 11.25F);
+            this.label3.Location = new System.Drawing.Point(8, 155);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(52, 13);
+            this.label3.Size = new System.Drawing.Size(80, 18);
             this.label3.TabIndex = 21;
             this.label3.Text = "Categoria";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(5, 116);
+            this.label2.Font = new System.Drawing.Font("Consolas", 11.25F);
+            this.label2.Location = new System.Drawing.Point(8, 116);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(63, 13);
+            this.label2.Size = new System.Drawing.Size(96, 18);
             this.label2.TabIndex = 20;
             this.label2.Text = "Descripcion";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Consolas", 11.25F);
             this.label1.Location = new System.Drawing.Point(8, 74);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(44, 13);
+            this.label1.Size = new System.Drawing.Size(56, 18);
             this.label1.TabIndex = 19;
             this.label1.Text = "Nombre";
             // 
             // cmbCategoria
             // 
             this.cmbCategoria.FormattingEnabled = true;
-            this.cmbCategoria.Location = new System.Drawing.Point(8, 168);
+            this.cmbCategoria.Location = new System.Drawing.Point(8, 176);
             this.cmbCategoria.Name = "cmbCategoria";
-            this.cmbCategoria.Size = new System.Drawing.Size(121, 21);
+            this.cmbCategoria.Size = new System.Drawing.Size(118, 21);
             this.cmbCategoria.TabIndex = 18;
             // 
             // dgvProductos
@@ -142,21 +148,21 @@
             // 
             // txtDescripcion
             // 
-            this.txtDescripcion.Location = new System.Drawing.Point(11, 132);
+            this.txtDescripcion.Location = new System.Drawing.Point(8, 132);
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(118, 20);
             this.txtDescripcion.TabIndex = 29;
             // 
             // txtStock
             // 
-            this.txtStock.Location = new System.Drawing.Point(11, 250);
+            this.txtStock.Location = new System.Drawing.Point(8, 263);
             this.txtStock.Name = "txtStock";
-            this.txtStock.Size = new System.Drawing.Size(121, 20);
+            this.txtStock.Size = new System.Drawing.Size(118, 20);
             this.txtStock.TabIndex = 30;
             // 
             // txtPrecio
             // 
-            this.txtPrecio.Location = new System.Drawing.Point(11, 208);
+            this.txtPrecio.Location = new System.Drawing.Point(8, 221);
             this.txtPrecio.Name = "txtPrecio";
             this.txtPrecio.Size = new System.Drawing.Size(118, 20);
             this.txtPrecio.TabIndex = 31;
@@ -165,11 +171,12 @@
             // 
             this.txtIdProducto.Location = new System.Drawing.Point(162, 93);
             this.txtIdProducto.Name = "txtIdProducto";
-            this.txtIdProducto.Size = new System.Drawing.Size(118, 20);
+            this.txtIdProducto.Size = new System.Drawing.Size(148, 20);
             this.txtIdProducto.TabIndex = 32;
             // 
             // btnAgregarProducto
             // 
+            this.btnAgregarProducto.Font = new System.Drawing.Font("Consolas", 11.25F);
             this.btnAgregarProducto.Location = new System.Drawing.Point(11, 289);
             this.btnAgregarProducto.Name = "btnAgregarProducto";
             this.btnAgregarProducto.Size = new System.Drawing.Size(118, 43);
@@ -180,6 +187,7 @@
             // 
             // btnModificarProducto
             // 
+            this.btnModificarProducto.Font = new System.Drawing.Font("Consolas", 11.25F);
             this.btnModificarProducto.Location = new System.Drawing.Point(162, 168);
             this.btnModificarProducto.Name = "btnModificarProducto";
             this.btnModificarProducto.Size = new System.Drawing.Size(118, 43);
@@ -190,6 +198,7 @@
             // 
             // btnEliminarProducto
             // 
+            this.btnEliminarProducto.Font = new System.Drawing.Font("Consolas", 11.25F);
             this.btnEliminarProducto.Location = new System.Drawing.Point(162, 119);
             this.btnEliminarProducto.Name = "btnEliminarProducto";
             this.btnEliminarProducto.Size = new System.Drawing.Size(118, 43);
@@ -212,6 +221,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.PaleGoldenrod;
             this.ClientSize = new System.Drawing.Size(966, 444);
             this.Controls.Add(this.btnImprimirProductosXML);
             this.Controls.Add(this.btnEliminarProducto);

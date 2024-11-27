@@ -57,29 +57,33 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(152, 146);
+            this.label4.Font = new System.Drawing.Font("Consolas", 11.25F);
+            this.label4.Location = new System.Drawing.Point(152, 141);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(49, 13);
+            this.label4.Size = new System.Drawing.Size(72, 18);
             this.label4.TabIndex = 47;
             this.label4.Text = "Telefono";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 146);
+            this.label2.Font = new System.Drawing.Font("Consolas", 11.25F);
+            this.label2.Location = new System.Drawing.Point(9, 141);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(44, 13);
+            this.label2.Size = new System.Drawing.Size(72, 18);
             this.label2.TabIndex = 46;
             this.label2.Text = "Apellido";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(12, 80);
+            this.label6.Font = new System.Drawing.Font("Consolas", 11.25F);
+            this.label6.Location = new System.Drawing.Point(12, 75);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(26, 13);
+            this.label6.Size = new System.Drawing.Size(32, 18);
             this.label6.TabIndex = 45;
             this.label6.Text = "DNI";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // dgvClientes
             // 
@@ -102,6 +106,7 @@
             // 
             // btnEliminarCliente
             // 
+            this.btnEliminarCliente.Font = new System.Drawing.Font("Consolas", 11.25F);
             this.btnEliminarCliente.Location = new System.Drawing.Point(12, 226);
             this.btnEliminarCliente.Name = "btnEliminarCliente";
             this.btnEliminarCliente.Size = new System.Drawing.Size(118, 34);
@@ -134,14 +139,16 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(152, 80);
+            this.label1.Font = new System.Drawing.Font("Consolas", 11.25F);
+            this.label1.Location = new System.Drawing.Point(152, 75);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(44, 13);
+            this.label1.Size = new System.Drawing.Size(56, 18);
             this.label1.TabIndex = 56;
             this.label1.Text = "Nombre";
             // 
             // btnModificarCliente
             // 
+            this.btnModificarCliente.Font = new System.Drawing.Font("Consolas", 11.25F);
             this.btnModificarCliente.Location = new System.Drawing.Point(155, 226);
             this.btnModificarCliente.Name = "btnModificarCliente";
             this.btnModificarCliente.Size = new System.Drawing.Size(118, 34);
@@ -164,6 +171,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.PaleGoldenrod;
             this.ClientSize = new System.Drawing.Size(977, 553);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnModificarCliente);

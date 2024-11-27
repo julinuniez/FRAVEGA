@@ -31,8 +31,8 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.comprarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mediosDePagoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.panel = new System.Windows.Forms.Panel();
             this.hISTORIALDEPAGOToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.panel = new System.Windows.Forms.Panel();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -44,38 +44,42 @@
             this.hISTORIALDEPAGOToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(800, 26);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // comprarToolStripMenuItem
             // 
+            this.comprarToolStripMenuItem.Font = new System.Drawing.Font("Consolas", 11.25F);
             this.comprarToolStripMenuItem.Name = "comprarToolStripMenuItem";
-            this.comprarToolStripMenuItem.Size = new System.Drawing.Size(76, 20);
+            this.comprarToolStripMenuItem.Size = new System.Drawing.Size(76, 22);
             this.comprarToolStripMenuItem.Text = "COMPRAR";
             this.comprarToolStripMenuItem.Click += new System.EventHandler(this.comprarToolStripMenuItem_Click);
             // 
             // mediosDePagoToolStripMenuItem
             // 
+            this.mediosDePagoToolStripMenuItem.Font = new System.Drawing.Font("Consolas", 11.25F);
             this.mediosDePagoToolStripMenuItem.Name = "mediosDePagoToolStripMenuItem";
-            this.mediosDePagoToolStripMenuItem.Size = new System.Drawing.Size(113, 20);
+            this.mediosDePagoToolStripMenuItem.Size = new System.Drawing.Size(132, 22);
             this.mediosDePagoToolStripMenuItem.Text = "MEDIOS DE PAGO";
             this.mediosDePagoToolStripMenuItem.Click += new System.EventHandler(this.mediosDePagoToolStripMenuItem_Click);
             // 
-            // panel
-            // 
-            this.panel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel.Location = new System.Drawing.Point(0, 24);
-            this.panel.Name = "panel";
-            this.panel.Size = new System.Drawing.Size(800, 426);
-            this.panel.TabIndex = 2;
-            // 
             // hISTORIALDEPAGOToolStripMenuItem
             // 
+            this.hISTORIALDEPAGOToolStripMenuItem.Font = new System.Drawing.Font("Consolas", 11.25F);
             this.hISTORIALDEPAGOToolStripMenuItem.Name = "hISTORIALDEPAGOToolStripMenuItem";
-            this.hISTORIALDEPAGOToolStripMenuItem.Size = new System.Drawing.Size(126, 20);
+            this.hISTORIALDEPAGOToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
             this.hISTORIALDEPAGOToolStripMenuItem.Text = "HISTORIAL DE PAGO";
             this.hISTORIALDEPAGOToolStripMenuItem.Click += new System.EventHandler(this.hISTORIALDEPAGOToolStripMenuItem_Click);
+            // 
+            // panel
+            // 
+            this.panel.BackColor = System.Drawing.Color.PaleGoldenrod;
+            this.panel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel.Location = new System.Drawing.Point(0, 26);
+            this.panel.Name = "panel";
+            this.panel.Size = new System.Drawing.Size(800, 424);
+            this.panel.TabIndex = 2;
             // 
             // frmPrincipalCliente
             // 

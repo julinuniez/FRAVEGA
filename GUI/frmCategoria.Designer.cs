@@ -56,26 +56,29 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(40, 149);
+            this.label2.Font = new System.Drawing.Font("Consolas", 11.25F);
+            this.label2.Location = new System.Drawing.Point(26, 157);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(63, 13);
+            this.label2.Size = new System.Drawing.Size(96, 18);
             this.label2.TabIndex = 22;
             this.label2.Text = "Descripcion";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Consolas", 11.25F);
             this.label1.Location = new System.Drawing.Point(40, 100);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(44, 13);
+            this.label1.Size = new System.Drawing.Size(56, 18);
             this.label1.TabIndex = 21;
             this.label1.Text = "Nombre";
             // 
             // btnAgregarCategoria
             // 
-            this.btnAgregarCategoria.Location = new System.Drawing.Point(28, 220);
+            this.btnAgregarCategoria.Font = new System.Drawing.Font("Consolas", 11.25F);
+            this.btnAgregarCategoria.Location = new System.Drawing.Point(21, 220);
             this.btnAgregarCategoria.Name = "btnAgregarCategoria";
-            this.btnAgregarCategoria.Size = new System.Drawing.Size(84, 46);
+            this.btnAgregarCategoria.Size = new System.Drawing.Size(101, 46);
             this.btnAgregarCategoria.TabIndex = 38;
             this.btnAgregarCategoria.Text = "Agregar";
             this.btnAgregarCategoria.UseVisualStyleBackColor = true;
@@ -85,7 +88,7 @@
             // 
             this.txtNombreCategoria.Location = new System.Drawing.Point(28, 116);
             this.txtNombreCategoria.Name = "txtNombreCategoria";
-            this.txtNombreCategoria.Size = new System.Drawing.Size(84, 20);
+            this.txtNombreCategoria.Size = new System.Drawing.Size(94, 20);
             this.txtNombreCategoria.TabIndex = 37;
             // 
             // dgvCategorias
@@ -104,14 +107,15 @@
             // 
             this.txtDescripcion.Location = new System.Drawing.Point(28, 178);
             this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(84, 20);
+            this.txtDescripcion.Size = new System.Drawing.Size(94, 20);
             this.txtDescripcion.TabIndex = 39;
             // 
             // btnModificarCategoria
             // 
-            this.btnModificarCategoria.Location = new System.Drawing.Point(28, 285);
+            this.btnModificarCategoria.Font = new System.Drawing.Font("Consolas", 11.25F);
+            this.btnModificarCategoria.Location = new System.Drawing.Point(156, 157);
             this.btnModificarCategoria.Name = "btnModificarCategoria";
-            this.btnModificarCategoria.Size = new System.Drawing.Size(84, 46);
+            this.btnModificarCategoria.Size = new System.Drawing.Size(101, 46);
             this.btnModificarCategoria.TabIndex = 40;
             this.btnModificarCategoria.Text = "Modificar";
             this.btnModificarCategoria.UseVisualStyleBackColor = true;
@@ -121,23 +125,26 @@
             // 
             this.txtIdCategoria.Location = new System.Drawing.Point(156, 116);
             this.txtIdCategoria.Name = "txtIdCategoria";
-            this.txtIdCategoria.Size = new System.Drawing.Size(84, 20);
+            this.txtIdCategoria.Size = new System.Drawing.Size(101, 20);
             this.txtIdCategoria.TabIndex = 43;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(168, 100);
+            this.label3.Font = new System.Drawing.Font("Consolas", 11.25F);
+            this.label3.Location = new System.Drawing.Point(153, 100);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(66, 13);
+            this.label3.Size = new System.Drawing.Size(104, 18);
             this.label3.TabIndex = 42;
             this.label3.Text = "ID Categoria";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // button_Eliminar
             // 
-            this.button_Eliminar.Location = new System.Drawing.Point(150, 244);
+            this.button_Eliminar.Font = new System.Drawing.Font("Consolas", 11.25F);
+            this.button_Eliminar.Location = new System.Drawing.Point(156, 220);
             this.button_Eliminar.Name = "button_Eliminar";
-            this.button_Eliminar.Size = new System.Drawing.Size(84, 46);
+            this.button_Eliminar.Size = new System.Drawing.Size(101, 46);
             this.button_Eliminar.TabIndex = 44;
             this.button_Eliminar.Text = "Baja";
             this.button_Eliminar.UseVisualStyleBackColor = true;
@@ -157,6 +164,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.PaleGoldenrod;
             this.ClientSize = new System.Drawing.Size(932, 510);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.button_Eliminar);
@@ -170,6 +178,7 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.ForeColor = System.Drawing.SystemColors.InfoText;
             this.Name = "frmCategoria";
             this.Text = "frmCategoria";
             ((System.ComponentModel.ISupportInitialize)(this.dgvCategorias)).EndInit();

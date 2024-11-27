@@ -39,9 +39,10 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(542, 26);
+            this.label2.Font = new System.Drawing.Font("Consolas", 11.25F);
+            this.label2.Location = new System.Drawing.Point(565, 33);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(94, 13);
+            this.label2.Size = new System.Drawing.Size(144, 18);
             this.label2.TabIndex = 7;
             this.label2.Text = "Detalle de Compra";
             // 
@@ -59,9 +60,10 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(127, 26);
+            this.label1.Font = new System.Drawing.Font("Consolas", 11.25F);
+            this.label1.Location = new System.Drawing.Point(107, 33);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(98, 13);
+            this.label1.Size = new System.Drawing.Size(160, 18);
             this.label1.TabIndex = 5;
             this.label1.Text = "Historial de Compra";
             // 
@@ -81,6 +83,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.PaleGoldenrod;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.dataGridViewDetalles);
