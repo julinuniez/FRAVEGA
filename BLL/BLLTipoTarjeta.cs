@@ -26,5 +26,10 @@ namespace BLL
         {
             return mapper.EliminarTipoTarjeta(id);
         }
+        public int obtenerIdTipoTarjeta(string nombreTarjeta)
+        {
+            return mapper.obtenerIdTipoTarjeta(nombreTarjeta);
+        }
+
     }
 }

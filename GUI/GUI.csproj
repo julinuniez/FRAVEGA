@@ -71,11 +71,11 @@
     <Compile Include="frmGestionCliente.Designer.cs">
       <DependentUpon>frmGestionCliente.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmHistorialCompra.cs">
+    <Compile Include="frmHistorialCompras.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmHistorialCompra.Designer.cs">
-      <DependentUpon>frmHistorialCompra.cs</DependentUpon>
+    <Compile Include="frmHistorialCompras.Designer.cs">
+      <DependentUpon>frmHistorialCompras.cs</DependentUpon>
     </Compile>
     <Compile Include="frmMedioPago.cs">
       <SubType>Form</SubType>
@@ -145,8 +145,8 @@
     <EmbeddedResource Include="frmGestionCliente.resx">
       <DependentUpon>frmGestionCliente.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmHistorialCompra.resx">
-      <DependentUpon>frmHistorialCompra.cs</DependentUpon>
+    <EmbeddedResource Include="frmHistorialCompras.resx">
+      <DependentUpon>frmHistorialCompras.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMedioPago.resx">
       <DependentUpon>frmMedioPago.cs</DependentUpon>

@@ -44,5 +44,15 @@ namespace DAL
             return lista;
         }
 
+        public int obtenerIdTipoTarjeta(string nombreTarjeta)
+        {
+            SqlParameter[] parametros = new SqlParameter[]
+          {
+                new SqlParameter("@nombre", nombreTarjeta)
+
+          };
+            return acceso.obtenerInt("ObtenerIdTipoTarjeta", parametros);
+        }
+
     }
 }

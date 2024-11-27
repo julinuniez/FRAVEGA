@@ -54,7 +54,7 @@ namespace GUI
         private void hISTORIALDEPAGOToolStripMenuItem_Click(object sender, EventArgs e)
         {
             LimpiarPanel();
-            frmHistorialCompra frm = new frmHistorialCompra(loginUser);
+            frmHistorialCompras frm = new frmHistorialCompras(loginUser);
             this.Width = frm.Width;
             this.Height = frm.Height + 40;
             frm.MdiParent = this;

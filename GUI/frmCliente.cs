@@ -172,8 +172,6 @@ namespace GUI
             try
             {
                 int totalVenta = 0;
-                if (gestorMedioPago.ValidarMedioDePago(cmbTarjeta.Text, Convert.ToInt32(txtCvv.Text)))
-                {
                     List<DetalleVenta> listaDetalleVenta = new List<DetalleVenta>();
                     foreach (DataGridViewRow row in DGdetalleView.Rows)
                     {
@@ -185,6 +183,8 @@ namespace GUI
                         totalVenta += Convert.ToInt32(Detalle.Subtotal);
                         listaDetalleVenta.Add(Detalle);
                     }
+                if (gestorMedioPago.ValidarMedioDePago(cmbTarjeta.Text, Convert.ToInt32(txtCvv.Text)) && listaDetalleVenta.Count > 0 )
+                {
                     Venta venta = new Venta();
                     venta.DNI = loginUser.DNI;
                     venta.total = totalVenta;
@@ -200,7 +200,7 @@ namespace GUI
                 }
                 else
                 {
-                    MessageBox.Show("Tarjeta no válida");
+                    MessageBox.Show("Datos Incorrectos");
                 }
             }
             catch(Exception ex)

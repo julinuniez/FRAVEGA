@@ -32,6 +32,7 @@ namespace GUI
             cmbTipoTarjeta.DataSource = null;
             cmbTipoTarjeta.DataSource = gestorTipoTarjeta.ListarTipoTarjeta();
             cmbTipoTarjeta.DisplayMember = "Nombre";
+            cmbTipoTarjeta.ValueMember = "idTipoTarjeta";
         }
         public void ActualizarListaMedioPago()
         {
@@ -49,7 +50,7 @@ namespace GUI
 
             if (!ValidarFechaCaducidad(txtFechaCaducidad.Text))
             {
-                MessageBox.Show("Por favor, ingrese una fecha de caducidad válida (formato MM/AA o MM/YYYY, y debe ser futura).");
+                MessageBox.Show("Por favor, ingrese una fecha de caducidad válida.");
                 return;
             }
 
@@ -65,7 +66,9 @@ namespace GUI
                 MedioDePago medioPago = new MedioDePago
                 {
                     nroTarjeta = Convert.ToString(txtNumero.Text), // Usar `long` para tarjetas largas
-                    FechaCaducidad = Convert.ToDateTime($"01/{txtFechaCaducidad.Text}"), // Agregar día ficticio
+                    idTipoTarjeta = gestorTipoTarjeta.obtenerIdTipoTarjeta(cmbTipoTarjeta.Text),
+                    DNI = loginUser.DNI,
+                    FechaCaducidad = Convert.ToDateTime(txtFechaCaducidad.Text), // Agregar día ficticio
                     cvv = Convert.ToInt32(txtCVV.Text)
                 };
 
@@ -87,23 +90,30 @@ namespace GUI
 
         private bool ValidarFechaCaducidad(string fechaCaducidad)
         {
-            string pattern = @"^(0[1-9]|1[0-2])/(?:\d{2}|\d{4})$"; // Formato MM/AA o MM/YYYY
+            // Patrón para DD/MM/AAAA
+            string pattern = @"^([0-2][0-9]|3[0-1])/(0[1-9]|1[0-2])/\d{4}$"; // Formato DD/MM/AAAA
             if (!Regex.IsMatch(fechaCaducidad, pattern)) return false;
 
             // Verificar si la fecha es futura
             try
             {
                 string[] partes = fechaCaducidad.Split('/');
-                int mes = Convert.ToInt32(partes[0]);
-                int anio = partes[1].Length == 2 ? 2000 + Convert.ToInt32(partes[1]) : Convert.ToInt32(partes[1]);
-                DateTime fecha = new DateTime(anio, mes, 1);
+                int dia = Convert.ToInt32(partes[0]);
+                int mes = Convert.ToInt32(partes[1]);
+                int anio = Convert.ToInt32(partes[2]);
+
+                // Crear un objeto DateTime para la fecha ingresada
+                DateTime fecha = new DateTime(anio, mes, dia);
+
+                // Validar que la fecha sea válida y futura
                 return fecha > DateTime.Now;
             }
             catch
             {
-                return false;
+                return false; // Retorna false si hay algún error al analizar la fecha
             }
         }
+
 
         private bool ValidarCVV(string cvv)
         {
