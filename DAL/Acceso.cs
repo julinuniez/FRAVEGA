@@ -171,7 +171,7 @@ namespace DAL
                 cmd.Parameters.Clear();
                 cmd.Parameters.AddRange(parametros);
             }
-            id = Convert.ToInt32(cmd.ExecuteScalar());
+            id = (int)Convert.ToInt64(cmd.ExecuteScalar());
 
             }
             catch (Exception ex)

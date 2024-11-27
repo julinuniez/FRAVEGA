@@ -43,7 +43,7 @@ namespace DAL
         }
         public int getNroVenta()
         {
-            return acceso.obtenerIntQuery("select max(nroVenta) +1  from Venta");
+            return acceso.obtenerIntQuery("SELECT COALESCE(MAX(nroVenta), 0) + 1 FROM Venta");
         }
         public bool generarXMLVenta()
         {
