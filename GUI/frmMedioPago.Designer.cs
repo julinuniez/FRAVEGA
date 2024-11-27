@@ -158,6 +158,7 @@
             this.dgvMediosDePago.ReadOnly = true;
             this.dgvMediosDePago.Size = new System.Drawing.Size(547, 266);
             this.dgvMediosDePago.TabIndex = 69;
+            this.dgvMediosDePago.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMediosDePago_CellClick);
             // 
             // button1
             // 

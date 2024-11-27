@@ -150,7 +150,17 @@ namespace GUI
 
         private void button1_Click(object sender, EventArgs e)
         {
-            gestorMedioPago.generarXML();
+
+            try
+            {
+                gestorMedioPago.generarXML();
+                MessageBox.Show("XML Medios de Pago generado correctamente");
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void label4_Click(object sender, EventArgs e)
@@ -161,6 +171,23 @@ namespace GUI
         private void frmMedioPago_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void dgvMediosDePago_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                try
+                {
+                    DataGridViewRow row = dgvMediosDePago.Rows[e.RowIndex];
+                    txtNumero.Text = row.Cells["nroTarjeta"].Value.ToString();
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
         }
     }
 }

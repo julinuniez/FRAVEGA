@@ -32,7 +32,16 @@ namespace GUI
 
         private void button1_Click(object sender, EventArgs e)
         {
+            try
+            {
             gestorVenta.generarXMLVenta();
+                MessageBox.Show("XML Detalles generado correctamente");
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void dataGridViewHistorial_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -42,7 +51,7 @@ namespace GUI
                 try
                 {
                     DataGridViewRow row = dataGridViewHistorial.Rows[e.RowIndex];
-                    textBox1.Text = row.Cells["nroVenta"].Value.ToString();
+                    //textBox1.Text = row.Cells["nroVenta"].Value.ToString();
                     gestorDetalleVenta.ListarDetalleVenta(Convert.ToInt32(row.Cells["nroVenta"].Value));
                     dgvDetalleVentas.DataSource = null;
                     dgvDetalleVentas.DataSource = gestorDetalleVenta.ListarDetalleVenta(Convert.ToInt32(row.Cells["nroVenta"].Value));

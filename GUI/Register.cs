@@ -21,53 +21,61 @@ namespace GUI
         BLLUsuario gestorUsuario = new BLLUsuario();
         private void buttonRegistrarse_Click(object sender, EventArgs e)
         {
-            bool valido = true;
-            Usuario usuario = new Usuario();
+            try
+            {
+                bool valido = true;
+                Usuario usuario = new Usuario();
 
-            // Validaciones con REGEX
-            if (!lblTxtBoxDNI.Validar())
-            {
-                MessageBox.Show("DNI inválido. Debe contener 7 u 8 dígitos.");
-                valido = false;
+                // Validaciones con REGEX
+                if (!lblTxtBoxDNI.Validar())
+                {
+                    MessageBox.Show("DNI inválido. Debe contener 7 u 8 dígitos.");
+                    valido = false;
+                }
+                if (!lblTxtBoxNombre.Validar())
+                {
+                    MessageBox.Show("Nombre inválido. Solo se permiten letras y espacios.");
+                    valido = false;
+                }
+                if (!lblTxtBoxApellido.Validar())
+                {
+                    MessageBox.Show("Apellido inválido. Solo se permiten letras y espacios.");
+                    valido = false;
+                }
+                if (!lblTxtBoxTelefono.Validar())
+                {
+                    MessageBox.Show("Teléfono inválido. Solo se permiten números (8 a 15 dígitos).");
+                    valido = false;
+                }
+
+                if (lblTxtBoxContraseña.Texto != lblTxtBoxRepetirContraseña.Texto)
+                {
+                    MessageBox.Show("Las contraseñas no coinciden.");
+                    valido = false;
+                }
+                else if (!lblTxtBoxContraseña.Validar())
+                {
+                    MessageBox.Show("Contraseña inválida. Debe contener al menos 8 caracteres, incluyendo una letra y un número.");
+                    valido = false;
+                }
+
+                // Si todo es válido, registrar usuario
+                if (valido)
+                {
+                    usuario.DNI = Convert.ToInt32(lblTxtBoxDNI.Texto);
+                    usuario.Nombre = lblTxtBoxNombre.Texto;
+                    usuario.Apellido = lblTxtBoxApellido.Texto;
+                    usuario.Telefono = Convert.ToInt32(lblTxtBoxTelefono.Texto);
+
+                    gestorUsuario.RegistrarUsuario(usuario, lblTxtBoxContraseña.Texto);
+                    MessageBox.Show("Usuario registrado con éxito.");
+                }
             }
-            if (!lblTxtBoxNombre.Validar())
+            catch (Exception ex)
             {
-                MessageBox.Show("Nombre inválido. Solo se permiten letras y espacios.");
-                valido = false;
-            }
-            if (!lblTxtBoxApellido.Validar())
-            {
-                MessageBox.Show("Apellido inválido. Solo se permiten letras y espacios.");
-                valido = false;
-            }
-            if (!lblTxtBoxTelefono.Validar())
-            {
-                MessageBox.Show("Teléfono inválido. Solo se permiten números (8 a 15 dígitos).");
-                valido = false;
+                MessageBox.Show(ex.Message);
             }
 
-            if (lblTxtBoxContraseña.Texto != lblTxtBoxRepetirContraseña.Texto)
-            {
-                MessageBox.Show("Las contraseñas no coinciden.");
-                valido = false;
-            }
-            else if (!lblTxtBoxContraseña.Validar())
-            {
-                MessageBox.Show("Contraseña inválida. Debe contener al menos 8 caracteres, incluyendo una letra y un número.");
-                valido = false;
-            }
-
-            // Si todo es válido, registrar usuario
-            if (valido)
-            {
-                usuario.DNI = Convert.ToInt32(lblTxtBoxDNI.Texto);
-                usuario.Nombre = lblTxtBoxNombre.Texto;
-                usuario.Apellido = lblTxtBoxApellido.Texto;
-                usuario.Telefono = Convert.ToInt32(lblTxtBoxTelefono.Texto);
-
-                gestorUsuario.RegistrarUsuario(usuario, lblTxtBoxContraseña.Texto);
-                MessageBox.Show("Usuario registrado con éxito.");
-            }
         }
 
         private void Register_Load(object sender, EventArgs e)

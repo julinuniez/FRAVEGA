@@ -145,7 +145,16 @@ namespace GUI
 
         private void button1_Click(object sender, EventArgs e)
         {
-            gestorUsuario.generarXML();
+            try
+            {
+                gestorUsuario.generarXML();
+                MessageBox.Show("XML Clientes generado correctamente");
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void label6_Click(object sender, EventArgs e)

@@ -139,7 +139,17 @@ namespace GUI
 
         private void button1_Click(object sender, EventArgs e)
         {
-            gestorCategoria.generarXML();
+           
+            try
+            {
+                gestorCategoria.generarXML();
+                MessageBox.Show("XML Categorias generado correctamente");
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
 
         private void label3_Click(object sender, EventArgs e)
