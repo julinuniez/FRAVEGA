@@ -43,7 +43,7 @@ namespace BLL
         {
             return mapper.getIdProducto(nombre);
         }
-        public int getStock(Producto producto)
+        private int getStock(Producto producto)
         {
             return mapper.getStock(producto);
         }
