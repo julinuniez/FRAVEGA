@@ -17,7 +17,7 @@ namespace DAL
         {
             SqlParameter[] parametros = new SqlParameter[]
             {
-            new SqlParameter("@idCliente", venta.idCliente),
+            new SqlParameter("@DNI", venta.DNI),
             new SqlParameter("@Total", venta.total),
             new SqlParameter("@Fecha", venta.fecha),
             new SqlParameter("@NroTarjeta", venta.nroTarjeta)
@@ -33,10 +33,10 @@ namespace DAL
             {
                 Venta venta = new Venta();
                 venta.nroVenta = Convert.ToInt32(dr["nroVenta"]);
-                venta.idCliente = Convert.ToInt32(dr["idCliente"]);
+                venta.DNI = Convert.ToInt32(dr["dni"]);
                 venta.total = Convert.ToDecimal(dr["total"]);
                 venta.fecha = Convert.ToDateTime(dr["fecha"]);
-                venta.nroTarjeta = dr["nroTarjeta"].ToString();
+                venta.nroTarjeta = Convert.ToString(dr["nroTarjeta"]);
                 lista.Add(venta);
             }
             return lista;

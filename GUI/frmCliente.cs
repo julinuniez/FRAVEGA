@@ -171,14 +171,14 @@ namespace GUI
                     Detalle.idProducto = gestorProducto.getIdProducto(row.Cells[1].Value.ToString());
                     Detalle.Cantidad = Convert.ToInt32(row.Cells[2].Value);
                     Detalle.Subtotal = Convert.ToInt32(row.Cells[3].Value);
-                    totalVenta += Detalle.Subtotal;
+                    totalVenta += Convert.ToInt32(Detalle.Subtotal);
                     gestorDetalleVenta.AgregarDetalleVenta(Detalle);
                 }
                 Venta venta = new Venta();
-                venta.idCliente = loginUser.idUsuario;
+                venta.DNI = loginUser.DNI;
                 venta.total = totalVenta;
                 venta.fecha = DateTime.Now;
-                venta.nroTarjeta = cmbTarjeta.Text;
+                venta.nroTarjeta = Convert.ToString(cmbTarjeta.Text);
                 gestorVenta.AgregarVenta(venta);
             }
             catch(Exception ex)

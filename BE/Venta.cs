@@ -16,12 +16,12 @@ namespace BE
 			set { _nroVenta = value; }
 		}
 
-		private int _idCliente;
+		private int _dni;
 
-		public int idCliente
+		public int DNI
 		{
-			get { return _idCliente; }
-			set { _idCliente = value; }
+			get { return _dni; }
+			set { _dni = value; }
 		}
 
 		private decimal _total;

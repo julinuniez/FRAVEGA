@@ -79,7 +79,7 @@ namespace GUI
             }
             catch (Exception ex)
             {
-                MessageBox.Show($"Ocurrió un error al iniciar sesión: {ex.Message}");
+                MessageBox.Show($"Ocurrió un error: {ex.Message}");
             }
         }
 
