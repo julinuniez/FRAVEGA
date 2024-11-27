@@ -196,7 +196,10 @@ namespace GUI
                     {
                         gestorDetalleVenta.AgregarDetalleVenta(detalle);
                     }
+                    DGdetalleView.Rows.Clear();
+                    lblMonto.Text = "---------------";
                     MessageBox.Show("Venta realizada con éxito");
+                    lblNroVenta.Text = (gestorVenta.getNroVenta()).ToString();
                 }
                 else
                 {

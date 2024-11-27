@@ -64,13 +64,12 @@ namespace GUI
                 try
                 {
                     DataGridViewRow row = dataGridViewHistorial.Rows[e.RowIndex];
-                    dataGridViewDetalles.DataSource = null;
+                    dataGridViewDetalles.Rows.Clear();
                     foreach (DetalleVenta dv in gestorDetalleVenta.ListarDetalleVenta(Convert.ToInt32(row.Cells["nroVenta"].Value)))
                     {
                         string nombreProducto = gestorProducto.getNombreProducto(dv.idProducto);
                         dataGridViewDetalles.Rows.Add(nombreProducto, dv.Cantidad, dv.Subtotal);
                     }
-                    dataGridViewDetalles.DataSource = gestorDetalleVenta.ListarDetalleVenta(Convert.ToInt32(row.Cells["nroVenta"].Value));
 
                 }
                 catch (Exception ex)
