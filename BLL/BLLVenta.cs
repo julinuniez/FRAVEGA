@@ -32,5 +32,10 @@ namespace BLL
         {
             return mapper.generarXMLVenta();
         }
+
+        public List<Venta> ListarVentasPorDNI(Usuario user)
+        {
+            return mapper.ListarVentasPorDni(user);
+        }
     }
 }

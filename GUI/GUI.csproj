@@ -71,6 +71,12 @@
     <Compile Include="frmGestionCliente.Designer.cs">
       <DependentUpon>frmGestionCliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmHistorialCompra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmHistorialCompra.Designer.cs">
+      <DependentUpon>frmHistorialCompra.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmMedioPago.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -100,6 +106,12 @@
     </Compile>
     <Compile Include="lblComboBox.Designer.cs">
       <DependentUpon>lblComboBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="lblDataGrid.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="lblDataGrid.Designer.cs">
+      <DependentUpon>lblDataGrid.cs</DependentUpon>
     </Compile>
     <Compile Include="lblTxtBox.cs">
       <SubType>UserControl</SubType>
@@ -133,6 +145,9 @@
     <EmbeddedResource Include="frmGestionCliente.resx">
       <DependentUpon>frmGestionCliente.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmHistorialCompra.resx">
+      <DependentUpon>frmHistorialCompra.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmMedioPago.resx">
       <DependentUpon>frmMedioPago.cs</DependentUpon>
     </EmbeddedResource>
@@ -147,6 +162,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="lblComboBox.resx">
       <DependentUpon>lblComboBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="lblDataGrid.resx">
+      <DependentUpon>lblDataGrid.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="lblTxtBox.resx">
       <DependentUpon>lblTxtBox.cs</DependentUpon>

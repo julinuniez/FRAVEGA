@@ -174,7 +174,7 @@ namespace GUI
                 int totalVenta = 0;
                 if (gestorMedioPago.ValidarMedioDePago(cmbTarjeta.Text, Convert.ToInt32(txtCvv.Text)))
                 {
-
+                    List<DetalleVenta> listaDetalleVenta = new List<DetalleVenta>();
                     foreach (DataGridViewRow row in DGdetalleView.Rows)
                     {
                         DetalleVenta Detalle = new DetalleVenta();
@@ -183,7 +183,7 @@ namespace GUI
                         Detalle.Cantidad = Convert.ToInt32(row.Cells[2].Value);
                         Detalle.Subtotal = Convert.ToInt32(row.Cells[3].Value);
                         totalVenta += Convert.ToInt32(Detalle.Subtotal);
-                        gestorDetalleVenta.AgregarDetalleVenta(Detalle);
+                        listaDetalleVenta.Add(Detalle);
                     }
                     Venta venta = new Venta();
                     venta.DNI = loginUser.DNI;
@@ -191,6 +191,16 @@ namespace GUI
                     venta.fecha = DateTime.Now;
                     venta.nroTarjeta = Convert.ToString(cmbTarjeta.Text);
                     gestorVenta.AgregarVenta(venta);
+
+                    foreach(DetalleVenta detalle in listaDetalleVenta)
+                    {
+                        gestorDetalleVenta.AgregarDetalleVenta(detalle);
+                    }
+                    MessageBox.Show("Venta realizada con éxito");
+                }
+                else
+                {
+                    MessageBox.Show("Tarjeta no válida");
                 }
             }
             catch(Exception ex)

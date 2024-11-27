@@ -50,5 +50,19 @@ namespace GUI
             panel.Controls.Add(frm);
             frm.Show();
         }
+
+        private void hISTORIALDEPAGOToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            LimpiarPanel();
+            frmHistorialCompra frm = new frmHistorialCompra(loginUser);
+            this.Width = frm.Width;
+            this.Height = frm.Height + 40;
+            frm.MdiParent = this;
+            frm.FormBorderStyle = FormBorderStyle.None;
+            frm.TopLevel = false;
+            frm.Dock = DockStyle.Fill;
+            panel.Controls.Add(frm);
+            frm.Show();
+        }
     }
 }
