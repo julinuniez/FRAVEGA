@@ -15,7 +15,7 @@ namespace GUI
 {
     public partial class frmCliente : Form
     {
-        decimal total = 0;
+        int total = 0;
         Usuario loginUser;
         public frmCliente(Usuario user)
         {
@@ -150,10 +150,20 @@ namespace GUI
                 {
 
                     DGdetalleView.Rows.RemoveAt(e.RowIndex);
-                    total -= Convert.ToDecimal(DGdetalleView.Rows[e.RowIndex].Cells[3].Value);
-                    lblMonto.Text = total.ToString();
+                    //total -= Convert.ToInt32(DGdetalleView.Rows[e.RowIndex].Cells[3].Value);
+                    ActualizarMontoAcumulado();
                 }
             }
+        }
+
+        private void ActualizarMontoAcumulado()
+        {
+            int total = 0;
+            foreach (DataGridViewRow row in DGdetalleView.Rows)
+            {
+                total += Convert.ToInt32(row.Cells[3].Value);
+            }
+            lblMonto.Text = total.ToString();
         }
 
         private void btnFinalizarVenta_Click(object sender, EventArgs e)
